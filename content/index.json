@@ -9,7 +9,8 @@
       "importance": 3,
       "timeMinutes": 10,
       "contributors": []
-    }
+    },
+    "position": 10
   },
   {
     "slug": "a-1-ai-alignment",
@@ -23,18 +24,8 @@
       "contributors": [
         "Leon Lang"
       ]
-    }
-  },
-  {
-    "slug": "a-4-singular-learning-theory",
-    "title": "A.4: Singular Learning Theory",
-    "cluster": "A",
-    "frontmatter": {
-      "summary": "Singular Learning Theory: degeneracy, the local learning coefficient, free energy, and Bayesian phase transitions.",
-      "difficulty": 5,
-      "importance": 4,
-      "timeMinutes": 480
-    }
+    },
+    "position": 20
   },
   {
     "slug": "a-3-deep-learning-theory-2",
@@ -45,29 +36,19 @@
       "difficulty": 3,
       "importance": 4,
       "timeMinutes": 240
-    }
+    },
+    "position": 40
   },
   {
-    "slug": "a-2-deep-learning-theory-1",
-    "title": "A.2: Overview of Deep Learning Theory 1",
+    "slug": "a-4-singular-learning-theory",
+    "title": "A.4: Singular Learning Theory",
     "cluster": "A",
     "frontmatter": {
-      "summary": "First overview of deep learning theory — approximation, generalization, and optimization in over-parameterized neural networks.",
-      "difficulty": 3,
+      "summary": "Singular Learning Theory: degeneracy, the local learning coefficient, free energy, and Bayesian phase transitions.",
+      "difficulty": 5,
       "importance": 4,
-      "timeMinutes": 360
-    }
-  },
-  {
-    "slug": "smoke-test",
-    "title": "Sparse Parity Learning",
-    "cluster": "A",
-    "frontmatter": {
-      "summary": "Learning the parity of a sparse substring of bits and the gap between random SGD and real SGD complexity.",
-      "difficulty": 3,
-      "importance": 3,
-      "timeMinutes": 5,
-      "contributors": []
-    }
+      "timeMinutes": 480
+    },
+    "position": 50
   }
 ]
