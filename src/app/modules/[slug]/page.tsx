@@ -1,11 +1,10 @@
 import { notFound } from "next/navigation";
-import { listSlugs, readModuleMdx } from "@/lib/content";
+import { readModuleMdx } from "@/lib/content";
 import { MdxBody } from "@/lib/mdx";
 
-export async function generateStaticParams() {
-  const slugs = await listSlugs();
-  return slugs.map((slug) => ({ slug }));
-}
+// Read MDX from disk at request time so the exporter's git push picks up
+// new content immediately without rebuild.
+export const dynamic = "force-dynamic";
 
 export default async function ModulePage({
   params,

@@ -1,0 +1,18 @@
+[Unit]
+Description=Iliad curriculum public site (Next.js)
+After=network.target
+[Service]
+Type=simple
+User=iliad
+Group=iliad
+WorkingDirectory=/var/iliad/public-site-repo
+Environment=NODE_ENV=production
+Environment=PORT=3001
+ExecStart=/usr/bin/node ./node_modules/.bin/next start -p 3001
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=iliad-public
+[Install]
+WantedBy=multi-user.target

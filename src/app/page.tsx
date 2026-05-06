@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { listIndex } from "@/lib/content";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const items = await listIndex();
   const byCluster = new Map<string, typeof items>();
