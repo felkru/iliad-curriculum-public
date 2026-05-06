@@ -15,6 +15,7 @@ export type IndexEntry = {
   slug: string;
   title: string;
   cluster: string | null;
+  position?: number;
   frontmatter: Frontmatter;
 };
 

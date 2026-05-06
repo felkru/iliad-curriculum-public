@@ -14,8 +14,13 @@ const CLUSTER_LABEL: Record<string, string> = {
 
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
-function sortedItems<T extends { slug: string; cluster: string | null }>(items: T[]): T[] {
-  return [...items].sort((a, b) => a.slug.localeCompare(b.slug));
+function sortedItems<T extends { slug: string; cluster: string | null; position?: number }>(items: T[]): T[] {
+  return [...items].sort(
+    (a, b) =>
+      (a.position ?? Number.POSITIVE_INFINITY) -
+        (b.position ?? Number.POSITIVE_INFINITY) ||
+      a.slug.localeCompare(b.slug),
+  );
 }
 
 export default async function Home() {
