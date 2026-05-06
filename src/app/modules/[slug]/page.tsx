@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { readModuleMdx } from "@/lib/content";
+import { readModuleMdx, listModuleSources } from "@/lib/content";
 import { MdxBody } from "@/lib/mdx";
 
 // Read MDX from disk at request time so the exporter's git push picks up
@@ -15,6 +15,7 @@ export default async function ModulePage({
   const mod = await readModuleMdx(slug);
   if (!mod) notFound();
   const fm = mod.frontmatter;
+  const sources = await listModuleSources(slug);
   return (
     <article className="mx-auto max-w-3xl px-6 py-10 prose">
       <header className="not-prose mb-6">
@@ -35,6 +36,23 @@ export default async function ModulePage({
           </a>
         </div>
       </header>
+      {sources.length > 0 && (
+        <section className="not-prose mb-6 rounded-md border border-zinc-200 bg-white p-4">
+          <h2 className="text-sm font-semibold mb-2">Original sources</h2>
+          <ul className="text-sm space-y-1">
+            {sources.map((f) => (
+              <li key={f}>
+                <a
+                  href={`/uploads/${slug}/${encodeURIComponent(f)}`}
+                  className="text-sky-700 hover:underline"
+                >
+                  {f}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <MdxBody source={mod.body} />
     </article>
   );

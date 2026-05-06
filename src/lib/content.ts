@@ -20,6 +20,16 @@ export type IndexEntry = {
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "modules");
 const INDEX_FILE = path.join(process.cwd(), "content", "index.json");
+const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
+
+export async function listModuleSources(slug: string): Promise<string[]> {
+  try {
+    const files = await readdir(path.join(UPLOADS_DIR, slug));
+    return files.filter((f) => !f.startsWith(".")).sort();
+  } catch {
+    return [];
+  }
+}
 
 export async function listIndex(): Promise<IndexEntry[]> {
   try {
