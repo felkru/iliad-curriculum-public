@@ -35,5 +35,16 @@
       "importance": 4,
       "timeMinutes": 480
     }
+  },
+  {
+    "slug": "a-3-deep-learning-theory-2",
+    "title": "A.3: Overview of Deep Learning Theory 2",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "Second overview of deep learning theory — simplicity bias, mysteries of generalization, and connections to alignment.",
+      "difficulty": 3,
+      "importance": 4,
+      "timeMinutes": 240
+    }
   }
 ]

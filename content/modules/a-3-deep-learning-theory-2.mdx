@@ -1,0 +1,109 @@
+---
+title: "A.3: Overview of Deep Learning Theory 2"
+cluster: "A"
+difficulty: 3
+importance: 4
+timeMinutes: 240
+contributors:
+  - "Zach Furman"
+summary: "Second overview of deep learning theory — simplicity bias, mysteries of generalization, and connections to alignment."
+---
+
+## Sources
+
+- `source.html` — original Google Doc export ("B.2 Mysteries of Deep Learning")
+
+## A.3: Overview of Deep Learning Theory 2
+
+## Contributors
+
+Zach Furman (The University of Melbourne)
+
+## Learning outcomes
+
+Goals:
+
+- Students can explain how the three barriers from Day A.2 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success
+- Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning
+- Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain
+- Students understand the "program synthesis" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations
+- Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible
+
+Some notes on intentions:
+
+- As with Day A.2, the goal is awareness and broad context, not deep technical mastery. The subsequent days (SLT, training dynamics, influence functions) go deep on specific approaches; this day ensures students know what those approaches are trying to explain
+- The reading list is deliberately longer than can be comfortably covered in one day. The TA should select a subset based on audience interest and pacing. The "Deep Learning as Program Synthesis" post is the one reading that should not be cut, as it provides the overarching framework and connects back to Day A.2
+- This day is reading-and-discussion-heavy rather than exercise-heavy. That's appropriate given the survey nature of the content, but it means discussion quality matters a lot
+
+## Prerequisites
+
+- Day A.2 content: the three barriers (approximation, generalization, optimization), Solomonoff induction and the simplicity prior, no free lunch, bias-variance tradeoff
+- Basic understanding of deep learning, sufficient to read non-specialist ML papers
+- Knowledge of mechanistic interpretability (Day B.2) is very helpful motivation but not logically necessary
+
+## Content
+
+### Fast-track
+
+Read the lecture slides for the overall framing, then read "Deep Learning as Program Synthesis" (skipping the background section on Solomonoff induction, which was covered on Day A.2, and optionally deferring the "path forward" section). This gives a high level overview of various empirical mysteries. Then skim as many papers on the list as you have time/interest (possibly none).
+
+### Main content
+
+Lecture:
+
+- [PDF](https://drive.google.com/file/d/1C-ragyFZhd7Dw5byMg5aqxwOLzF_7Xqj/view?usp=drive_link)
+
+Core readings (likely cover a smaller subset depending on time / audience interest):
+
+- Overview
+  - [Deep Learning as Program Synthesis](https://www.lesswrong.com/posts/Dw8mskAvBX37MxvXo/deep-learning-as-program-synthesis-1)
+    - Note that this post presents an opinionated hypothesis (deep learning is performing something analogous to Solomonoff induction) alongside relatively consensus discussion of empirical mysteries. The post is largely being shared for the latter, though students may find the hypothesis itself useful pedagogically
+- Approximation
+  - [Approximation is expensive, but the lunch is cheap](https://www.lesswrong.com/posts/gq9GR6duzcuxyxZtD/approximation-is-expensive-but-the-lunch-is-cheap)
+  - [Why and When Can Deep – but Not Shallow – Networks Avoid the Curse of Dimensionality: a Review](https://arxiv.org/pdf/1611.00740)
+- Generalization
+  - [Understanding deep learning requires rethinking generalization](https://arxiv.org/abs/1611.03530)
+  - [Deep Learning is Not So Mysterious or Different](https://arxiv.org/abs/2503.02113)
+  - [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
+- Optimization
+  - [Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit](https://arxiv.org/abs/2207.08799)
+  - [SGD learning on neural networks: leap complexity and saddle-to-saddle dynamics](https://arxiv.org/abs/2302.11055)
+- Representational alignment
+  - [The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987)
+- In-context learning
+  - [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
+
+### Learn more
+
+- [The Scaling Hypothesis](https://gwern.net/scaling-hypothesis)
+  - Quite polemical. Nevertheless, very influential "ideas piece"
+- [Getting aligned on representational alignment](https://arxiv.org/abs/2310.13018)
+  - A broader overview of the representational alignment phenomenon
+- [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120)
+  - Classic paper which finds stagewise learning in neural networks with linear activation function; will be covered later in the course
+- [Stagewise Development in Neural Networks](https://www.lesswrong.com/posts/Zza9MNA7YtHkzAtit/stagewise-development-in-neural-networks)
+  - A nice paper investigating stagewise learning in small LLMs. Requires some SLT knowledge
+- [Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs](https://arxiv.org/abs/2502.17424)
+  - Training on "evil" data in narrow domains (like, code with vulnerabilities) generalizes to "evil" more broadly (praising Hitler, etc)
+
+## Teaching guide
+
+First, start with the lecture, which should take ~1 hour. Ask for questions and discuss.
+
+For readings:
+
+- Read each piece one at a time, set a timer for how long you expect the reading to take (underestimate is good), and assess people's progress when the timer runs out and possibly/likely run the timer again. Then discuss in small groups (~4 people) for 10-30 mins, depending on the importance of the content and how much there is to digest. During small group discussions, you can walk around different groups and participate in different discussions
+- In the case where the piece is too long to digest comfortably in a single setting, or is very dense, break it down into smaller chunks of 20-40 mins, with intermediate discussions. This is especially true for the "Deep Learning as Program Synthesis" piece but also several others
+- There is not enough time to read every piece, and so only some will have to be selected, possibly based on audience interest. It is important that students read "Deep Learning as Program Synthesis" (despite its length) as it covers most of these mysteries at once in a unified way, but the other readings are more for deepening understanding. In the April 2026 iteration, we read: "Deep Learning is Not So Mysterious or Different," "The Platonic Representation Hypothesis," and "In-context Learning and Induction Heads"
+- For the later pieces it can help to explicitly encourage students to skim for high-level awareness/ideas rather than read closely, including by setting a short reading timer (relative to the length of the piece) that explicitly forces skimming
+  - Note however that the two pieces listed under "optimization" do require deep engagement to get much value at all out of them, and likely cannot be skimmed productively
+
+Throughout: ensure to take breaks regularly, every hour or two for at least 10-20 mins, and also the lunch break.
+
+Only one TA is strictly required, though more can assist with facilitating discussions.
+
+## Notes for future iterations
+
+- See the notes from Day A.2, many apply here as well
+- Annotating the reading list here could be helpful
+- Possibly the reading list should be curated down to a smaller list explicitly, as there is not enough time for even half of the readings to be covered
