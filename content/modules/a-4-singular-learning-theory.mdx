@@ -1,0 +1,204 @@
+---
+title: "A.4: Singular Learning Theory"
+cluster: "A"
+difficulty: 5
+importance: 4
+timeMinutes: 480
+contributors:
+  - "Kai Ogden"
+  - "Matthew Farrugia-Roberts"
+  - "Zach Furman"
+summary: "Singular Learning Theory: degeneracy, the local learning coefficient, free energy, and Bayesian phase transitions."
+---
+
+## Sources
+
+- `source.html` (Iliad Intensive module document)
+- `Ogden+2026 Degeneracy in Deep Learning - An invitation to singular learning theory (Pilot, Spring 2026).pdf` — main lecture notes
+- `Furman2026 Introduction to Singular Learning Theory.pdf` — lecture slides
+- `Furman2025 Introduction to Singular Learning Theory.key` — Keynote source for the slides
+
+## A.4: Singular Learning Theory
+
+## Contributors
+
+Teaching plan and lecture notes by:
+
+- **Kai Ogden** — University of Oxford
+- **Matthew Farrugia-Roberts** — University of Oxford
+- **Zach Furman** — The University of Melbourne
+
+Lecture slides by Zach Furman.
+
+## Learning outcomes
+
+After completing this module, students should be able to:
+
+1. Define degeneracy of parameter–function maps and identify degenerate directions in simple models (including deep linear networks and multi-layer perceptrons).
+2. Define the local learning coefficient via volume scaling asymptotics, compute learning coefficients in simple examples, and compare to the regular and minimally singular cases.
+3. State Watanabe's free energy formula and analyse toy examples of Bayesian phase transitions.
+
+## Prerequisites
+
+The following is an indicative list of mathematical concepts that will be helpful for reading the tutorial and completing the exercises.
+
+- **Linear algebra:** vectors, matrices, rank, orthogonal matrices, rank–nullity, positive definiteness, eigenvalues, spectral decomposition.
+- **Calculus:** partial derivatives, gradient, directional derivative, chain rule, Hessian, second-order Taylor expansion and remainder.
+- **Integration and analysis:** multivariate integrals, change of variables, volume in $\mathbb{R}^d$, asymptotic notation (big-O, little-o), computing basic limits and integrals.
+- **Probability:** probability simplex, conditional probability, probability density functions, independence, expectation, Bayes' rule, Gaussians, law of large numbers.
+
+Resources for most of these prerequisites are listed in either the [ARENA Prerequisites: Core concepts](https://learn.arena.education/chapter0_fundamentals/00_prereqs/1-core-concepts-knowledge/) or the Iliad Intensive, Module 0: Prerequisites document. But these are very standard topics. For a general introduction, see any popular textbook on the relevant subject. For isolated topics, consult, e.g., Wikipedia or an LLM.
+
+We also require some specific terminology and notation regarding deep learning, optimisation, and statistical inference.
+
+- **Deep learning:** parametric function approximation or statistical inference (parameter–function maps, deep linear networks, multi-layer perceptrons, loss functions, likelihood).
+- **Bayesian statistics:** prior, posterior, partition function, Bayesian free energy.
+
+These topics are also mentioned in Module 0 or the ARENA materials, and some of the material will overlap with Modules A.2 and A.3 overviewing deep learning theory. The lecture notes for this module also review everything we need, and introduce our notation, in section 1 ("Preliminaries").
+
+Readers with more advanced backgrounds may appreciate occasional references throughout the lecture notes on topics from algebraic geometry, fractal geometry, or statistical physics. (However, these references are tangential and readers without these backgrounds can safely skip them.)
+
+## Content
+
+### Fast-track
+
+To paraphrase Euclid, there is no royal road to algebro-geometric learning theory. However, it is possible to get a bird's-eye view and the most important intuitions in a comparably short time. If this is what you are looking for, we recommend the following route through the lecture notes linked from the "Main content" section below.
+
+Assuming you are already somewhat comfortable with deep learning and Bayesian inference, skip Section 1, and refer back only as needed. Then, proceed as follows.
+
+1. **To understand parameter–function map versus loss landscape degeneracy:** Read Section 2.1 and complete Exercises 2.1 and 2.2. Complete either Exercise 2.9 or 2.10. Read Section 2.5 and complete your choice of Exercises 2.14 and/or 2.15.
+2. **To understand the local learning coefficient via volume scaling:** Read Section 3.1 and complete Exercises 3.1, 3.2, 3.4, and 3.7. Read Section 3.3 and Exercise 3.10.
+3. **To understand the relation between degeneracy and learning in the Bayesian case:** Read all of Section 4 (it is shorter). Complete Exercise 4.2.
+
+### Main content
+
+The main content for today centres around the following set of lecture notes:
+
+- **Ogden et al. 2026** — *Degeneracy in Deep Learning: An invitation to singular learning theory* (Pilot, Spring 2026).
+
+We will also frame the topics using a lecture on the day. Slides:
+
+- **Furman 2026** — *Introduction to Singular Learning Theory* (PDF).
+- Keynote source available as `Furman2025 Introduction to Singular Learning Theory.key`.
+
+### Learn more
+
+Please see Section 5 of the lecture notes for the following:
+
+- A list of other introductory readings on singular learning theory.
+- A survey of recent work on singular deep learning.
+
+Timaeus, a non-profit research organisation working on SLT for alignment, also maintains a list of introductory resources on their website: [https://timaeus.co/learn](https://timaeus.co/learn).
+
+## Teaching guide
+
+**Day plan** (ILO = Intended Learning Outcome; exercises with `*` = "if time allows"; all exercise numbers are from the "Spring 2026 pilot" version of the notes).
+
+| Time | Topic | ILOs |
+| --- | --- | --- |
+| 10:00–10:30 | **Block 1: Introduction to singular learning theory.** *Lecture:* The puzzle of implicit model selection; preliminaries; defining degeneracy; local learning coefficient definition, intuitions; Bayesian learning; free energy formula; Bayesian phase transitions; resolving the puzzle; empirical work. | 1, 2, 3 |
+| 11:00–12:30 | **Block 2: What is degeneracy?** *Notes:* Sections 1.1, 1.2, 2. *Exercises:* (1) Definition of degeneracy (ex. 2.1, 2.2, 2.3\*); (2) Examples from deep learning (ex. 2.6\*, 2.9, 2.10\*); (3) Relating different definitions of degeneracy (ex. 2.12\*, 2.15). | 1 |
+| 12:30–13:30 | **Lunch break.** | — |
+| 13:30–15:30 | **Block 3: The degeneracy hierarchy.** *Notes:* Section 3. *Exercises:* (1) Volume scaling (ex. 3.1, 3.2); (2) Learning coefficient via volume scaling (ex. 3.4, 3.5\*); (3) Learning coefficient examples (ex. 3.7, 3.10). | 2 |
+| 15:30–16:00 | **Afternoon break.** | — |
+| 16:00–17:30 | **Block 4: Degeneracy and Bayesian deep learning.** *Notes:* Sections 1.3, 1.4, 4. *Exercises:* (1) Bayesian inference (ex. 1.3\*, 1.7, 1.8); (2) Free energy formula, Bayesian phase transitions (ex. 4.2\*). | 3 |
+| 17:30–18:00 | **Block 5: Closing remarks.** *Lecture:* Summary; looking ahead; where to find further resources and get involved ("Learn more" content). Feedback survey (10 minutes). | N/A |
+| 18:00 | **End of day.** | — |
+
+The main format of each block will be either a lecture or an exercise session.
+
+- A **lecture block** is as you'd expect: Zach delivered the lecture slides, sometimes pausing for student questions. The goal was to frame the whole day. We would revisit the themes from the lecture throughout the exercise blocks.
+- The **exercise blocks** worked as follows:
+  - TAs would start by giving a brief (10 min) oral/whiteboard overview of the theme for the block and directing students to the relevant section of the notes.
+  - Then we set them the first exercise(s), give them 20 minutes or so to work on it. TAs walk around and help anyone who needs assistance with the exercises.
+  - Once everyone is done, give a brief (5–10 min) oral/whiteboard recap of the solution/takeaways, and set the next exercise(s). Repeat until the end of the block.
+
+<Callout type="tip">
+There should be roughly one TA per ~10 students, as long as they are fully available (e.g. not working on their own stuff or in another room, available to help students on demand).
+</Callout>
+
+## Notes for future iterations
+
+### Retrospective
+
+The teaching plan section above is an up-to-date summary that reflects what we actually got time to cover and what the exercise sessions looked like.
+
+**Exercise session notes:**
+
+- **MFR:** One thing we could have done better was encourage students to work in groups; the room was mostly silent when nobody was asking questions.
+- **MFR:** Another thing we could have done better was encourage students to consult AIs if they need a primer on some context (or otherwise), though TAs were also available in this case.
+- **MFR:** Another thing we could have done is encourage strong students to work ahead if they finish early.
+
+**Feedback was mostly positive:**
+
+- Several people commented on lecture notes and exercises being good.
+  - Nice quote: *"Initial lecture, exercise and discussion format — all very good! (And this presentation is massively better than what was available online around 2 years ago)"*
+- Several people commented on liking the format, as a mix between lecture, exercises, discussion.
+
+**Some things mentioned as areas we could improve** (see the feedback form for full quotes):
+
+- **Visualisations.** *(Noted below.)*
+- **Spend more time on preliminaries early in the day.** *(We assigned this as pre-reading, but could also consider allocating more time.)*
+- **More links with actual AI safety stuff; links to core issues in alignment.**
+  - We did try to connect this in the wrap-up discussion at the end of the day.
+  - Probably more could be included in the framing lecture at the start of the day.
+- **We should make clearer [exercise difficulty / time].**
+  - Already noted above; below we suggest using ARENA-style time/difficulty indicators on the exercises.
+- **Looking for more challenging exercises later in the day.**
+  - Perhaps they mean Section 4; agree we should add more + deeper exercises.
+- *"I want to read counterargument or adjacent-variant theories to know how confident I should be about the likelihood of this theory and how strongly I should pursue it."*
+  - This is what the other days are for…!
+- **Too much time on math proof / mathematical, wants us to cater more to people with different backgrounds.**
+  - This is intentional at the level of Iliad Intensive; don't think we need to do anything.
+- **Someone said it was all too fast; they couldn't keep up and wished they could have just worked at their own pace.**
+  - The good news is that the lecture notes support this person working through at their own pace.
+  - Since only a couple of people expressed concerns like this, probably we are going at about the right pace overall.
+  - Potentially the cause here is that this person was not comfortable with the preliminaries sections that we assigned as pre-reading. It would be good if they had found time to do the pre-readings, but also we could potentially try to make space for pre-readings in the first exercise block.
+
+**In-person feedback:**
+
+- Vaguely positive.
+- Nothing specific to note.
+
+### Future improvements
+
+*"If you or someone else developed this module section further, what should they change?"*
+
+- **MFR:** I think I'm pretty happy with it for one day. See answers below.
+- **MFR:** The notes themselves I have various plans for improvement, not specific enough to write down yet though. Could basically put in about as much effort as before to make a more expanded and thorough version of the notes.
+
+*"What content could be added?"*
+
+- **MFR:** There is already enough for one day; mostly should focus on delivering that content better.
+- **MFR:** If you want extra SLT days, could have:
+  - For a similar audience of mostly physicists, a day on Bayesian interp foundations, such as LLC estimator, susceptibilities and their estimation.
+  - For an audience of scientists/empiricists, a day on the empirical science/interp work discussed in the further readings section of the notes.
+  - For a more mathematically mature audience, a day doing a deep dive into the underlying algebraic geometry and Bayesian theory.
+- **ZF:** Add images/figures (consider using existing ones from Timaeus blog posts / publications).
+  - **ZF:** Can also leverage exercises based on Desmos, etc.
+- **MFR:** Flesh out Section 4 (on Bayesian phase transitions) with more / deeper exercises.
+  - Perhaps it would be possible to add an example of a Bayesian phase transition in a DLN, if we can find a clean one.
+- **MFR:** Would be nice to add an exercise like the DLN LLC one, but on tanh networks, paralleling how we have both DLN and tanh networks in the "What is degeneracy?" section.
+
+*"What could be explained better with more effort?"*
+
+- **MFR:** I think maybe we haven't found the right way to frame the distinction between degeneracy in the loss vs. in the parameter–function map.
+  - **ZF:** I think the Hessian chain rule calculation is fairly enlightening but elementary (doesn't require the FIM, etc).
+    - **MFR:** This could be added as an exercise.
+- **KO:** Maybe more attention to preliminaries (Section 1), which we set as pre-reading, but not everyone was on board with this.
+- **KO:** Since some parts of the notes are skipped during the day, make sure the different sections in the day are motivated and linked to each other. There is a chance of accidentally skipping small but important details when skipping parts of the notes.
+
+*"How could the content be made more scalable? More self-contained?"*
+
+- **MFR:** I think having the notes already makes the content very self-contained; not much more is needed.
+  - **MFR/KO:** Perhaps some solutions could be improved, made clearer.
+  - Exercises could be more battle-tested and refined with student experience (add appropriate hints, clear up confusing wording, etc.).
+- **KO:** The ARENA exercises have ratings for difficulty, importance and expected duration; providing this kind of indicator could help students self-study the material, e.g. know when to consult solution or LLM.
+
+*"Is there some research project which, if finished, would allow a more streamlined explanation of this topic?"*
+
+- **MFR:** General progress in theoretical SLT, e.g. progress on SGD theory, could warrant updating the presentation. Absent that, I think the notes are a pretty good first-day introduction to the current framework in the field.
+
+<Callout type="note">
+The substantive mathematical content for this module — definitions, exercises, proofs, and worked examples on degeneracy, the local learning coefficient, volume scaling, the free energy formula, and Bayesian phase transitions — lives in the linked lecture notes (`Ogden+2026 Degeneracy in Deep Learning`) and slide deck (`Furman2026 Introduction to Singular Learning Theory.pdf`). This page is the day-level teaching plan and module overview.
+</Callout>

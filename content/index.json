@@ -24,5 +24,16 @@
         "Leon Lang"
       ]
     }
+  },
+  {
+    "slug": "a-4-singular-learning-theory",
+    "title": "A.4: Singular Learning Theory",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "Singular Learning Theory: degeneracy, the local learning coefficient, free energy, and Bayesian phase transitions.",
+      "difficulty": 5,
+      "importance": 4,
+      "timeMinutes": 480
+    }
   }
 ]
