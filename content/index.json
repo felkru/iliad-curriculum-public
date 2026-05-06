@@ -46,5 +46,16 @@
       "importance": 4,
       "timeMinutes": 240
     }
+  },
+  {
+    "slug": "a-2-deep-learning-theory-1",
+    "title": "A.2: Overview of Deep Learning Theory 1",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "First overview of deep learning theory — approximation, generalization, and optimization in over-parameterized neural networks.",
+      "difficulty": 3,
+      "importance": 4,
+      "timeMinutes": 360
+    }
   }
 ]
