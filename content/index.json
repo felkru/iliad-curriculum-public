@@ -57,5 +57,17 @@
       "importance": 4,
       "timeMinutes": 360
     }
+  },
+  {
+    "slug": "smoke-test",
+    "title": "Sparse Parity Learning",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "Learning the parity of a sparse substring of bits and the gap between random SGD and real SGD complexity.",
+      "difficulty": 3,
+      "importance": 3,
+      "timeMinutes": 5,
+      "contributors": []
+    }
   }
 ]
