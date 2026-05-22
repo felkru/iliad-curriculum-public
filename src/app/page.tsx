@@ -36,16 +36,13 @@ export default async function Home() {
   );
   return (
     <main className="mx-auto px-6 py-10" style={{ maxWidth: 720 }}>
-      <header className="mb-8 border-b border-zinc-200 pb-5">
+      <header className="mb-8">
         <h1
           className="font-serif tracking-tight leading-[1.1] text-[2.5rem]"
           style={{ fontWeight: 600 }}
         >
           Iliad Intensive Curriculum
         </h1>
-        <p className="mt-4 font-serif italic text-[1.05rem] text-zinc-700 leading-relaxed">
-          April 2026 cohort — AI Safety theory of deep learning, agency, alignment.
-        </p>
       </header>
       {items.length === 0 ? (
         <p className="font-serif text-zinc-500">No public modules yet.</p>
