@@ -35,6 +35,21 @@
     "position": 20
   },
   {
+    "slug": "a-2-deep-learning-theory-1",
+    "title": "A.2: Overview of Deep Learning Theory 1",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "First overview of deep learning theory — approximation, generalization, and optimization in over-parameterized neural networks.",
+      "difficulty": 4,
+      "importance": 5,
+      "timeMinutes": 360,
+      "contributors": [
+        "Zach Furman (The University of Melbourne)"
+      ]
+    },
+    "position": 30
+  },
+  {
     "slug": "a-3-deep-learning-theory-2",
     "title": "A.3: Overview of Deep Learning Theory 2",
     "cluster": "A",
