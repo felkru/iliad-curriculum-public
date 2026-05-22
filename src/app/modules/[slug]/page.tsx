@@ -38,6 +38,12 @@ export default async function ModulePage({
             {fm.summary}
           </p>
         )}
+        {fm.contributors && fm.contributors.length > 0 && (
+          <p className="mt-3 font-sans text-sm text-zinc-600">
+            <span className="text-zinc-500">By </span>
+            {fm.contributors.join(", ")}
+          </p>
+        )}
         <div className="font-sans mt-5 flex gap-3 text-sm">
           <a
             href={`/api/download/${slug}`}
@@ -46,6 +52,18 @@ export default async function ModulePage({
             Download .md
           </a>
         </div>
+        {fm.learningOutcomes && fm.learningOutcomes.length > 0 && (
+          <section className="mt-6 rounded border border-zinc-200 bg-white/60 p-4">
+            <h2 className="font-sans text-xs uppercase tracking-[0.15em] text-zinc-500">
+              What you&rsquo;ll learn
+            </h2>
+            <ul className="mt-2 list-disc pl-5 font-serif text-[1rem] leading-relaxed text-zinc-800 space-y-1">
+              {fm.learningOutcomes.map((o, i) => (
+                <li key={i}>{o}</li>
+              ))}
+            </ul>
+          </section>
+        )}
       </header>
       <div className="prose mx-auto">
         <MdxBody source={mod.body} />

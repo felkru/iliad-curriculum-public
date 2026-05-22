@@ -9,6 +9,7 @@ export type Frontmatter = {
   timeMinutes?: number;
   contributors?: string[];
   summary?: string;
+  learningOutcomes?: string[];
 };
 
 export type IndexEntry = {
@@ -50,6 +51,52 @@ export async function listSlugs(): Promise<string[]> {
   }
 }
 
+function parseYaml(yaml: string): Frontmatter {
+  const fm: Frontmatter = {};
+  const lines = yaml.split("\n");
+  let i = 0;
+  while (i < lines.length) {
+    const line = lines[i];
+    const kv = line.match(/^([A-Za-z_]+):\s*(.*)$/);
+    if (!kv) {
+      i++;
+      continue;
+    }
+    const key = kv[1] as keyof Frontmatter;
+    const inline = kv[2].trim();
+    if (inline === "") {
+      // Block-list value: subsequent indented `- item` lines belong to this key.
+      const items: string[] = [];
+      let j = i + 1;
+      while (j < lines.length && /^\s+-\s+/.test(lines[j])) {
+        items.push(
+          lines[j].replace(/^\s+-\s+/, "").trim().replace(/^["']|["']$/g, ""),
+        );
+        j++;
+      }
+      // @ts-expect-error narrow assignment
+      fm[key] = items;
+      i = j;
+      continue;
+    }
+    let val: unknown = inline;
+    if (typeof val === "string") {
+      if (/^\d+$/.test(val)) val = parseInt(val, 10);
+      else if (val.startsWith("[") && val.endsWith("]")) {
+        val = val
+          .slice(1, -1)
+          .split(",")
+          .map((s) => s.trim().replace(/^["']|["']$/g, ""))
+          .filter(Boolean);
+      } else val = val.replace(/^["']|["']$/g, "");
+    }
+    // @ts-expect-error narrow assignment
+    fm[key] = val;
+    i++;
+  }
+  return fm;
+}
+
 export async function readModuleMdx(slug: string): Promise<{
   raw: string;
   frontmatter: Frontmatter;
@@ -59,28 +106,7 @@ export async function readModuleMdx(slug: string): Promise<{
     const raw = await readFile(path.join(CONTENT_DIR, `${slug}.mdx`), "utf8");
     const m = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
     if (!m) return { raw, frontmatter: {}, body: raw };
-    const yaml = m[1];
-    const body = m[2];
-    const fm: Frontmatter = {};
-    for (const line of yaml.split("\n")) {
-      const match = line.match(/^([A-Za-z_]+):\s*(.*)$/);
-      if (!match) continue;
-      const key = match[1] as keyof Frontmatter;
-      let val: unknown = match[2].trim();
-      if (typeof val === "string") {
-        if (/^\d+$/.test(val)) val = parseInt(val, 10);
-        else if (val.startsWith("[") && val.endsWith("]")) {
-          val = val
-            .slice(1, -1)
-            .split(",")
-            .map((s) => s.trim().replace(/^["']|["']$/g, ""))
-            .filter(Boolean);
-        } else val = val.replace(/^["']|["']$/g, "");
-      }
-      // @ts-expect-error narrow assignment
-      fm[key] = val;
-    }
-    return { raw, frontmatter: fm, body };
+    return { raw, frontmatter: parseYaml(m[1]), body: m[2] };
   } catch {
     return null;
   }
