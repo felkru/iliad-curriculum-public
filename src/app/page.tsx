@@ -35,8 +35,8 @@ export default async function Home() {
     [...byCluster.keys()].filter((c) => !CLUSTER_ORDER.includes(c)),
   );
   return (
-    <main className="mx-auto px-6 py-16" style={{ maxWidth: 720 }}>
-      <header className="mb-14 border-b border-zinc-200 pb-8">
+    <main className="mx-auto px-6 py-10" style={{ maxWidth: 720 }}>
+      <header className="mb-8 border-b border-zinc-200 pb-5">
         <h1
           className="font-serif tracking-tight leading-[1.1] text-[2.5rem]"
           style={{ fontWeight: 600 }}
@@ -50,15 +50,15 @@ export default async function Home() {
       {items.length === 0 ? (
         <p className="font-serif text-zinc-500">No public modules yet.</p>
       ) : (
-        <div className="space-y-12">
+        <div className="space-y-8">
           {orderedClusters.map((cluster) => (
             <section key={cluster}>
-              <h2 className="font-sans text-xs uppercase tracking-[0.15em] text-zinc-500 mb-4">
+              <h2 className="font-sans text-xs uppercase tracking-[0.15em] text-zinc-500 mb-3">
                 {CLUSTER_LABEL[cluster] ?? `Cluster ${cluster}`}
               </h2>
               <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
                 {sortedItems(byCluster.get(cluster)!).map((p) => (
-                  <li key={p.slug} className="py-4">
+                  <li key={p.slug} className="py-3">
                     <Link
                       href={`/modules/${p.slug}`}
                       className="block font-serif text-[1.25rem] leading-snug hover:text-[var(--link)]"

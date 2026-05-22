@@ -16,8 +16,8 @@ export default async function ModulePage({
   if (!mod) notFound();
   const fm = mod.frontmatter;
   return (
-    <article className="mx-auto px-6 py-14" style={{ maxWidth: 720 }}>
-      <header className="not-prose mb-10 border-b border-zinc-200 pb-6">
+    <article className="mx-auto px-6 py-10" style={{ maxWidth: 720 }}>
+      <header className="not-prose mb-6 border-b border-zinc-200 pb-4">
         <h1
           className="font-serif text-[2.1rem] leading-[1.15] tracking-tight"
           style={{ fontWeight: 600 }}
