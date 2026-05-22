@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
 const sans = Inter({
   variable: "--font-sans",
@@ -30,7 +31,10 @@ export default function RootLayout({
       lang="en"
       className={`${sans.variable} ${serif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-serif">{children}</body>
+      <body className="min-h-full flex flex-col font-serif">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
