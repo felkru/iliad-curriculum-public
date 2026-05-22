@@ -1,9 +1,13 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useNav } from "./NavContext";
 
 export function NavToggle() {
+  const pathname = usePathname();
   const { open, toggle } = useNav();
+  // The home page already lists every module — no toggle needed there.
+  if (pathname === "/") return null;
   return (
     <button
       type="button"
