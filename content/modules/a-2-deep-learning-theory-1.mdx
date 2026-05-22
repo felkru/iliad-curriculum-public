@@ -1,23 +1,48 @@
 ---
 title: "A.2: Overview of Deep Learning Theory 1"
-cluster: "A"
+cluster: A
 difficulty: 4
 importance: 5
 timeMinutes: 360
 contributors:
-  - "Zach Furman (The University of Melbourne)"
-summary: "First overview of deep learning theory — approximation, generalization, and optimization in over-parameterized neural networks."
+  - Zach Furman (The University of Melbourne)
+summary: First overview of deep learning theory — approximation, generalization, and optimization in over-parameterized neural networks.
 learningOutcomes:
   - "Students can explain the three fundamental barriers to building a universal learning machine: approximation, generalization, and optimization, and articulate why they are sometimes/naively in tension with each other"
-  - "Students can explain what Solomonoff induction is, how it resolves the approximation and generalization barriers via a universal hypothesis class and simplicity prior, and why it fails on optimization"
-  - "Students are aware of the optimality result for Solomonoff induction"
-  - "Students can explain the bias-variance tradeoff and why it might suggest universal learning is impossible, and how the simplicity prior in Solomonoff induction sidesteps this"
-  - "Students can state the no free lunch theorem and explain what it does and does not imply about practical learning"
-  - "Students can explain, at a high level, why even polynomial-time hypothesis classes can be hard to learn over efficiently (the PRG/cryptographic hardness argument)"
-  - "Students can articulate why learning requires structure in the world, and what this implies about what we should expect from powerful learning machines"
+  - Students can explain what Solomonoff induction is, how it resolves the approximation and generalization barriers via a universal hypothesis class and simplicity prior, and why it fails on optimization
+  - Students are aware of the optimality result for Solomonoff induction
+  - Students can explain the bias-variance tradeoff and why it might suggest universal learning is impossible, and how the simplicity prior in Solomonoff induction sidesteps this
+  - Students can state the no free lunch theorem and explain what it does and does not imply about practical learning
+  - Students can explain, at a high level, why even polynomial-time hypothesis classes can be hard to learn over efficiently (the PRG/cryptographic hardness argument)
+  - Students can articulate why learning requires structure in the world, and what this implies about what we should expect from powerful learning machines
   - "Students understand the relevance of this material to AGI safety: if AGI is a learning machine, the three barriers constrain what it can look like, and Solomonoff induction serves as a theoretical reference point for reasoning about its capabilities"
----
+notesForFutureIterations: |-
+  - Making a comprehensive set of lecture notes that actually ties the readings together rather than just listing them would be nice. Or at a minimum just an annotated reading list
+  - Mathematically showing the exact decomposition of empirical risk into approximation, generalization, optimization in e.g. the ERM framework would be helpful, to make these categories less hand-wave-y
+  - Approximation theory and the curse of dimensionality should be covered today (e.g. the parameter count lower bound from [here](https://gwern.net/doc/cs/algorithm/1989-devore.pdf)), I just couldn't find any good existing resources so this might need to be created
+  - This covered a lot of ground in one day and people felt a bit rushed
+  - Preparing explicit discussion prompts ahead of time for readings could be a good idea
+  - Small group discussions (~4 people) generally work better than full class discussions
+  - Learning goals should be made more clear. People generally did not realize that the end goal here was *awareness* of these broader learning theory
+  - Spend more time talking about why this is useful for alignment
+  - People's backgrounds are very different, and some people will read 2x slower than others - this can sometimes mean a tradeoff between letting people slip behind or boring the most capable students. Not sure how to handle
+  - I (Zach Furman) am not an expert in Solomonoff induction but nevertheless ended up having to cover it, and my lack of knowledge was noticeable. Would have gone worse without other TAs there who knew more
+teachingGuide: |-
+  First, start with the lecture, which should take 1-1.5 hours. Ask for questions and discuss.
 
+  For readings:
+
+  - Read each piece one at a time, set a timer for how long you expect the reading to take (underestimate is good), and assess people's progress when the timer runs out and possibly/likely run the timer again. Then discuss in small groups (~4 people) for 10-30 mins, depending on the importance of the content and how much there is to digest. During small group discussions, you can walk around different groups and participate in different discussions
+  - In the case where the piece is too long to digest comfortably in a single setting, or is very dense, break it down into smaller chunks of 20-40 mins, with intermediate discussions. For A.2, this should only be the case for the Solomonoff induction reading (Shane Legg's thesis)
+
+  For exercises:
+
+  - Break the exercises into chunks depending on content and duration (aim for 20-40 mins). Set a timer for how long you expect the chunk to take (underestimate is good), and assess people's progress when the timer runs out and possibly/likely run the timer again. Explicitly tell the students they can ask for help at any time. After the chunk is up, ask questions of the class ("what answer did you get here? what pattern might that suggest?" etc), make some remarks about takeaways, etc. Repeat.
+
+  Throughout: ensure to take breaks regularly, every hour or two for at least 10-20 mins, and also the lunch break.
+
+  Only one TA is strictly required, though more can assist with facilitating discussions and exercises.
+---
 ## Prerequisites
 
 - Probability theory basics: probability distributions, conditional probability, Bayes' theorem
@@ -25,11 +50,9 @@ learningOutcomes:
 - Some familiarity with the concept of Turing machines and computability (at the level of "know what a Turing machine is, why it's a universal model of computation, and what it means for a function to be computable")
 - No machine learning background assumed; no coding required
 - Helpful but not required: basic statistical concepts (bias, variance, estimators)
-
 ## Fast-track
 
 The content is already a very high-level overview, but to get the absolute basics, read the lecture slides and Sections 2-2.8 of Shane Legg's PhD thesis. Ideally this would still involve a decent amount of discussion (possibly with LLMs).
-
 ## Main content
 
 Main lecture:
@@ -48,7 +71,6 @@ Readings and exercises (in order):
 - [Understanding Machine Learning: From Theory to Algorithms](https://www.cambridge.org/core/books/understanding-machine-learning/3059695661405D25673058E43C8BE2A6)
   - Section 8.4 (Hardness of learning)
 - (Read some A.3 content if time)
-
 ## Learn more
 
 - [An intuitive explanation of Solomonoff induction](https://www.lesswrong.com/posts/Kyc5dFDzBg4WccrbK/an-intuitive-explanation-of-solomonoff-induction)
@@ -62,33 +84,3 @@ Readings and exercises (in order):
 - [An Introduction to Universal Artificial Intelligence](https://hutter1.net/publ/uaibook2.pdf)
   - Hutter's SI / AIXI book
 - [Understanding Machine Learning: From Theory to Algorithms](https://www.cambridge.org/core/books/understanding-machine-learning/3059695661405D25673058E43C8BE2A6)
-
-## Teaching guide
-
-First, start with the lecture, which should take 1-1.5 hours. Ask for questions and discuss.
-
-For readings:
-
-- Read each piece one at a time, set a timer for how long you expect the reading to take (underestimate is good), and assess people's progress when the timer runs out and possibly/likely run the timer again. Then discuss in small groups (~4 people) for 10-30 mins, depending on the importance of the content and how much there is to digest. During small group discussions, you can walk around different groups and participate in different discussions
-- In the case where the piece is too long to digest comfortably in a single setting, or is very dense, break it down into smaller chunks of 20-40 mins, with intermediate discussions. For A.2, this should only be the case for the Solomonoff induction reading (Shane Legg's thesis)
-
-For exercises:
-
-- Break the exercises into chunks depending on content and duration (aim for 20-40 mins). Set a timer for how long you expect the chunk to take (underestimate is good), and assess people's progress when the timer runs out and possibly/likely run the timer again. Explicitly tell the students they can ask for help at any time. After the chunk is up, ask questions of the class ("what answer did you get here? what pattern might that suggest?" etc), make some remarks about takeaways, etc. Repeat.
-
-Throughout: ensure to take breaks regularly, every hour or two for at least 10-20 mins, and also the lunch break.
-
-Only one TA is strictly required, though more can assist with facilitating discussions and exercises.
-
-## Notes for future iterations
-
-- Making a comprehensive set of lecture notes that actually ties the readings together rather than just listing them would be nice. Or at a minimum just an annotated reading list
-- Mathematically showing the exact decomposition of empirical risk into approximation, generalization, optimization in e.g. the ERM framework would be helpful, to make these categories less hand-wave-y
-- Approximation theory and the curse of dimensionality should be covered today (e.g. the parameter count lower bound from [here](https://gwern.net/doc/cs/algorithm/1989-devore.pdf)), I just couldn't find any good existing resources so this might need to be created
-- This covered a lot of ground in one day and people felt a bit rushed
-- Preparing explicit discussion prompts ahead of time for readings could be a good idea
-- Small group discussions (~4 people) generally work better than full class discussions
-- Learning goals should be made more clear. People generally did not realize that the end goal here was *awareness* of these broader learning theory
-- Spend more time talking about why this is useful for alignment
-- People's backgrounds are very different, and some people will read 2x slower than others - this can sometimes mean a tradeoff between letting people slip behind or boring the most capable students. Not sure how to handle
-- I (Zach Furman) am not an expert in Solomonoff induction but nevertheless ended up having to cover it, and my lack of knowledge was noticeable. Would have gone worse without other TAs there who knew more
