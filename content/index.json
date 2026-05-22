@@ -23,6 +23,13 @@
       "timeMinutes": 240,
       "contributors": [
         "Leon Lang"
+      ],
+      "learningOutcomes": [
+        "understand the basic decomposition of risks into AI misalignment, misuse, power grabs, and others",
+        "can explain different alignment targets like coherent extrapolated volition, intent alignment, or AI that follows a constitution",
+        "can reason about training stories and outer and inner (mis)alignment, challenges to these notions, and the relationship to inductive biases",
+        "are aware of discussions on whether AI systems develop goals and understand the basic arguments for instrumental convergence",
+        "are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem"
       ]
     },
     "position": 20
@@ -35,7 +42,17 @@
       "summary": "Second overview of deep learning theory — simplicity bias, mysteries of generalization, and connections to alignment.",
       "difficulty": 3,
       "importance": 4,
-      "timeMinutes": 240
+      "timeMinutes": 240,
+      "learningOutcomes": [
+        "Students can explain how the three barriers from Day A.2 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
+        "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning",
+        "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain",
+        "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations",
+        "Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible",
+        "As with Day A.2, the goal is awareness and broad context, not deep technical mastery. The subsequent days (SLT, training dynamics, influence functions) go deep on specific approaches; this day ensures students know what those approaches are trying to explain",
+        "The reading list is deliberately longer than can be comfortably covered in one day. The TA should select a subset based on audience interest and pacing. The \"Deep Learning as Program Synthesis\" post is the one reading that should not be cut, as it provides the overarching framework and connects back to Day A.2",
+        "This day is reading-and-discussion-heavy rather than exercise-heavy. That's appropriate given the survey nature of the content, but it means discussion quality matters a lot"
+      ]
     },
     "position": 40
   },
