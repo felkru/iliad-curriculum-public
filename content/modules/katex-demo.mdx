@@ -1,0 +1,111 @@
+---
+title: "KaTeX rendering demo"
+cluster: "demo"
+difficulty: 1
+importance: 1
+timeMinutes: 2
+contributors: []
+summary: "Reference page showing the math, prose, and component primitives that module pages can use."
+---
+
+# KaTeX rendering demo
+
+This page is a smoke test for the math, hyperlink, and code formatting
+available inside module MDX. If anything below looks broken on your
+device, that's a renderer bug — file a ticket.
+
+## Inline math
+
+The quadratic formula is $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$. Euler's
+identity $e^{i\pi} + 1 = 0$ is the most beautiful equation. Pythagoras:
+$a^2 + b^2 = c^2$. Real numbers $x \in \mathbb{R}$ form a continuum.
+
+## Display math
+
+$$\int_{-\infty}^{\infty} e^{-x^2} \, dx = \sqrt{\pi}$$
+
+$$\sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}$$
+
+$$\mathcal{L}(\theta) = -\frac{1}{N}\sum_{i=1}^{N} \log p_\theta(y_i \mid x_i)$$
+
+## Aligned equations
+
+$$
+\begin{aligned}
+\nabla_\theta \mathcal{L}(\theta)
+  &= -\frac{1}{N}\sum_{i=1}^{N} \nabla_\theta \log p_\theta(y_i \mid x_i) \\
+  &= \mathbb{E}_{(x, y) \sim \mathcal{D}}\left[-\nabla_\theta \log p_\theta(y \mid x)\right]
+\end{aligned}
+$$
+
+## Matrices
+
+$$
+A = \begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{pmatrix}
+$$
+
+## Greek letters & operators
+
+$\alpha, \beta, \gamma, \delta, \epsilon, \zeta, \eta, \theta, \iota,
+\kappa, \lambda, \mu, \nu, \xi, \pi, \rho, \sigma, \tau, \phi, \chi,
+\psi, \omega$
+
+$\Gamma, \Delta, \Theta, \Lambda, \Xi, \Pi, \Sigma, \Phi, \Psi, \Omega$
+
+$\forall, \exists, \in, \notin, \subset, \subseteq, \cup, \cap,
+\emptyset, \mathbb{N}, \mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$
+
+## Links
+
+Inline links should be blue and underlined on hover:
+[Iliad Institute](https://iliad.ac/),
+[the Singular Learning Theory tutorial](https://arxiv.org/abs/2305.11648),
+[KaTeX supported functions](https://katex.org/docs/supported.html).
+
+## Lists
+
+- bulleted item one
+- bulleted item two with **bold** and *italic*
+  - nested
+  - another nested
+
+1. numbered item one
+2. numbered item two with `inline code`
+3. numbered item three with math: $\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}$
+
+## Code block
+
+```python
+def kl_divergence(p: torch.Tensor, q: torch.Tensor) -> torch.Tensor:
+    """KL(p || q) for discrete distributions."""
+    return (p * (p.log() - q.log())).sum(dim=-1)
+```
+
+## Custom components
+
+<Callout type="note">
+Notes use a sky-blue accent.
+</Callout>
+
+<Callout type="tip">
+Tips use an emerald accent.
+</Callout>
+
+<Callout type="warning">
+Warnings use an amber accent.
+</Callout>
+
+<Exercise difficulty={3}>
+Compute the gradient of $\mathcal{L}(\theta) = \tfrac{1}{2}\|y - X\theta\|_2^2$
+with respect to $\theta$, and identify the closed-form OLS solution.
+</Exercise>
+
+<Solution>
+$\nabla_\theta \mathcal{L} = -X^\top (y - X\theta)$. Setting to zero gives
+$\theta^* = (X^\top X)^{-1} X^\top y$, the OLS estimator.
+</Solution>
