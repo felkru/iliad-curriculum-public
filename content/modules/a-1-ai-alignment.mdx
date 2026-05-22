@@ -1,18 +1,142 @@
 ---
 title: "A.1: AI Alignment — An Introduction"
-cluster: "A"
+cluster: A
 difficulty: 2
 importance: 5
 timeMinutes: 240
-contributors: ["Leon Lang"]
+contributors:
+  - Leon Lang
 summary: "Introduction to AI alignment: what alignment means, decomposition of risks, alignment targets, scheming, and inner vs outer alignment."
-learningOutcomes: ["understand the basic decomposition of risks into AI misalignment, misuse, power grabs, and others","can explain different alignment targets like coherent extrapolated volition, intent alignment, or AI that follows a constitution","can reason about training stories and outer and inner (mis)alignment, challenges to these notions, and the relationship to inductive biases","are aware of discussions on whether AI systems develop goals and understand the basic arguments for instrumental convergence","are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem"]
+learningOutcomes:
+  - understand the basic decomposition of risks into AI misalignment, misuse, power grabs, and others
+  - can explain different alignment targets like coherent extrapolated volition, intent alignment, or AI that follows a constitution
+  - can reason about training stories and outer and inner (mis)alignment, challenges to these notions, and the relationship to inductive biases
+  - are aware of discussions on whether AI systems develop goals and understand the basic arguments for instrumental convergence
+  - are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem
+notesForFutureIterations: |-
+  <Callout type="note">
+  The following are internal notes from the module author about possible future improvements.
+  </Callout>
+
+  Ideas for changes:
+
+  - Getting-to-know:
+    - Day 1 could include 30 mins to complete the Names and Faces slides.
+    - On top of 1-1 intros (which should be more well-structured!): Small group-introductions in e.g. a round.
+  - Big changes/general:
+    - Have a presentation on the entire "main content" section: This can explain all basic terminology and explain how the readings fit together / what their purpose is!
+      - This could also explain what follows in the later days and how it all fits together!
+      - I feel like this should also do some of what my "reward learning theory" intro post does. So that the reward learning theory day can go deeper there!
+    - Perhaps four readings+discussions was tiring. Other types of activities intermixed might help.
+  - Discussions:
+    - Have discussions in full groups for creating common knowledge?
+    - Organize discussions better: More moderation, more deliberate grouping, make sure everyone contributes (?).
+  - Reading sessions:
+    - General upshot: Get more information density! This would also allow to get slightly more advanced.
+    - Inductive bias post needs to be replaced.
+    - Rocket alignment post is really good if one understands all the analogies, but otherwise may appear shallow. Is there a better alternative?
+    - Is there a shorter alternative to "Why tool AIs want to be agent AIs", e.g. Rohin Shah's post? Plus, maybe have a short post on an alternative view.
+    - I'm actually wondering whether to replace most readings with just short lectures, allowing more active work by participants.
+  - Readings, general:
+    - Alignment problem decomposition:
+      - The "alignment problem decompositions" largely *assumes* that we use deep learning, and seems to exclude agent foundations research. Can we be more inclusive?
+      - We could additionally discuss "underspecification" as a case which can lead to both outer and inner misalignment.
+    - The "inductive biases" section is a bit weak.
+    - I am not entirely sure whether the "theory vs. empirical" categorization for approaches to alignment fully decomposes things. E.g., model organisms provides more information (is currently under forecasting) and is also very valuable. Also, prosaic vs. non-prosaic is actually also an important distinction that is *very different* from empirical vs. non-empirical, and we could make this clearer.
+    - Make clearer the "credibility" of some writers? E.g. Gwern is a pseudonymous person…
+  - Other:
+    - "especially if the AI is additionally smart or powerful": This module does not talk much about the intelligence of AI and how this influences the risk landscape! Is this an oversight?
+    - On "Learn more":
+      - I am currently doubling lots of content. Is this intended / should it be different?
+      - Is it useful to have this huge reading list? Does anyone work with such lists at all?
+      - Should I include more other types of resources like podcasts, other alignment courses, etc.?
+      - Perhaps in the learning more section, we can discuss further alignment targets:
+        - Child – We give it values but don't tell it what to do.
+        - Parent – Cares for the child / is controlled by the child.
+        - Benevolent dictator.
+        - Competition leading to human values: [When competition leads to human values by Beren Millidge](https://www.youtube.com/watch?v=ua67aXBP76k)
+        - Values emerge from collaboration?
+    - Maybe more generally: Does this document have too many doublings and boilerplate? Should it be simplified? Is there a difference between what should be shared with participants vs. externally?
+    - Potentially explain more of an agent foundations perspective already.
+    - First day: Give overview of the various days in the program.
+teachingGuide: |-
+  The first 2.5 hours of this day are devoted to welcoming the participants and having introductory 1-1's. This leaves 4.0 hours to the actual content, split into four sessions.
+
+  First, explain to the students that this is mostly a conceptual day: The aim is to understand a basic decomposition of the problem of safe AI into specifying an alignment target and solving the technical alignment problem, which can itself decompose further. We also discuss the basic role that goal-directedness plays in the risks, and basic views on the risk landscape. The aim is that after this day, all students are broadly on the same page about what the alignment problem is, and have some basic impression of how the rest of the course relates to the problem.
+
+  Students who are bored since they know the content already can read all texts in "main content" that they do not know.
+
+  ### Session 1: Alignment targets
+
+  Spend 40 minutes reading the following texts:
+
+  - [Coherent extrapolated volition](https://intelligence.org/files/CEV.pdf): Read the 2.5 intro pages in Section 3.
+  - [Intent alignment](https://ai-alignment.com/clarifying-ai-alignment-cec47cd69dd6): Read entirely.
+  - [Claude's constitution](https://www.anthropic.com/news/claude-new-constitution): Read the entire overview blogpost.
+  - [Corrigibility](https://www.lesswrong.com/w/corrigibility-1): Read entirely.
+
+  <Exercise difficulty={2}>
+  Discuss in groups of 3–5 for 20 minutes. Possible prompts:
+
+  - Which alignment targets imply which others? Where this is not the case, think through counter examples.
+  - Which alignment targets seem sufficient for safety? E.g., a corrigible system might cause harm before we change its values. Can it cause catastrophic harm? What about the other notions?
+  - What other ideas for alignment targets do you have? Does your target have a benefit?
+  </Exercise>
+
+  ### Session 2: Alignment problem decompositions
+
+  Spend 40 minutes reading the following texts:
+
+  - [Reward misspecification](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/): Read ~entirely.
+  - [Goal misgeneralization](https://deepmind.google/blog/how-undesired-goals-can-arise-with-correct-rewards/): Read ~entirely.
+  - [Training stories](https://www.alignmentforum.org/posts/FDJnZt8Ks2djouQTZ/how-do-we-become-confident-in-the-safety-of-a-machine): Read everything before the section "How mechanistic does [...]".
+  - [Inductive biases](https://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf): Read ~entirely.
+
+  <Exercise difficulty={3}>
+  Discuss in groups of 3–5 for 20 minutes. Possible prompts:
+
+  - Think of well-known or imagined misalignment scenarios: Can you think of some that clearly fall into the reward misspecification or goal misgeneralization category? Are some not clearly in either of them?
+  - What problem with "outer" and "inner" misalignment is the terminology of "training stories" trying to solve? Construct examples where training stories seem more appropriate than inner/outer alignment as a framework.
+  - Think of concrete ways in which modern deep learning systems generalize beyond their explicit training examples. What inductive biases may underlie these examples? Is it always possible to come up with a "clean description" of those biases? Is the inductive bias you come up with enforced in the architecture, or more implicit?
+    - Perhaps: Discuss this explicitly for the case of "emergent misalignment".
+  </Exercise>
+
+  ### Session 3: Goal directedness
+
+  Spend 40 minutes reading the following texts:
+
+  - [Why tool AIs want to be agent AIs](https://gwern.net/tool-ai): Spend as much time as you can with the post, perhaps using an LLM of your choice to summarize key points.
+  - [Basic AI drives](https://selfawaresystems.com/wp-content/uploads/2008/01/ai_drives_final.pdf): Read at least abstract, intro, conclusion, and understand every heading and a basic argument for its underlying AI drive.
+
+  <Exercise difficulty={2}>
+  Discuss in groups of 3–5 for 20 minutes. Possible prompts:
+
+  - Clearly we can imagine *different types* of agents, e.g. some that coherently optimize a utility function, and others that are based on contextually activated computations, etc. What type do we see in today's LLM agents? How will this development continue in the future?
+  - Can you think of other convergent instrumental goals than the ones mentioned in basic AI drives?
+  - What is the relationship between corrigibility and convergent instrumental subgoals?
+  </Exercise>
+
+  ### Session 4: Uncertain risks and outlook
+
+  Spend 40 minutes reading the following texts:
+
+  - [Core views on AI safety](https://www.anthropic.com/news/core-views-on-ai-safety): Read the three sections "Our Approach: Empiricism in AI Safety", "The role of frontier models in AI safety" and "Taking a portfolio approach to AI safety".
+  - [Model organisms of misalignment](https://www.lesswrong.com/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1): Read everything before "Examples of Model Organisms [...]".
+  - [The rocket alignment problem](https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem): Skim if time permits.
+
+  <Exercise difficulty={3}>
+  Discuss in groups of 3–5 for 20 minutes. Possible prompts:
+
+  - How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?
+  - Can you think of model organisms for misalignment that were published after the post came out in 2023? Does this change our understanding of the risks?
+  - Does the analogy between the AI alignment and rocket alignment problems feel accurate? In what ways does it or does it not?
+  - What safety approaches (e.g., on a spectrum from theoretical to empirical) feel most appealing to you, and why? Does this depend on details of the problem you are trying to solve?
+  </Exercise>
 ---
 ## Prerequisites
 
 - We recommend a basic understanding of deep learning to follow this module.
-- To understand some of the decompositions of AI alignment, it is also useful to have a basic understanding of reinforcement learning, including the notions of a reward function and a policy.
-## Content
+- To understand some of the decompositions of AI alignment, it is also useful to have a basic understanding of reinforcement learning, including the notions of a reward function and a policy.## Content
 
 ### Fast-track
 
@@ -210,124 +334,3 @@ Philosophical/conceptual work:
 Against many plans, empirical and theoretical:
 
 - [On how various plans miss the hard bits of the alignment challenge](https://www.lesswrong.com/posts/3pinFH3jerMzAvmza/on-how-various-plans-miss-the-hard-bits-of-the-alignment): Arguing about everyone else's (empirical) plan.
-## Teaching guide
-
-The first 2.5 hours of this day are devoted to welcoming the participants and having introductory 1-1's. This leaves 4.0 hours to the actual content, split into four sessions.
-
-First, explain to the students that this is mostly a conceptual day: The aim is to understand a basic decomposition of the problem of safe AI into specifying an alignment target and solving the technical alignment problem, which can itself decompose further. We also discuss the basic role that goal-directedness plays in the risks, and basic views on the risk landscape. The aim is that after this day, all students are broadly on the same page about what the alignment problem is, and have some basic impression of how the rest of the course relates to the problem.
-
-Students who are bored since they know the content already can read all texts in "main content" that they do not know.
-
-### Session 1: Alignment targets
-
-Spend 40 minutes reading the following texts:
-
-- [Coherent extrapolated volition](https://intelligence.org/files/CEV.pdf): Read the 2.5 intro pages in Section 3.
-- [Intent alignment](https://ai-alignment.com/clarifying-ai-alignment-cec47cd69dd6): Read entirely.
-- [Claude's constitution](https://www.anthropic.com/news/claude-new-constitution): Read the entire overview blogpost.
-- [Corrigibility](https://www.lesswrong.com/w/corrigibility-1): Read entirely.
-
-<Exercise difficulty={2}>
-Discuss in groups of 3–5 for 20 minutes. Possible prompts:
-
-- Which alignment targets imply which others? Where this is not the case, think through counter examples.
-- Which alignment targets seem sufficient for safety? E.g., a corrigible system might cause harm before we change its values. Can it cause catastrophic harm? What about the other notions?
-- What other ideas for alignment targets do you have? Does your target have a benefit?
-</Exercise>
-
-### Session 2: Alignment problem decompositions
-
-Spend 40 minutes reading the following texts:
-
-- [Reward misspecification](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/): Read ~entirely.
-- [Goal misgeneralization](https://deepmind.google/blog/how-undesired-goals-can-arise-with-correct-rewards/): Read ~entirely.
-- [Training stories](https://www.alignmentforum.org/posts/FDJnZt8Ks2djouQTZ/how-do-we-become-confident-in-the-safety-of-a-machine): Read everything before the section "How mechanistic does [...]".
-- [Inductive biases](https://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf): Read ~entirely.
-
-<Exercise difficulty={3}>
-Discuss in groups of 3–5 for 20 minutes. Possible prompts:
-
-- Think of well-known or imagined misalignment scenarios: Can you think of some that clearly fall into the reward misspecification or goal misgeneralization category? Are some not clearly in either of them?
-- What problem with "outer" and "inner" misalignment is the terminology of "training stories" trying to solve? Construct examples where training stories seem more appropriate than inner/outer alignment as a framework.
-- Think of concrete ways in which modern deep learning systems generalize beyond their explicit training examples. What inductive biases may underlie these examples? Is it always possible to come up with a "clean description" of those biases? Is the inductive bias you come up with enforced in the architecture, or more implicit?
-  - Perhaps: Discuss this explicitly for the case of "emergent misalignment".
-</Exercise>
-
-### Session 3: Goal directedness
-
-Spend 40 minutes reading the following texts:
-
-- [Why tool AIs want to be agent AIs](https://gwern.net/tool-ai): Spend as much time as you can with the post, perhaps using an LLM of your choice to summarize key points.
-- [Basic AI drives](https://selfawaresystems.com/wp-content/uploads/2008/01/ai_drives_final.pdf): Read at least abstract, intro, conclusion, and understand every heading and a basic argument for its underlying AI drive.
-
-<Exercise difficulty={2}>
-Discuss in groups of 3–5 for 20 minutes. Possible prompts:
-
-- Clearly we can imagine *different types* of agents, e.g. some that coherently optimize a utility function, and others that are based on contextually activated computations, etc. What type do we see in today's LLM agents? How will this development continue in the future?
-- Can you think of other convergent instrumental goals than the ones mentioned in basic AI drives?
-- What is the relationship between corrigibility and convergent instrumental subgoals?
-</Exercise>
-
-### Session 4: Uncertain risks and outlook
-
-Spend 40 minutes reading the following texts:
-
-- [Core views on AI safety](https://www.anthropic.com/news/core-views-on-ai-safety): Read the three sections "Our Approach: Empiricism in AI Safety", "The role of frontier models in AI safety" and "Taking a portfolio approach to AI safety".
-- [Model organisms of misalignment](https://www.lesswrong.com/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1): Read everything before "Examples of Model Organisms [...]".
-- [The rocket alignment problem](https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem): Skim if time permits.
-
-<Exercise difficulty={3}>
-Discuss in groups of 3–5 for 20 minutes. Possible prompts:
-
-- How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?
-- Can you think of model organisms for misalignment that were published after the post came out in 2023? Does this change our understanding of the risks?
-- Does the analogy between the AI alignment and rocket alignment problems feel accurate? In what ways does it or does it not?
-- What safety approaches (e.g., on a spectrum from theoretical to empirical) feel most appealing to you, and why? Does this depend on details of the problem you are trying to solve?
-</Exercise>
-## Notes for future iterations
-
-<Callout type="note">
-The following are internal notes from the module author about possible future improvements.
-</Callout>
-
-Ideas for changes:
-
-- Getting-to-know:
-  - Day 1 could include 30 mins to complete the Names and Faces slides.
-  - On top of 1-1 intros (which should be more well-structured!): Small group-introductions in e.g. a round.
-- Big changes/general:
-  - Have a presentation on the entire "main content" section: This can explain all basic terminology and explain how the readings fit together / what their purpose is!
-    - This could also explain what follows in the later days and how it all fits together!
-    - I feel like this should also do some of what my "reward learning theory" intro post does. So that the reward learning theory day can go deeper there!
-  - Perhaps four readings+discussions was tiring. Other types of activities intermixed might help.
-- Discussions:
-  - Have discussions in full groups for creating common knowledge?
-  - Organize discussions better: More moderation, more deliberate grouping, make sure everyone contributes (?).
-- Reading sessions:
-  - General upshot: Get more information density! This would also allow to get slightly more advanced.
-  - Inductive bias post needs to be replaced.
-  - Rocket alignment post is really good if one understands all the analogies, but otherwise may appear shallow. Is there a better alternative?
-  - Is there a shorter alternative to "Why tool AIs want to be agent AIs", e.g. Rohin Shah's post? Plus, maybe have a short post on an alternative view.
-  - I'm actually wondering whether to replace most readings with just short lectures, allowing more active work by participants.
-- Readings, general:
-  - Alignment problem decomposition:
-    - The "alignment problem decompositions" largely *assumes* that we use deep learning, and seems to exclude agent foundations research. Can we be more inclusive?
-    - We could additionally discuss "underspecification" as a case which can lead to both outer and inner misalignment.
-  - The "inductive biases" section is a bit weak.
-  - I am not entirely sure whether the "theory vs. empirical" categorization for approaches to alignment fully decomposes things. E.g., model organisms provides more information (is currently under forecasting) and is also very valuable. Also, prosaic vs. non-prosaic is actually also an important distinction that is *very different* from empirical vs. non-empirical, and we could make this clearer.
-  - Make clearer the "credibility" of some writers? E.g. Gwern is a pseudonymous person…
-- Other:
-  - "especially if the AI is additionally smart or powerful": This module does not talk much about the intelligence of AI and how this influences the risk landscape! Is this an oversight?
-  - On "Learn more":
-    - I am currently doubling lots of content. Is this intended / should it be different?
-    - Is it useful to have this huge reading list? Does anyone work with such lists at all?
-    - Should I include more other types of resources like podcasts, other alignment courses, etc.?
-    - Perhaps in the learning more section, we can discuss further alignment targets:
-      - Child – We give it values but don't tell it what to do.
-      - Parent – Cares for the child / is controlled by the child.
-      - Benevolent dictator.
-      - Competition leading to human values: [When competition leads to human values by Beren Millidge](https://www.youtube.com/watch?v=ua67aXBP76k)
-      - Values emerge from collaboration?
-  - Maybe more generally: Does this document have too many doublings and boilerplate? Should it be simplified? Is there a difference between what should be shared with participants vs. externally?
-  - Potentially explain more of an agent foundations perspective already.
-  - First day: Give overview of the various days in the program.
