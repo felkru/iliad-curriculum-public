@@ -35,28 +35,41 @@ export default async function Home() {
     [...byCluster.keys()].filter((c) => !CLUSTER_ORDER.includes(c)),
   );
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
-      <h1 className="text-3xl font-semibold">Iliad Intensive Curriculum</h1>
-      <p className="mt-2 text-zinc-600">
-        April 2026 cohort — AI Safety theory of deep learning, agency, alignment.
-      </p>
+    <main className="mx-auto px-6 py-16" style={{ maxWidth: 720 }}>
+      <header className="mb-14 border-b border-zinc-200 pb-8">
+        <h1
+          className="font-serif tracking-tight leading-[1.1] text-[2.5rem]"
+          style={{ fontWeight: 600 }}
+        >
+          Iliad Intensive Curriculum
+        </h1>
+        <p className="mt-4 font-serif italic text-[1.05rem] text-zinc-700 leading-relaxed">
+          April 2026 cohort — AI Safety theory of deep learning, agency, alignment.
+        </p>
+      </header>
       {items.length === 0 ? (
-        <p className="mt-10 text-sm text-zinc-500">No public modules yet.</p>
+        <p className="font-serif text-zinc-500">No public modules yet.</p>
       ) : (
-        <div className="mt-10 space-y-8">
+        <div className="space-y-12">
           {orderedClusters.map((cluster) => (
             <section key={cluster}>
-              <h2 className="text-lg font-medium mb-3">
+              <h2 className="font-sans text-xs uppercase tracking-[0.15em] text-zinc-500 mb-4">
                 {CLUSTER_LABEL[cluster] ?? `Cluster ${cluster}`}
               </h2>
-              <ul className="divide-y divide-zinc-200 rounded border border-zinc-200 bg-white">
+              <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
                 {sortedItems(byCluster.get(cluster)!).map((p) => (
-                  <li key={p.slug} className="px-4 py-3">
-                    <Link href={`/modules/${p.slug}`} className="font-medium">
+                  <li key={p.slug} className="py-4">
+                    <Link
+                      href={`/modules/${p.slug}`}
+                      className="block font-serif text-[1.25rem] leading-snug hover:text-[var(--link)]"
+                      style={{ fontWeight: 500 }}
+                    >
                       {p.title}
                     </Link>
                     {p.frontmatter?.summary && (
-                      <p className="text-sm text-zinc-600">{p.frontmatter.summary}</p>
+                      <p className="mt-1 font-serif text-[1rem] text-zinc-600 leading-relaxed">
+                        {p.frontmatter.summary}
+                      </p>
                     )}
                   </li>
                 ))}
