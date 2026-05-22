@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
-import { readModuleMdx } from "@/lib/content";
+import { listIndex, readModuleMdx } from "@/lib/content";
 import { MdxBody } from "@/lib/mdx";
-import { ModuleSidebar } from "@/components/ModuleSidebar";
+import { ModulePageShell } from "@/components/ModulePageShell";
+import { SidebarNav } from "@/components/SidebarNav";
 import { InlineMd } from "@/components/InlineMd";
 
 // Read MDX from disk at request time so the exporter's git push picks up
@@ -14,14 +15,13 @@ export default async function ModulePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const mod = await readModuleMdx(slug);
+  const [mod, modules] = await Promise.all([readModuleMdx(slug), listIndex()]);
   if (!mod) notFound();
   const fm = mod.frontmatter;
 
   return (
-    <div className="mx-auto flex max-w-6xl gap-10 px-6 py-10">
-      <ModuleSidebar activeSlug={slug} />
-      <article className="min-w-0 flex-1" style={{ maxWidth: 720 }}>
+    <ModulePageShell sidebar={<SidebarNav modules={modules} activeSlug={slug} />}>
+      <article>
         <header className="not-prose mb-6 border-b border-zinc-200 pb-4">
           <h1
             className="font-serif text-[2.1rem] leading-[1.15] tracking-tight"
@@ -74,6 +74,6 @@ export default async function ModulePage({
           <MdxBody source={mod.body} />
         </div>
       </article>
-    </div>
+    </ModulePageShell>
   );
 }

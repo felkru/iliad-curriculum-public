@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
-import { listIndex } from "@/lib/content";
+import { useNav } from "./NavContext";
+import type { IndexEntry } from "@/lib/content";
 
 const CLUSTER_LABEL: Record<string, string> = {
   "0": "Foundations",
@@ -11,13 +14,21 @@ const CLUSTER_LABEL: Record<string, string> = {
 };
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
-export async function ModuleSidebar({ activeSlug }: { activeSlug?: string }) {
-  const items = await listIndex();
-  const byCluster = new Map<string, typeof items>();
-  for (const p of items) {
-    const k = p.cluster ?? "Other";
+export function SidebarNav({
+  modules,
+  activeSlug,
+}: {
+  modules: IndexEntry[];
+  activeSlug?: string;
+}) {
+  const { open, setOpen } = useNav();
+  if (!open) return null;
+
+  const byCluster = new Map<string, IndexEntry[]>();
+  for (const m of modules) {
+    const k = m.cluster ?? "Other";
     if (!byCluster.has(k)) byCluster.set(k, []);
-    byCluster.get(k)!.push(p);
+    byCluster.get(k)!.push(m);
   }
   for (const list of byCluster.values()) {
     list.sort(
@@ -30,11 +41,11 @@ export async function ModuleSidebar({ activeSlug }: { activeSlug?: string }) {
   const orderedClusters = CLUSTER_ORDER.filter((c) => byCluster.has(c)).concat(
     [...byCluster.keys()].filter((c) => !CLUSTER_ORDER.includes(c)),
   );
-  if (items.length === 0) return null;
+
   return (
     <nav
       aria-label="Modules"
-      className="hidden lg:block w-60 shrink-0 self-start sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4"
+      className="w-full max-w-xs shrink-0 self-start sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4"
     >
       <div className="space-y-5 font-sans text-sm">
         {orderedClusters.map((cluster) => (
@@ -49,6 +60,11 @@ export async function ModuleSidebar({ activeSlug }: { activeSlug?: string }) {
                   <li key={p.slug}>
                     <Link
                       href={`/modules/${p.slug}`}
+                      onClick={() => {
+                        // close on mobile after navigation
+                        if (window.matchMedia("(max-width: 1023px)").matches)
+                          setOpen(false);
+                      }}
                       className={
                         "block rounded px-2 py-1 leading-snug " +
                         (active

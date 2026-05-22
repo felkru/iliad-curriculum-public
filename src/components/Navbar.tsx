@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { IliadMark } from "./IliadMark";
-import { NavDrawer } from "./NavDrawer";
-import { listIndex } from "@/lib/content";
+import { NavToggle } from "./NavToggle";
 
-export async function Navbar() {
-  const items = await listIndex();
+export function Navbar() {
   return (
     <header className="sticky top-0 z-30 w-full border-b border-zinc-200 bg-[var(--background)]/90 backdrop-blur supports-[backdrop-filter]:bg-[var(--background)]/80">
       <div className="mx-auto flex h-12 max-w-6xl items-center gap-3 px-4 sm:px-6 font-sans text-sm">
-        <NavDrawer modules={items} />
+        <NavToggle />
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2 text-zinc-700 hover:text-black"
