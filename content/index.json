@@ -12,7 +12,39 @@
       "timeMinutes": 10,
       "contributors": []
     },
-    "position": 10
+    "position": 10,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Modules",
+        "slug": "modules"
+      },
+      {
+        "level": 3,
+        "text": "Cluster A — Foundations of Learning",
+        "slug": "cluster-a--foundations-of-learning"
+      },
+      {
+        "level": 3,
+        "text": "Cluster B — Interpretability and ML Engineering",
+        "slug": "cluster-b--interpretability-and-ml-engineering"
+      },
+      {
+        "level": 3,
+        "text": "Cluster C — Agency and Alignment Theory",
+        "slug": "cluster-c--agency-and-alignment-theory"
+      },
+      {
+        "level": 3,
+        "text": "Cluster D — Oversight and Outlook",
+        "slug": "cluster-d--oversight-and-outlook"
+      },
+      {
+        "level": 2,
+        "text": "Other Courses",
+        "slug": "other-courses"
+      }
+    ]
   },
   {
     "slug": "a-1-ai-alignment",
@@ -38,7 +70,29 @@
       ],
       "notesForFutureIterations": "<Callout type=\"note\">\nThe following are internal notes from the module author about possible future improvements.\n</Callout>\n\nIdeas for changes:\n\n- Getting-to-know:\n  - Day 1 could include 30 mins to complete the Names and Faces slides.\n  - On top of 1-1 intros (which should be more well-structured!): Small group-introductions in e.g. a round.\n- Big changes/general:\n  - Have a presentation on the entire \"main content\" section: This can explain all basic terminology and explain how the readings fit together / what their purpose is!\n    - This could also explain what follows in the later days and how it all fits together!\n    - I feel like this should also do some of what my \"reward learning theory\" intro post does. So that the reward learning theory day can go deeper there!\n  - Perhaps four readings+discussions was tiring. Other types of activities intermixed might help.\n- Discussions:\n  - Have discussions in full groups for creating common knowledge?\n  - Organize discussions better: More moderation, more deliberate grouping, make sure everyone contributes (?).\n- Reading sessions:\n  - General upshot: Get more information density! This would also allow to get slightly more advanced.\n  - Inductive bias post needs to be replaced.\n  - Rocket alignment post is really good if one understands all the analogies, but otherwise may appear shallow. Is there a better alternative?\n  - Is there a shorter alternative to \"Why tool AIs want to be agent AIs\", e.g. Rohin Shah's post? Plus, maybe have a short post on an alternative view.\n  - I'm actually wondering whether to replace most readings with just short lectures, allowing more active work by participants.\n- Readings, general:\n  - Alignment problem decomposition:\n    - The \"alignment problem decompositions\" largely *assumes* that we use deep learning, and seems to exclude agent foundations research. Can we be more inclusive?\n    - We could additionally discuss \"underspecification\" as a case which can lead to both outer and inner misalignment.\n  - The \"inductive biases\" section is a bit weak.\n  - I am not entirely sure whether the \"theory vs. empirical\" categorization for approaches to alignment fully decomposes things. E.g., model organisms provides more information (is currently under forecasting) and is also very valuable. Also, prosaic vs. non-prosaic is actually also an important distinction that is *very different* from empirical vs. non-empirical, and we could make this clearer.\n  - Make clearer the \"credibility\" of some writers? E.g. Gwern is a pseudonymous person…\n- Other:\n  - \"especially if the AI is additionally smart or powerful\": This module does not talk much about the intelligence of AI and how this influences the risk landscape! Is this an oversight?\n  - On \"Learn more\":\n    - I am currently doubling lots of content. Is this intended / should it be different?\n    - Is it useful to have this huge reading list? Does anyone work with such lists at all?\n    - Should I include more other types of resources like podcasts, other alignment courses, etc.?\n    - Perhaps in the learning more section, we can discuss further alignment targets:\n      - Child – We give it values but don't tell it what to do.\n      - Parent – Cares for the child / is controlled by the child.\n      - Benevolent dictator.\n      - Competition leading to human values: [When competition leads to human values by Beren Millidge](https://www.youtube.com/watch?v=ua67aXBP76k)\n      - Values emerge from collaboration?\n  - Maybe more generally: Does this document have too many doublings and boilerplate? Should it be simplified? Is there a difference between what should be shared with participants vs. externally?\n  - Potentially explain more of an agent foundations perspective already.\n  - First day: Give overview of the various days in the program."
     },
-    "position": 20
+    "position": 20,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 3,
+        "text": "Fast-track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   },
   {
     "slug": "a-2-deep-learning-theory-1",
@@ -67,7 +121,29 @@
       ],
       "notesForFutureIterations": "- Making a comprehensive set of lecture notes that actually ties the readings together rather than just listing them would be nice. Or at a minimum just an annotated reading list\n- Mathematically showing the exact decomposition of empirical risk into approximation, generalization, optimization in e.g. the ERM framework would be helpful, to make these categories less hand-wave-y\n- Approximation theory and the curse of dimensionality should be covered today (e.g. the parameter count lower bound from [here](https://gwern.net/doc/cs/algorithm/1989-devore.pdf)), I just couldn't find any good existing resources so this might need to be created\n- This covered a lot of ground in one day and people felt a bit rushed\n- Preparing explicit discussion prompts ahead of time for readings could be a good idea\n- Small group discussions (~4 people) generally work better than full class discussions\n- Learning goals should be made more clear. People generally did not realize that the end goal here was *awareness* of these broader learning theory\n- Spend more time talking about why this is useful for alignment\n- People's backgrounds are very different, and some people will read 2x slower than others - this can sometimes mean a tradeoff between letting people slip behind or boring the most capable students. Not sure how to handle\n- I (Zach Furman) am not an expert in Solomonoff induction but nevertheless ended up having to cover it, and my lack of knowledge was noticeable. Would have gone worse without other TAs there who knew more"
     },
-    "position": 30
+    "position": 30,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Fast-track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 2,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   },
   {
     "slug": "a-3-deep-learning-theory-2",
@@ -96,7 +172,29 @@
       ],
       "notesForFutureIterations": "- See the notes from Day A.2, many apply here as well\n- Annotating the reading list here could be helpful\n- Possibly the reading list should be curated down to a smaller list explicitly, as there is not enough time for even half of the readings to be covered"
     },
-    "position": 40
+    "position": 40,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 3,
+        "text": "Fast-track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   },
   {
     "slug": "a-4-singular-learning-theory",
@@ -122,6 +220,28 @@
       ],
       "notesForFutureIterations": "### Retrospective\n\nThe teaching plan section is an up-to-date summary that reflects what we actually got time to cover and what the exercise sessions looked like.\n\nExercise session notes:\n\n- MFR: One thing we could have done better was encourage students to work in groups, the room was mostly silent when nobody was asking questions.\n- MFR: Another thing we could have done better was encourage students to consult AIs if they need a primer on some context (or otherwise), though TAs were also available in this case.\n- MFR: Another thing we could have done is encourage strong students to work ahead if they finish early.\n\nFeedback was mostly positive:\n\n- Several people commented on lecture notes and exercises being good.\n  - Nice quote: \"Initial lecture, exercise and discussion format - all very good! (And this presentation is massively better than what was available online around 2 years ago)\"\n- Several people commented on liking the format, as a mix between lecture, exercises, discussion.\n\nSome things mentioned as areas we could improve (see the feedback form for full quotes):\n\n- Visualisations\n  - We have noted this below\n- Spend more time on preliminaries early in the day\n  - We assigned this as pre-reading, but could also consider allocating more time\n- More links with actual AI safety stuff; links to core issues in alignment.\n  - We did try to connect this in the wrap-up discussion at the end of the day\n  - Probably more could be included in the framing lecture at the start of the day\n- We should make clearer\n  - Already noted above, and below we suggest using ARENA-style time/difficulty indicators on the exercises\n- Looking for more challenging exercises later in the day\n  - Perhaps they mean section 4, agree we should add more + deeper exercises.\n- \"I want to read counterargument or adjacent-varient theories to know how confident I should be about the likelihood of this theory and how strongly I should pursue it.\"\n  - This is what the other days are for…!\n- Too much time on math proof / mathematical, wants us to cater more to people with different backgrounds.\n  - This is intentional at the level of Iliad Intensive, don't think we need to do anything.\n- Someone said it was all too fast, they couldn't keep up and wished they could have just worked at their own pace\n  - So the good news is that the lecture notes support this person working through at their own pace.\n  - Since only a couple of people expressed concerns like this, probably we are going at about the right pace overall.\n  - Potentially the cause here is that this person was not comfortable with the preliminaries sections that we assigned as pre-readings. It would be good if they had found time to do the pre-readings, but also we could potentially try to make space for pre-readings in the first exercise block.\n\nIn-person feedback:\n\n- Vaguely positive\n- Nothing specific to note.\n\n### Future improvements\n\n\"If you or someone else developed this module section further, what should they change?\"\n\n- MFR: I think I'm pretty happy with it for one day. See answers below.\n- MFR: The notes themselves I have various plans for improvement, not specific enough to write down yet though. Could basically put in about as much effort as before to make a more expanded and thorough version of the notes.\n\n\"What content could be added?\"\n\n- MFR: There is already enough for one day, mostly should focus on delivering that content better.\n- MFR: If you want extra SLT days, could have:\n  - For a similar audience of mostly physicists, could have a day on Bayesian interp foundations, such as LLC estimator, susceptibilities and their estimation.\n  - For an audience of scientists/empiricists, a day on the empirical science/interp work discussed in the further readings section of the notes.\n  - For a more mathematically mature audience, could have a day doing a deep dive into the underlying algebraic geometry and Bayesian theory.\n- ZF: Add images/figures (consider using existing ones from Timaeus blog posts / publications).\n  - ZF: Can also leverage exercises based on Desmos, etc\n- MFR: Flesh out section 4 (on Bayesian phase transitions) with more / deeper exercises.\n  - Perhaps it would be possible to add an example of a Bayesian phase transition in a DLN, if we can find a clean one.\n- MFR: Would be nice to add an exercise like the DLN LLC one, but on tanh networks, paralleling how we have both DLN and tanh networks int he \"what is degeneracy?\" section.\n\n\"What could be explained better with more effort?\"\n\n- MFR: I think maybe we haven't found the right way to frame the distinction between degeneracy in the loss vs. in the parameter–function map.\n  - ZF: I think the Hessian chain rule calculation is fairly enlightening but elementary (doesn't require the FIM, etc)\n    - MFR: This could be added as an exercise.\n- KO: Maybe more attention to preliminaries (section 1), which we set as pre-reading, but not everyone was on board with this.\n- KO: Since some parts of the notes are skipped during the day, make sure the different sections in the day are motivated and linked to each other. There is a chance of accidentally skipping small but important details when skipping parts of the notes.\n\n\"How could the content be made more scalable? More self-contained?\"\n\n- MFR: I think having the notes already makes the content very self-contained, not much more is needed.\n  - MFR/KO: Perhaps some solutions could be improved, made clearer.\n  - Exercises could be more battle-tested and refined with student experience (add appropriate hints, clear up confusing wording, etc.)\n- KO: The ARENA exercises have ratings for difficulty, importance and expected duration, providing this kind of indicator could help students self-study the material, e.g. know when to consult solution or LLM.\n\n\"Is there some research project which, if finished, would allow a more streamlined explanation of this topic?\"\n\n- MFR: General progress in theoretical SLT, e.g. progress on SGD theory, could warrant updating the presentation. Absent that, I think the notes are a pretty good first day introduction to the current framework in the field."
     },
-    "position": 50
+    "position": 50,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 3,
+        "text": "Fast-track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   }
 ]
