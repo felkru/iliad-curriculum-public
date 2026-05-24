@@ -14,6 +14,13 @@ const CLUSTER_LABEL: Record<string, string> = {
 };
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
+// h2 = no indent, h3 = one step, h4 = two steps.
+const HEADING_INDENT: Record<number, string> = {
+  2: "pl-2",
+  3: "pl-5",
+  4: "pl-8",
+};
+
 export function SidebarNav({
   modules,
   activeSlug,
@@ -42,6 +49,10 @@ export function SidebarNav({
     [...byCluster.keys()].filter((c) => !CLUSTER_ORDER.includes(c)),
   );
 
+  const closeOnMobile = () => {
+    if (window.matchMedia("(max-width: 1023px)").matches) setOpen(false);
+  };
+
   return (
     <nav
       aria-label="Modules"
@@ -56,15 +67,12 @@ export function SidebarNav({
             <ul className="space-y-1">
               {byCluster.get(cluster)!.map((p) => {
                 const active = p.slug === activeSlug;
+                const headings = active ? p.headings ?? [] : [];
                 return (
                   <li key={p.slug}>
                     <Link
                       href={`/modules/${p.slug}`}
-                      onClick={() => {
-                        // close on mobile after navigation
-                        if (window.matchMedia("(max-width: 1023px)").matches)
-                          setOpen(false);
-                      }}
+                      onClick={closeOnMobile}
                       className={
                         "block rounded px-2 py-1 leading-snug " +
                         (active
@@ -74,6 +82,27 @@ export function SidebarNav({
                     >
                       {p.title}
                     </Link>
+                    {headings.length > 0 && (
+                      <ul
+                        className="mt-1 mb-2 border-l border-zinc-200"
+                        aria-label={`Sections of ${p.title}`}
+                      >
+                        {headings.map((h, i) => (
+                          <li key={`${h.slug}-${i}`}>
+                            <a
+                              href={`#${h.slug}`}
+                              onClick={closeOnMobile}
+                              className={
+                                "block py-0.5 leading-snug text-[0.82rem] text-zinc-600 hover:text-black hover:bg-zinc-50 rounded-r " +
+                                (HEADING_INDENT[h.level] ?? "pl-2")
+                              }
+                            >
+                              {h.text}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 );
               })}

@@ -17,17 +17,38 @@ export type Frontmatter = {
   internalNotes?: string;
 };
 
+export type HeadingEntry = {
+  level: 2 | 3 | 4;
+  text: string;
+  slug: string;
+};
+
 export type IndexEntry = {
   slug: string;
   title: string;
   cluster: string | null;
   position?: number;
   frontmatter: Frontmatter;
+  headings?: HeadingEntry[];
+};
+
+export type SiteConfig = {
+  headingDepth: number;
 };
 
 const CONTENT_DIR = path.join(process.cwd(), "content", "modules");
 const INDEX_FILE = path.join(process.cwd(), "content", "index.json");
+const SITE_CONFIG_FILE = path.join(process.cwd(), "content", "site-config.json");
 const UPLOADS_DIR = path.join(process.cwd(), "public", "uploads");
+
+export async function readSiteConfig(): Promise<SiteConfig> {
+  try {
+    const raw = await readFile(SITE_CONFIG_FILE, "utf8");
+    return JSON.parse(raw) as SiteConfig;
+  } catch {
+    return { headingDepth: 3 };
+  }
+}
 
 export async function listModuleSources(slug: string): Promise<string[]> {
   try {

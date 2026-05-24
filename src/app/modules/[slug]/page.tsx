@@ -31,12 +31,6 @@ export default async function ModulePage({
           </h1>
           <div className="font-sans mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs uppercase tracking-wide text-zinc-500">
             {fm.cluster && <span>Cluster {fm.cluster}</span>}
-            {fm.cluster && (fm.difficulty || fm.importance || fm.timeMinutes) ? <span>·</span> : null}
-            {fm.difficulty && <span>Difficulty {fm.difficulty}/5</span>}
-            {fm.difficulty && (fm.importance || fm.timeMinutes) ? <span>·</span> : null}
-            {fm.importance && <span>Importance {fm.importance}/5</span>}
-            {fm.importance && fm.timeMinutes ? <span>·</span> : null}
-            {fm.timeMinutes && <span>~{fm.timeMinutes} min</span>}
             <a
               href={`/api/download/${slug}`}
               className="ml-3 rounded border border-zinc-300 bg-white px-2.5 py-[3px] text-[0.7rem] normal-case tracking-normal text-zinc-700 hover:bg-zinc-50"

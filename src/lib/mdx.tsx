@@ -1,6 +1,7 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
 import "katex/dist/katex.min.css";
 import type { ReactNode } from "react";
 
@@ -49,7 +50,9 @@ export function MdxBody({ source }: { source: string }) {
       options={{
         mdxOptions: {
           remarkPlugins: [remarkMath],
-          rehypePlugins: [[rehypeKatex, { strict: false }]],
+          // rehypeSlug must run before rehypeKatex so it operates on plain
+          // heading text. Adds `id` attrs that the sidebar TOC links target.
+          rehypePlugins: [rehypeSlug, [rehypeKatex, { strict: false }]],
         },
       }}
     />

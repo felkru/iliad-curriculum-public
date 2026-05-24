@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { listIndex } from "@/lib/content";
 
+const HERO_SUMMARY =
+  "The Iliad Intensive is a month-long, full-time AI alignment course for students with strong mathematics, physics, or theoretical-CS backgrounds. These are the materials from the April 2026 cohort — mathematical exercises, self-contained lecture notes on topics from singular learning theory to debate, and pointers for further study. About 20 contributors developed them. We share them to invite feedback and enable independent study.";
+
 export const dynamic = "force-dynamic";
 
 const CLUSTER_LABEL: Record<string, string> = {
@@ -36,13 +39,21 @@ export default async function Home() {
   );
   return (
     <main className="mx-auto px-6 py-10" style={{ maxWidth: 720 }}>
-      <header className="mb-8">
+      <header className="mb-10">
         <h1
           className="font-serif tracking-tight leading-[1.1] text-[2.5rem]"
           style={{ fontWeight: 600 }}
         >
           Iliad Intensive Curriculum
         </h1>
+        <p className="mt-5 font-serif text-[1.08rem] leading-relaxed text-zinc-700">
+          {HERO_SUMMARY}
+        </p>
+        <p className="mt-3 font-sans text-sm">
+          <Link href="/about" className="text-[var(--link)] hover:underline">
+            Read the full overview →
+          </Link>
+        </p>
       </header>
       {items.length === 0 ? (
         <p className="font-serif text-zinc-500">No public modules yet.</p>
