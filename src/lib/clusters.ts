@@ -1,11 +1,9 @@
 /**
- * Public-site cluster handling. Built-in defaults match the admin's
- * src/lib/clusters.ts. At request time we try to load the editable list
- * shipped by the exporter at `content/clusters.json` — falling back to
- * defaults if it's missing.
+ * Pure cluster helpers. Client + server safe — no fs imports here. The
+ * server-only loader that reads content/clusters.json lives in
+ * ./cluster-store.ts so client components like SidebarNav can import the
+ * helpers without dragging node:fs/promises into the browser bundle.
  */
-import { readFile } from "node:fs/promises";
-import path from "node:path";
 
 export type Cluster = {
   id: string;
@@ -22,19 +20,6 @@ export const DEFAULT_CLUSTERS: Cluster[] = [
   { id: "D", label: "Cluster D — Agency", urlSlug: "agency", position: 40 },
   { id: "E", label: "Cluster E — Safety Guarantees and their Limits", urlSlug: "safety", position: 50 },
 ];
-
-const CLUSTERS_FILE = path.join(process.cwd(), "content", "clusters.json");
-
-export async function listClusters(): Promise<Cluster[]> {
-  try {
-    const raw = await readFile(CLUSTERS_FILE, "utf8");
-    const parsed = JSON.parse(raw) as Cluster[];
-    if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-  } catch {
-    /* fall through */
-  }
-  return DEFAULT_CLUSTERS;
-}
 
 export function clusterUrlSlug(
   cluster: string | null | undefined,

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listIndex } from "@/lib/content";
-import { listClusters, clusterLabel, pagePath } from "@/lib/clusters";
+import { clusterLabel, pagePath } from "@/lib/clusters";
+import { listClusters } from "@/lib/cluster-store";
 
 const HERO_SUMMARY =
   "The Iliad Intensive is a month-long, full-time AI alignment course for students with strong mathematics, physics, or theoretical-CS backgrounds. These are the materials from the April 2026 cohort — mathematical exercises, self-contained lecture notes on topics from singular learning theory to debate, and pointers for further study. About 20 contributors developed them. We share them to invite feedback and enable independent study.";

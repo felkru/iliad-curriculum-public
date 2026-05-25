@@ -1,6 +1,7 @@
 import { notFound, redirect, permanentRedirect } from "next/navigation";
 import { listIndex, readModuleMdx, readRedirect } from "@/lib/content";
-import { clusterUrlSlug, urlSlugToCluster, listClusters } from "@/lib/clusters";
+import { clusterUrlSlug, urlSlugToCluster } from "@/lib/clusters";
+import { listClusters } from "@/lib/cluster-store";
 import { MdxBody } from "@/lib/mdx";
 import { ModulePageShell } from "@/components/ModulePageShell";
 import { SidebarNav } from "@/components/SidebarNav";
