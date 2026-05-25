@@ -157,7 +157,10 @@
     "slug": "frontmatter-test",
     "title": "From source mode",
     "cluster": "A",
-    "frontmatter": {},
+    "frontmatter": {
+      "title": "From source mode",
+      "cluster": "A"
+    },
     "position": 0,
     "headings": [
       {
