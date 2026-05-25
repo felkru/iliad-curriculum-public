@@ -34,15 +34,8 @@ export default async function ModulePage({
     listIndex(),
     listClusters(),
   ]);
-  const expected = urlSlugToCluster(clusterParam, clusterList);
 
-  if (mod) {
-    const actualCluster = mod.frontmatter.cluster ?? null;
-    const actualClusterSlug = clusterUrlSlug(actualCluster, clusterList);
-    if (actualClusterSlug !== clusterParam) {
-      permanentRedirect(`/${actualClusterSlug}/${slug}`);
-    }
-  } else {
+  if (!mod) {
     const r = await readRedirect(slug);
     if (r) {
       const target = r.cluster
@@ -53,8 +46,15 @@ export default async function ModulePage({
     }
     notFound();
   }
-  if (!expected) {
-    permanentRedirect(`/${clusterUrlSlug(mod.frontmatter.cluster, clusterList)}/${slug}`);
+
+  // Canonicalise: if the URL's cluster segment doesn't match the page's
+  // actual cluster slug (or its fallback "page" slug when the page has no
+  // cluster yet), redirect once to the canonical path. We DON'T also check
+  // whether `clusterParam` resolves back to a known cluster id — that would
+  // loop forever on the no-cluster fallback "page" segment.
+  const actualClusterSlug = clusterUrlSlug(mod.frontmatter.cluster, clusterList);
+  if (actualClusterSlug !== clusterParam) {
+    permanentRedirect(`/${actualClusterSlug}/${slug}`);
   }
 
   const fm = mod.frontmatter;
