@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listIndex } from "@/lib/content";
-import { CLUSTER_LABEL, pagePath } from "@/lib/clusters";
+import { listClusters, clusterLabel, pagePath } from "@/lib/clusters";
 
 const HERO_SUMMARY =
   "The Iliad Intensive is a month-long, full-time AI alignment course for students with strong mathematics, physics, or theoretical-CS backgrounds. These are the materials from the April 2026 cohort — mathematical exercises, self-contained lecture notes on topics from singular learning theory to debate, and pointers for further study. About 20 contributors developed them. We share them to invite feedback and enable independent study.";
@@ -19,16 +19,19 @@ function sortedItems<T extends { slug: string; cluster: string | null; position?
 }
 
 export default async function Home() {
-  const items = await listIndex();
+  const [items, clusterList] = await Promise.all([listIndex(), listClusters()]);
   const byCluster = new Map<string, typeof items>();
   for (const p of items) {
     const k = p.cluster ?? "Other";
     if (!byCluster.has(k)) byCluster.set(k, []);
     byCluster.get(k)!.push(p);
   }
-  const orderedClusters = CLUSTER_ORDER.filter((c) => byCluster.has(c)).concat(
-    [...byCluster.keys()].filter((c) => !CLUSTER_ORDER.includes(c)),
-  );
+  // Cluster order: clusters from the DB (in their position order), then any
+  // ids present in `items` that aren't in the cluster table, then "Other".
+  const known = clusterList.map((c) => c.id);
+  const orderedClusters = known
+    .filter((c) => byCluster.has(c))
+    .concat([...byCluster.keys()].filter((c) => !known.includes(c)));
   return (
     <main className="mx-auto px-6 py-10" style={{ maxWidth: 720 }}>
       <header className="mb-10">
@@ -54,13 +57,13 @@ export default async function Home() {
           {orderedClusters.map((cluster) => (
             <section key={cluster}>
               <h2 className="font-sans text-xs uppercase tracking-[0.15em] text-zinc-500 mb-3">
-                {CLUSTER_LABEL[cluster] ?? `Cluster ${cluster}`}
+                {clusterLabel(cluster, clusterList)}
               </h2>
               <ul className="divide-y divide-zinc-200 border-y border-zinc-200">
                 {sortedItems(byCluster.get(cluster)!).map((p) => (
                   <li key={p.slug} className="py-3">
                     <Link
-                      href={pagePath(p.cluster, p.slug)}
+                      href={pagePath(p.cluster, p.slug, clusterList)}
                       className="block font-serif text-[1.25rem] leading-snug hover:text-[var(--link)]"
                       style={{ fontWeight: 500 }}
                     >

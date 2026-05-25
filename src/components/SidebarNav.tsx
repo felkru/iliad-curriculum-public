@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useNav } from "./NavContext";
 import type { IndexEntry } from "@/lib/content";
-import { CLUSTER_LABEL, pagePath } from "@/lib/clusters";
+import { clusterLabel, pagePath, type Cluster } from "@/lib/clusters";
 
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
@@ -17,9 +17,11 @@ const HEADING_INDENT: Record<number, string> = {
 export function SidebarNav({
   modules,
   activeSlug,
+  clusters: clusterList = [],
 }: {
   modules: IndexEntry[];
   activeSlug?: string;
+  clusters?: Cluster[];
 }) {
   const { open, setOpen } = useNav();
   if (!open) return null;
@@ -55,7 +57,7 @@ export function SidebarNav({
         {orderedClusters.map((cluster) => (
           <section key={cluster}>
             <h3 className="mb-2 text-[0.68rem] uppercase tracking-[0.15em] text-zinc-500">
-              {CLUSTER_LABEL[cluster] ?? `Cluster ${cluster}`}
+              {clusterLabel(cluster, clusterList)}
             </h3>
             <ul className="space-y-1">
               {byCluster.get(cluster)!.map((p) => {
@@ -64,7 +66,7 @@ export function SidebarNav({
                 return (
                   <li key={p.slug}>
                     <Link
-                      href={pagePath(p.cluster, p.slug)}
+                      href={pagePath(p.cluster, p.slug, clusterList)}
                       onClick={closeOnMobile}
                       className={
                         "block rounded px-2 py-1 leading-snug " +

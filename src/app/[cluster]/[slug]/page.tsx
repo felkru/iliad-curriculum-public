@@ -1,6 +1,6 @@
 import { notFound, redirect, permanentRedirect } from "next/navigation";
 import { listIndex, readModuleMdx, readRedirect } from "@/lib/content";
-import { clusterUrlSlug, URL_SLUG_TO_CLUSTER } from "@/lib/clusters";
+import { clusterUrlSlug, urlSlugToCluster, listClusters } from "@/lib/clusters";
 import { MdxBody } from "@/lib/mdx";
 import { ModulePageShell } from "@/components/ModulePageShell";
 import { SidebarNav } from "@/components/SidebarNav";
@@ -27,26 +27,25 @@ export default async function ModulePage({
 }) {
   const { cluster: clusterParam, slug } = await params;
   if (RESERVED.has(clusterParam)) notFound();
-  // Validate the cluster URL segment maps to a real cluster letter.
-  const expected = URL_SLUG_TO_CLUSTER[clusterParam];
 
-  const [mod, modules] = await Promise.all([readModuleMdx(slug), listIndex()]);
+  const [mod, modules, clusterList] = await Promise.all([
+    readModuleMdx(slug),
+    listIndex(),
+    listClusters(),
+  ]);
+  const expected = urlSlugToCluster(clusterParam, clusterList);
 
-  // If the page exists but lives under a different cluster, redirect to
-  // its canonical path. This keeps the cluster segment in sync after a
-  // cluster change.
   if (mod) {
     const actualCluster = mod.frontmatter.cluster ?? null;
-    const actualClusterSlug = clusterUrlSlug(actualCluster);
+    const actualClusterSlug = clusterUrlSlug(actualCluster, clusterList);
     if (actualClusterSlug !== clusterParam) {
       permanentRedirect(`/${actualClusterSlug}/${slug}`);
     }
   } else {
-    // Slug not live — try redirect table.
     const r = await readRedirect(slug);
     if (r) {
       const target = r.cluster
-        ? `/${clusterUrlSlug(r.cluster)}/${r.to}`
+        ? `/${clusterUrlSlug(r.cluster, clusterList)}/${r.to}`
         : `/${clusterParam}/${r.to}`;
       if (r.permanent) permanentRedirect(target);
       redirect(target);
@@ -54,14 +53,13 @@ export default async function ModulePage({
     notFound();
   }
   if (!expected) {
-    // Cluster segment unrecognized but page exists — redirect to canonical.
-    permanentRedirect(`/${clusterUrlSlug(mod.frontmatter.cluster)}/${slug}`);
+    permanentRedirect(`/${clusterUrlSlug(mod.frontmatter.cluster, clusterList)}/${slug}`);
   }
 
   const fm = mod.frontmatter;
 
   return (
-    <ModulePageShell sidebar={<SidebarNav modules={modules} activeSlug={slug} />}>
+    <ModulePageShell sidebar={<SidebarNav modules={modules} activeSlug={slug} clusters={clusterList} />}>
       <article>
         <header className="not-prose mb-6 border-b border-zinc-200 pb-4">
           <h1
