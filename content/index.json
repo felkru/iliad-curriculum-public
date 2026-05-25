@@ -138,6 +138,23 @@
     ]
   },
   {
+    "slug": "frontmatter-test",
+    "title": "From source mode",
+    "cluster": "A",
+    "frontmatter": {
+      "title": "From source mode",
+      "cluster": "A"
+    },
+    "position": 0,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Hello",
+        "slug": "hello"
+      }
+    ]
+  },
+  {
     "slug": "0-prerequisites",
     "title": "Prerequisites",
     "cluster": "0",
