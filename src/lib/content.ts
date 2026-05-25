@@ -52,12 +52,11 @@ export async function readSiteConfig(): Promise<SiteConfig> {
 
 const REDIRECTS_FILE = path.join(process.cwd(), "content", "redirects.json");
 
-export type Redirect = { to: string; permanent: boolean };
+export type Redirect = { to: string; permanent: boolean; cluster?: string | null };
 
 /**
- * Look up `slug` in content/redirects.json. Returns the target slug + status
- * code when the slug should be redirected. Cheap read every request — the
- * file is tiny.
+ * Look up `slug` in content/redirects.json. Returns the target slug + cluster
+ * + status code when the slug should be redirected.
  */
 export async function readRedirect(slug: string): Promise<Redirect | null> {
   try {

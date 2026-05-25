@@ -1,19 +1,11 @@
 import Link from "next/link";
 import { listIndex } from "@/lib/content";
+import { CLUSTER_LABEL, pagePath } from "@/lib/clusters";
 
 const HERO_SUMMARY =
   "The Iliad Intensive is a month-long, full-time AI alignment course for students with strong mathematics, physics, or theoretical-CS backgrounds. These are the materials from the April 2026 cohort — mathematical exercises, self-contained lecture notes on topics from singular learning theory to debate, and pointers for further study. About 20 contributors developed them. We share them to invite feedback and enable independent study.";
 
 export const dynamic = "force-dynamic";
-
-const CLUSTER_LABEL: Record<string, string> = {
-  "0": "Foundations",
-  A: "Cluster A — Theory of Deep Learning",
-  B: "Cluster B — Interpretability",
-  C: "Cluster C — Agency",
-  D: "Cluster D — Safety: Protocols and Guarantees",
-  E: "Cluster E — Safety Guarantees and their Limits",
-};
 
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
@@ -68,7 +60,7 @@ export default async function Home() {
                 {sortedItems(byCluster.get(cluster)!).map((p) => (
                   <li key={p.slug} className="py-3">
                     <Link
-                      href={`/modules/${p.slug}`}
+                      href={pagePath(p.cluster, p.slug)}
                       className="block font-serif text-[1.25rem] leading-snug hover:text-[var(--link)]"
                       style={{ fontWeight: 500 }}
                     >

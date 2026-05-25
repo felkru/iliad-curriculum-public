@@ -3,15 +3,8 @@
 import Link from "next/link";
 import { useNav } from "./NavContext";
 import type { IndexEntry } from "@/lib/content";
+import { CLUSTER_LABEL, pagePath } from "@/lib/clusters";
 
-const CLUSTER_LABEL: Record<string, string> = {
-  "0": "Foundations",
-  A: "A — Theory of Deep Learning",
-  B: "B — Interpretability",
-  C: "C — Agency",
-  D: "D — Safety: Protocols and Guarantees",
-  E: "E — Safety Guarantees and their Limits",
-};
 const CLUSTER_ORDER = ["0", "A", "B", "C", "D", "E", "Other"];
 
 // h2 = no indent, h3 = one step, h4 = two steps.
@@ -71,7 +64,7 @@ export function SidebarNav({
                 return (
                   <li key={p.slug}>
                     <Link
-                      href={`/modules/${p.slug}`}
+                      href={pagePath(p.cluster, p.slug)}
                       onClick={closeOnMobile}
                       className={
                         "block rounded px-2 py-1 leading-snug " +
