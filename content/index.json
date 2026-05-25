@@ -154,6 +154,35 @@
     ]
   },
   {
+    "slug": "a-3-reward-learning-theory",
+    "title": "Reward Learning Theory",
+    "cluster": "A",
+    "frontmatter": {},
+    "position": 0,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 2,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "0-prerequisites",
     "title": "Prerequisites",
     "cluster": "0",
