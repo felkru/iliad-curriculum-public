@@ -50,6 +50,27 @@ export async function readSiteConfig(): Promise<SiteConfig> {
   }
 }
 
+const REDIRECTS_FILE = path.join(process.cwd(), "content", "redirects.json");
+
+export type Redirect = { to: string; permanent: boolean };
+
+/**
+ * Look up `slug` in content/redirects.json. Returns the target slug + status
+ * code when the slug should be redirected. Cheap read every request — the
+ * file is tiny.
+ */
+export async function readRedirect(slug: string): Promise<Redirect | null> {
+  try {
+    const raw = await readFile(REDIRECTS_FILE, "utf8");
+    const map = JSON.parse(raw) as Record<string, Redirect>;
+    const hit = map[slug];
+    if (!hit || !hit.to || hit.to === slug) return null;
+    return hit;
+  } catch {
+    return null;
+  }
+}
+
 export async function listModuleSources(slug: string): Promise<string[]> {
   try {
     const files = await readdir(path.join(UPLOADS_DIR, slug));

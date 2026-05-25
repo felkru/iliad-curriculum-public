@@ -1,5 +1,5 @@
-import { notFound } from "next/navigation";
-import { listIndex, readModuleMdx } from "@/lib/content";
+import { notFound, redirect, permanentRedirect } from "next/navigation";
+import { listIndex, readModuleMdx, readRedirect } from "@/lib/content";
 import { MdxBody } from "@/lib/mdx";
 import { ModulePageShell } from "@/components/ModulePageShell";
 import { SidebarNav } from "@/components/SidebarNav";
@@ -16,7 +16,16 @@ export default async function ModulePage({
 }) {
   const { slug } = await params;
   const [mod, modules] = await Promise.all([readModuleMdx(slug), listIndex()]);
-  if (!mod) notFound();
+  if (!mod) {
+    // Slug not live — check the redirects table; otherwise 404.
+    const r = await readRedirect(slug);
+    if (r) {
+      const target = `/modules/${r.to}`;
+      if (r.permanent) permanentRedirect(target);
+      redirect(target);
+    }
+    notFound();
+  }
   const fm = mod.frontmatter;
 
   return (
