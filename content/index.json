@@ -285,9 +285,18 @@
     "title": "Mysteries of Deep Learning",
     "cluster": "B",
     "frontmatter": {
+      "title": "Mysteries of Deep Learning",
+      "cluster": "B",
       "summary": "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and candidate explanations including the program-synthesis hypothesis.",
       "contributors": [
         "Zach Furman (The University of Melbourne)"
+      ],
+      "learningOutcomes": [
+        "Students can explain how the three barriers from Day B.1 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
+        "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning",
+        "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain",
+        "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations",
+        "Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible"
       ]
     },
     "position": 0,

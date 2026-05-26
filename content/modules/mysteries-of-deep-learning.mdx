@@ -1,30 +1,51 @@
 ---
-title: "Mysteries of Deep Learning"
-cluster: "B"
+title: Mysteries of Deep Learning
+cluster: B
 contributors:
-  - "Zach Furman (The University of Melbourne)"
-summary: "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and candidate explanations including the program-synthesis hypothesis."
+  - Zach Furman (The University of Melbourne)
+summary: A survey of the empirical mysteries of deep learning — generalization
+  despite overparameterization, optimization on non-convex landscapes,
+  representational alignment, and in-context learning — and candidate
+  explanations including the program-synthesis hypothesis.
 learningOutcomes:
-  - "Students can explain how the three barriers from Day B.1 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success"
-  - "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning"
-  - "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain"
-  - "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations"
-  - "Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible"
+  - Students can explain how the three barriers from Day B.1 (approximation,
+    generalization, optimization) manifest specifically in the context of deep
+    learning, and why classical theoretical frameworks (e.g. bias-variance
+    tradeoff, universal approximation) actively counterpredicted deep learning's
+    success
+  - "Students are aware of the key empirical mysteries of deep learning:
+    data-dependent generalization despite overparameterization, effectiveness of
+    SGD on non-convex landscapes, representational alignment across
+    architectures, and in-context learning"
+  - Students have encountered at least one candidate explanation for each
+    mystery and can articulate what it does and doesn't explain
+  - Students understand the "program synthesis" hypothesis as one proposed
+    framework connecting deep learning to Solomonoff induction, and can evaluate
+    its strengths and limitations
+  - "Students can articulate why solving these mysteries matters for AI safety:
+    understanding the basic mechanisms by which deep learning works is necessary
+    for any *systematic* (generalizing OOD) alignment interventions or
+    measurements to even be possible"
 ---
-
 ## Learning outcomes
 
 Some notes on intentions:
 
-- As with Day B.1, the goal is awareness and broad context, not deep technical mastery. The subsequent days (SLT, training dynamics, influence functions) go deep on specific approaches; this day ensures students know what those approaches are trying to explain
-- The reading list is deliberately longer than can be comfortably covered in one day. The TA should select a subset based on audience interest and pacing. The "Deep Learning as Program Synthesis" post is the one reading that should not be cut, as it provides the overarching framework and connects back to Day B.1
-- This day is reading-and-discussion-heavy rather than exercise-heavy. That's appropriate given the survey nature of the content, but it means discussion quality matters a lot
+-   As with Day B.1, the goal is awareness and broad context, not deep technical mastery. The subsequent days (SLT, training dynamics, influence functions) go deep on specific approaches; this day ensures students know what those approaches are trying to explain
+    
+-   The reading list is deliberately longer than can be comfortably covered in one day. The TA should select a subset based on audience interest and pacing. The "Deep Learning as Program Synthesis" post is the one reading that should not be cut, as it provides the overarching framework and connects back to Day B.1
+    
+-   This day is reading-and-discussion-heavy rather than exercise-heavy. That's appropriate given the survey nature of the content, but it means discussion quality matters a lot
+    
 
 ## Prerequisites
 
-- Day B.1 content: the three barriers (approximation, generalization, optimization), Solomonoff induction and the simplicity prior, no free lunch, bias-variance tradeoff
-- Basic understanding of deep learning, sufficient to read non-specialist ML papers
-- Knowledge of mechanistic interpretability (Day C.2) is very helpful motivation but not logically necessary
+-   Day B.1 content: the three barriers (approximation, generalization, optimization), Solomonoff induction and the simplicity prior, no free lunch, bias-variance tradeoff
+    
+-   Basic understanding of deep learning, sufficient to read non-specialist ML papers
+    
+-   Knowledge of mechanistic interpretability (Day C.2) is very helpful motivation but not logically necessary
+    
 
 ## Fast track
 
@@ -34,37 +55,64 @@ Read the lecture slides for the overall framing, then read "Deep Learning as Pro
 
 Lecture:
 
-- [PDF](https://drive.google.com/file/d/1C-ragyFZhd7Dw5byMg5aqxwOLzF_7Xqj/view?usp=drive_link)
+-   [PDF](https://drive.google.com/file/d/1C-ragyFZhd7Dw5byMg5aqxwOLzF_7Xqj/view?usp=drive_link)
+    
 
 Core readings (likely cover a smaller subset depending on time / audience interest):
 
-- Overview
-    - [Deep Learning as Program Synthesis](https://www.lesswrong.com/posts/Dw8mskAvBX37MxvXo/deep-learning-as-program-synthesis-1)
-        - Note that this post presents an opinionated hypothesis (deep learning is performing something analogous to Solomonoff induction) alongside relatively consensus discussion of empirical mysteries. The post is largely being shared for the latter, though students may find the hypothesis itself useful pedagogically
-- Approximation
-    - [Approximation is expensive, but the lunch is cheap](https://www.lesswrong.com/posts/gq9GR6duzcuxyxZtD/approximation-is-expensive-but-the-lunch-is-cheap)
-    - [Why and When Can Deep – but Not Shallow – Networks Avoid the Curse of Dimensionality: a Review](https://arxiv.org/pdf/1611.00740)
-- Generalization
-    - [Understanding deep learning requires rethinking generalization](https://arxiv.org/abs/1611.03530)
-    - [Deep Learning is Not So Mysterious or Different](https://arxiv.org/abs/2503.02113)
-    - [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
-- Optimization
-    - [Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit](https://arxiv.org/abs/2207.08799)
-    - [SGD learning on neural networks: leap complexity and saddle-to-saddle dynamics](https://arxiv.org/abs/2302.11055)
-- Representational alignment
-    - [The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987)
-- In-context learning
-    - [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
+-   Overview
+    
+    -   [Deep Learning as Program Synthesis](https://www.lesswrong.com/posts/Dw8mskAvBX37MxvXo/deep-learning-as-program-synthesis-1)
+        
+        -   Note that this post presents an opinionated hypothesis (deep learning is performing something analogous to Solomonoff induction) alongside relatively consensus discussion of empirical mysteries. The post is largely being shared for the latter, though students may find the hypothesis itself useful pedagogically
+            
+-   Approximation
+    
+    -   [Approximation is expensive, but the lunch is cheap](https://www.lesswrong.com/posts/gq9GR6duzcuxyxZtD/approximation-is-expensive-but-the-lunch-is-cheap)
+        
+    -   [Why and When Can Deep – but Not Shallow – Networks Avoid the Curse of Dimensionality: a Review](https://arxiv.org/pdf/1611.00740)
+        
+-   Generalization
+    
+    -   [Understanding deep learning requires rethinking generalization](https://arxiv.org/abs/1611.03530)
+        
+    -   [Deep Learning is Not So Mysterious or Different](https://arxiv.org/abs/2503.02113)
+        
+    -   [The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning](https://arxiv.org/abs/2304.05366)
+        
+-   Optimization
+    
+    -   [Hidden Progress in Deep Learning: SGD Learns Parities Near the Computational Limit](https://arxiv.org/abs/2207.08799)
+        
+    -   [SGD learning on neural networks: leap complexity and saddle-to-saddle dynamics](https://arxiv.org/abs/2302.11055)
+        
+-   Representational alignment
+    
+    -   [The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987)
+        
+-   In-context learning
+    
+    -   [In-context Learning and Induction Heads](https://transformer-circuits.pub/2022/in-context-learning-and-induction-heads/index.html)
+        
 
 ## Learn more
 
-- [The Scaling Hypothesis](https://gwern.net/scaling-hypothesis)
-    - Quite polemical. Nevertheless, very influential "ideas piece"
-- [Getting aligned on representational alignment](https://arxiv.org/abs/2310.13018)
-    - A broader overview of the representational alignment phenomenon
-- [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120)
-    - Classic paper which finds stagewise learning in neural networks with linear activation function; will be covered later in the course
-- [Stagewise Development in Neural Networks](https://www.lesswrong.com/posts/Zza9MNA7YtHkzAtit/stagewise-development-in-neural-networks)
-    - A nice paper investigating stagewise learning in small LLMs. Requires some SLT knowledge
-- [Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs](https://arxiv.org/abs/2502.17424)
-    - Training on "evil" data in narrow domains (like, code with vulnerabilities) generalizes to "evil" more broadly (praising Hitler, etc)
+-   [The Scaling Hypothesis](https://gwern.net/scaling-hypothesis)
+    
+    -   Quite polemical. Nevertheless, very influential "ideas piece"
+        
+-   [Getting aligned on representational alignment](https://arxiv.org/abs/2310.13018)
+    
+    -   A broader overview of the representational alignment phenomenon
+        
+-   [Exact solutions to the nonlinear dynamics of learning in deep linear neural networks](https://arxiv.org/abs/1312.6120)
+    
+    -   Classic paper which finds stagewise learning in neural networks with linear activation function; will be covered later in the course
+        
+-   [Stagewise Development in Neural Networks](https://www.lesswrong.com/posts/Zza9MNA7YtHkzAtit/stagewise-development-in-neural-networks)
+    
+    -   A nice paper investigating stagewise learning in small LLMs. Requires some SLT knowledge
+        
+-   [Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs](https://arxiv.org/abs/2502.17424)
+    
+    -   Training on "evil" data in narrow domains (like, code with vulnerabilities) generalizes to "evil" more broadly (praising Hitler, etc)
