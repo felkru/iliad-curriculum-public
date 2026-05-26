@@ -134,81 +134,6 @@
     ]
   },
   {
-    "slug": "ai-alignment-introduction",
-    "title": "AI Alignment Introduction",
-    "cluster": "A",
-    "frontmatter": {
-      "summary": "An opinionated tour of the AI alignment problem: alignment targets, problem decompositions (outer/inner alignment, training stories, inductive biases), goal-directedness and instrumental convergence, the risk landscape, and high-level solution approaches.",
-      "difficulty": 2,
-      "importance": 5,
-      "timeMinutes": 90,
-      "contributors": [
-        "Leon Lang (Iliad)"
-      ],
-      "teachingGuide": "The first 2.5 hours of this day are devoted to welcoming the participants and having introductory 1-1's. This leaves 4.0 hours to the actual content, split into four sessions.\n\nFirst, explain to the students that this is mostly a conceptual day: The aim is to understand a basic decomposition of the problem of safe AI into specifying an alignment target and solving the technical alignment problem, which can itself decompose further. We also discuss the basic role that goal-directedness plays in the risks, and basic views on the risk landscape. The aim is that after this day, all students are broadly on the same page about what the alignment problem is, and have some basic impression of how the rest of the course relates to the problem.\n\nStudents who are bored since they know the content already can read all texts in \"main content\" that they do not know.\n\n### Session 1: Alignment targets\n\nSpend 40 minutes reading the following texts:\n\n- [Coherent extrapolated volition](https://intelligence.org/files/CEV.pdf): Read the 2.5 intro pages in Section 3.\n- [Intent alignment](https://ai-alignment.com/clarifying-ai-alignment-cec47cd69dd6): Read entirely.\n- [Claude's constitution](https://www.anthropic.com/news/claude-new-constitution): Read the entire overview blogpost.\n- [Corrigibility](https://www.lesswrong.com/w/corrigibility-1): Read entirely.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Which alignment targets imply which others? Where this is not the case, think through counter examples.\n- Which alignment targets seem sufficient for safety? E.g., a corrigible system might cause harm before we change its values. Can it cause catastrophic harm? What about the other notions?\n- What other ideas for alignment targets do you have? Does your target have a benefit?\n\n### Session 2: Alignment problem decompositions\n\nSpend 40 minutes reading the following texts:\n\n- [Reward misspecification](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/): Read ~entirely.\n- [Goal misgeneralization](https://deepmind.google/blog/how-undesired-goals-can-arise-with-correct-rewards/): Read ~entirely.\n- [Training stories](https://www.alignmentforum.org/posts/FDJnZt8Ks2djouQTZ/how-do-we-become-confident-in-the-safety-of-a-machine): Read everything before the section \"How mechanistic does [...]\"\n- [Inductive biases](https://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf): Read ~entirely\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Think of well-known or imagined misalignment scenarios: Can you think of some that clearly fall into the reward misspecification or goal misgeneralization category? Are some not clearly in either of them?\n- What problem with \"outer\" and \"inner\" misalignment is the terminology of \"training stories\" trying to solve? Construct examples where training stories seem more appropriate than inner/outer alignment as a framework.\n- Think of concrete ways in which modern deep learning systems generalize beyond their explicit training examples. What inductive biases may underlie these examples? Is it always possible to come up with a \"clean description\" of those biases? Is the inductive bias you come up with enforced in the architecture, or more implicit?\n    - Perhaps: Discuss this explicitly for the case of \"emergent misalignment\".\n\n### Session 3: Goal directedness\n\nSpend 40 minutes reading the following texts:\n\n- [Why tool AIs want to be agent AIs](https://gwern.net/tool-ai): Spend as much time as you can with the post, perhaps using an LLM of your choice to summarize key points.\n- [Basic AI drives](https://selfawaresystems.com/wp-content/uploads/2008/01/ai_drives_final.pdf): Read at least abstract, intro, conclusion, and understand every heading and a basic argument for its underlying AI drive.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Clearly we can imagine *different types* of agents, e.g. some that coherently optimize a utility function, and others that are based on contextually activated computations, etc. What type do we see in today's LLM agents? How will this development continue in the future?\n- Can you think of other convergent instrumental goals than the ones mentioned in basic AI drives?\n- What is the relationship between corrigibility and convergent instrumental subgoals?\n\n### Session 4: Uncertain risks and outlook\n\nSpend 40 minutes reading the following texts:\n\n- [Core views on AI safety](https://www.anthropic.com/news/core-views-on-ai-safety): Read the three sections \"Our Approach: Empiricism in AI Safety\", \"The role of frontier models in AI safety\" and \"Taking a portfolio approach to AI safety\".\n- [Model organisms of misalignment](https://www.lesswrong.com/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1): Read everything before \"Examples of Model Organisms [...]\".\n- [The rocket alignment problem](https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem): Skim if time permits.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?\n- Can you think of model organisms for misalignment that were published after the post came out in 2023? Does this change our understanding of the risks?\n- Does the analogy between the AI alignment and rocket alignment problems feel accurate? In what ways does it or does it not?\n- What safety approaches (e.g., on a spectrum from theoretical to empirical) feel most appealing to you, and why? Does this depend on details of the problem you are trying to solve?\n",
-      "learningOutcomes": [
-        "understand the basic decomposition of risks into AI misalignment, misuse, power grabs, and others",
-        "can explain different alignment targets like coherent extrapolated volition, intent alignment, or AI that follows a constitution",
-        "can reason about training stories and outer and inner (mis)alignment, challenges to these notions, and the relationship to inductive biases",
-        "are aware of discussions on whether AI systems develop goals and understand the basic arguments for instrumental convergence",
-        "are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem"
-      ]
-    },
-    "position": 1,
-    "headings": [
-      {
-        "level": 2,
-        "text": "Prerequisites",
-        "slug": "prerequisites"
-      },
-      {
-        "level": 2,
-        "text": "Fast track",
-        "slug": "fast-track"
-      },
-      {
-        "level": 2,
-        "text": "Main content",
-        "slug": "main-content"
-      },
-      {
-        "level": 2,
-        "text": "Learn more",
-        "slug": "learn-more"
-      },
-      {
-        "level": 3,
-        "text": "Problem overviews",
-        "slug": "problem-overviews"
-      },
-      {
-        "level": 3,
-        "text": "Alignment targets",
-        "slug": "alignment-targets"
-      },
-      {
-        "level": 3,
-        "text": "Alignment problem decompositions",
-        "slug": "alignment-problem-decompositions"
-      },
-      {
-        "level": 3,
-        "text": "Goal-directedness",
-        "slug": "goal-directedness"
-      },
-      {
-        "level": 3,
-        "text": "Forecasting risks",
-        "slug": "forecasting-risks"
-      },
-      {
-        "level": 3,
-        "text": "Theoretical vs. empirical vs. other approaches",
-        "slug": "theoretical-vs-empirical-vs-other-approaches"
-      }
-    ]
-  },
-  {
     "slug": "alignment-in-practice",
     "title": "Alignment in practice",
     "cluster": "A",
@@ -325,6 +250,81 @@
         "level": 2,
         "text": "Learn more",
         "slug": "learn-more"
+      }
+    ]
+  },
+  {
+    "slug": "ai-alignment-introduction",
+    "title": "AI Alignment Introduction",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "An opinionated tour of the AI alignment problem: alignment targets, problem decompositions (outer/inner alignment, training stories, inductive biases), goal-directedness and instrumental convergence, the risk landscape, and high-level solution approaches.",
+      "difficulty": 2,
+      "importance": 5,
+      "timeMinutes": 90,
+      "contributors": [
+        "Leon Lang (Iliad)"
+      ],
+      "teachingGuide": "The first 2.5 hours of this day are devoted to welcoming the participants and having introductory 1-1's. This leaves 4.0 hours to the actual content, split into four sessions.\n\nFirst, explain to the students that this is mostly a conceptual day: The aim is to understand a basic decomposition of the problem of safe AI into specifying an alignment target and solving the technical alignment problem, which can itself decompose further. We also discuss the basic role that goal-directedness plays in the risks, and basic views on the risk landscape. The aim is that after this day, all students are broadly on the same page about what the alignment problem is, and have some basic impression of how the rest of the course relates to the problem.\n\nStudents who are bored since they know the content already can read all texts in \"main content\" that they do not know.\n\n### Session 1: Alignment targets\n\nSpend 40 minutes reading the following texts:\n\n- [Coherent extrapolated volition](https://intelligence.org/files/CEV.pdf): Read the 2.5 intro pages in Section 3.\n- [Intent alignment](https://ai-alignment.com/clarifying-ai-alignment-cec47cd69dd6): Read entirely.\n- [Claude's constitution](https://www.anthropic.com/news/claude-new-constitution): Read the entire overview blogpost.\n- [Corrigibility](https://www.lesswrong.com/w/corrigibility-1): Read entirely.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Which alignment targets imply which others? Where this is not the case, think through counter examples.\n- Which alignment targets seem sufficient for safety? E.g., a corrigible system might cause harm before we change its values. Can it cause catastrophic harm? What about the other notions?\n- What other ideas for alignment targets do you have? Does your target have a benefit?\n\n### Session 2: Alignment problem decompositions\n\nSpend 40 minutes reading the following texts:\n\n- [Reward misspecification](https://deepmind.google/blog/specification-gaming-the-flip-side-of-ai-ingenuity/): Read ~entirely.\n- [Goal misgeneralization](https://deepmind.google/blog/how-undesired-goals-can-arise-with-correct-rewards/): Read ~entirely.\n- [Training stories](https://www.alignmentforum.org/posts/FDJnZt8Ks2djouQTZ/how-do-we-become-confident-in-the-safety-of-a-machine): Read everything before the section \"How mechanistic does [...]\"\n- [Inductive biases](https://www.cs.cmu.edu/~tom/pubs/NeedForBias_1980.pdf): Read ~entirely\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Think of well-known or imagined misalignment scenarios: Can you think of some that clearly fall into the reward misspecification or goal misgeneralization category? Are some not clearly in either of them?\n- What problem with \"outer\" and \"inner\" misalignment is the terminology of \"training stories\" trying to solve? Construct examples where training stories seem more appropriate than inner/outer alignment as a framework.\n- Think of concrete ways in which modern deep learning systems generalize beyond their explicit training examples. What inductive biases may underlie these examples? Is it always possible to come up with a \"clean description\" of those biases? Is the inductive bias you come up with enforced in the architecture, or more implicit?\n    - Perhaps: Discuss this explicitly for the case of \"emergent misalignment\".\n\n### Session 3: Goal directedness\n\nSpend 40 minutes reading the following texts:\n\n- [Why tool AIs want to be agent AIs](https://gwern.net/tool-ai): Spend as much time as you can with the post, perhaps using an LLM of your choice to summarize key points.\n- [Basic AI drives](https://selfawaresystems.com/wp-content/uploads/2008/01/ai_drives_final.pdf): Read at least abstract, intro, conclusion, and understand every heading and a basic argument for its underlying AI drive.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- Clearly we can imagine *different types* of agents, e.g. some that coherently optimize a utility function, and others that are based on contextually activated computations, etc. What type do we see in today's LLM agents? How will this development continue in the future?\n- Can you think of other convergent instrumental goals than the ones mentioned in basic AI drives?\n- What is the relationship between corrigibility and convergent instrumental subgoals?\n\n### Session 4: Uncertain risks and outlook\n\nSpend 40 minutes reading the following texts:\n\n- [Core views on AI safety](https://www.anthropic.com/news/core-views-on-ai-safety): Read the three sections \"Our Approach: Empiricism in AI Safety\", \"The role of frontier models in AI safety\" and \"Taking a portfolio approach to AI safety\".\n- [Model organisms of misalignment](https://www.lesswrong.com/posts/ChDH335ckdvpxXaXX/model-organisms-of-misalignment-the-case-for-a-new-pillar-of-1): Read everything before \"Examples of Model Organisms [...]\".\n- [The rocket alignment problem](https://www.alignmentforum.org/posts/Gg9a4y8reWKtLe3Tn/the-rocket-alignment-problem): Skim if time permits.\n\nDiscuss in groups of 3-5 for 20 minutes. Possible prompts:\n\n- How large is the risk? Do we live in an optimistic, intermediate, or pessimistic scenario? How has the evidence changed in the past years?\n- Can you think of model organisms for misalignment that were published after the post came out in 2023? Does this change our understanding of the risks?\n- Does the analogy between the AI alignment and rocket alignment problems feel accurate? In what ways does it or does it not?\n- What safety approaches (e.g., on a spectrum from theoretical to empirical) feel most appealing to you, and why? Does this depend on details of the problem you are trying to solve?\n",
+      "learningOutcomes": [
+        "understand the basic decomposition of risks into AI misalignment, misuse, power grabs, and others",
+        "can explain different alignment targets like coherent extrapolated volition, intent alignment, or AI that follows a constitution",
+        "can reason about training stories and outer and inner (mis)alignment, challenges to these notions, and the relationship to inductive biases",
+        "are aware of discussions on whether AI systems develop goals and understand the basic arguments for instrumental convergence",
+        "are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem"
+      ]
+    },
+    "position": 2,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 2,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Learn more",
+        "slug": "learn-more"
+      },
+      {
+        "level": 3,
+        "text": "Problem overviews",
+        "slug": "problem-overviews"
+      },
+      {
+        "level": 3,
+        "text": "Alignment targets",
+        "slug": "alignment-targets"
+      },
+      {
+        "level": 3,
+        "text": "Alignment problem decompositions",
+        "slug": "alignment-problem-decompositions"
+      },
+      {
+        "level": 3,
+        "text": "Goal-directedness",
+        "slug": "goal-directedness"
+      },
+      {
+        "level": 3,
+        "text": "Forecasting risks",
+        "slug": "forecasting-risks"
+      },
+      {
+        "level": 3,
+        "text": "Theoretical vs. empirical vs. other approaches",
+        "slug": "theoretical-vs-empirical-vs-other-approaches"
       }
     ]
   },
