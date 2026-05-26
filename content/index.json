@@ -199,9 +199,21 @@
     "title": "Principles of Learning",
     "cluster": "B",
     "frontmatter": {
+      "title": "Principles of Learning",
+      "cluster": "B",
       "summary": "A broad overview of the three fundamental barriers to universal learning — approximation, generalization, and optimization — and how Solomonoff induction frames them.",
       "contributors": [
         "Zach Furman (The University of Melbourne)"
+      ],
+      "internalNotes": "### Some notes on intentions here\n\n- There's a tradeoff between breadth and depth in what we cover: these first two learning theory days are something like a broad but shallow overview, whereas the next three days are more in-depth \"case studies\" on specific research directions\n- Trying to avoid the failure mode where we just focus on particular hobby horses of existing researchers in the safety community - we want them to be aware of at least the basic phenomena the field is trying to explain\n- Explicitly, the goal here is \"awareness,\" not deep knowledge, unlike the \"case study\" days later in the sequence. What we cover will connect directly to later days, which explore particular solutions in depth\n",
+      "learningOutcomes": [
+        "Students can explain the three fundamental barriers to building a universal learning machine: approximation, generalization, and optimization, and articulate why they are sometimes/naively in tension with each other",
+        "Students can explain what Solomonoff induction is, how it resolves the approximation and generalization barriers via a universal hypothesis class and simplicity prior, and why it fails on optimization (note that students are not expected to know the low-level details of Solomonoff induction, just understand the basic setup; students are aware of the optimality result for Solomonoff induction)",
+        "Students can explain the bias-variance tradeoff and why it might suggest universal learning is impossible, and how the simplicity prior in Solomonoff induction sidesteps this",
+        "Students can state the no free lunch theorem and explain what it does and does not imply about practical learning",
+        "Students can explain, at a high level, why even polynomial-time hypothesis classes can be hard to learn over efficiently (the PRG/cryptographic hardness argument)",
+        "Students can articulate why learning requires structure in the world, and what this implies about what we should expect from powerful learning machines",
+        "Students understand the relevance of this material to AGI safety: if AGI is a learning machine, the three barriers constrain what it can look like, and Solomonoff induction serves as a theoretical reference point for reasoning about its capabilities"
       ]
     },
     "position": 0,
