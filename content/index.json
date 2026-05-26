@@ -195,6 +195,14 @@
     ]
   },
   {
+    "slug": "b-1-principles-of-learning",
+    "title": "Principles of Learning",
+    "cluster": "B",
+    "frontmatter": {},
+    "position": 0,
+    "headings": []
+  },
+  {
     "slug": "0-prerequisites",
     "title": "Prerequisites",
     "cluster": "0",
