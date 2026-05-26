@@ -1,91 +1,5 @@
 [
   {
-    "slug": "0-prerequisites",
-    "title": "Prerequisites",
-    "cluster": "0",
-    "frontmatter": {
-      "summary": "A curated reading list of background worldview material and technical prerequisites (math, CS, deep learning) recommended before the Iliad Intensive.",
-      "difficulty": 1,
-      "importance": 5,
-      "timeMinutes": 60,
-      "contributors": [],
-      "learningOutcomes": []
-    },
-    "position": 0,
-    "headings": [
-      {
-        "level": 2,
-        "text": "Background worldview and assumptions",
-        "slug": "background-worldview-and-assumptions"
-      },
-      {
-        "level": 3,
-        "text": "Why AI matters",
-        "slug": "why-ai-matters"
-      },
-      {
-        "level": 3,
-        "text": "AI misalignment",
-        "slug": "ai-misalignment"
-      },
-      {
-        "level": 3,
-        "text": "Non-misalignment AI safety concerns",
-        "slug": "non-misalignment-ai-safety-concerns"
-      },
-      {
-        "level": 3,
-        "text": "Agent Foundations Background",
-        "slug": "agent-foundations-background"
-      },
-      {
-        "level": 2,
-        "text": "Technical prerequisites",
-        "slug": "technical-prerequisites"
-      },
-      {
-        "level": 3,
-        "text": "Engineering prerequisites",
-        "slug": "engineering-prerequisites"
-      },
-      {
-        "level": 3,
-        "text": "Deep Learning",
-        "slug": "deep-learning"
-      },
-      {
-        "level": 3,
-        "text": "Linear Algebra",
-        "slug": "linear-algebra"
-      },
-      {
-        "level": 3,
-        "text": "Calculus",
-        "slug": "calculus"
-      },
-      {
-        "level": 3,
-        "text": "Probability & Statistics",
-        "slug": "probability--statistics"
-      },
-      {
-        "level": 3,
-        "text": "Information theory",
-        "slug": "information-theory"
-      },
-      {
-        "level": 3,
-        "text": "Theoretical computer science",
-        "slug": "theoretical-computer-science"
-      },
-      {
-        "level": 3,
-        "text": "Miscellaneous",
-        "slug": "miscellaneous"
-      }
-    ]
-  },
-  {
     "slug": "ai-alignment-introduction",
     "title": "AI Alignment Introduction",
     "cluster": "A",
@@ -290,6 +204,92 @@
         "level": 2,
         "text": "Learn more",
         "slug": "learn-more"
+      }
+    ]
+  },
+  {
+    "slug": "prerequisites",
+    "title": "Prerequisites",
+    "cluster": "0",
+    "frontmatter": {
+      "summary": "A curated reading list of background worldview material and technical prerequisites (math, CS, deep learning) recommended before the Iliad Intensive.",
+      "difficulty": 1,
+      "importance": 5,
+      "timeMinutes": 60,
+      "contributors": [],
+      "learningOutcomes": []
+    },
+    "position": 0,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Background worldview and assumptions",
+        "slug": "background-worldview-and-assumptions"
+      },
+      {
+        "level": 3,
+        "text": "Why AI matters",
+        "slug": "why-ai-matters"
+      },
+      {
+        "level": 3,
+        "text": "AI misalignment",
+        "slug": "ai-misalignment"
+      },
+      {
+        "level": 3,
+        "text": "Non-misalignment AI safety concerns",
+        "slug": "non-misalignment-ai-safety-concerns"
+      },
+      {
+        "level": 3,
+        "text": "Agent Foundations Background",
+        "slug": "agent-foundations-background"
+      },
+      {
+        "level": 2,
+        "text": "Technical prerequisites",
+        "slug": "technical-prerequisites"
+      },
+      {
+        "level": 3,
+        "text": "Engineering prerequisites",
+        "slug": "engineering-prerequisites"
+      },
+      {
+        "level": 3,
+        "text": "Deep Learning",
+        "slug": "deep-learning"
+      },
+      {
+        "level": 3,
+        "text": "Linear Algebra",
+        "slug": "linear-algebra"
+      },
+      {
+        "level": 3,
+        "text": "Calculus",
+        "slug": "calculus"
+      },
+      {
+        "level": 3,
+        "text": "Probability & Statistics",
+        "slug": "probability--statistics"
+      },
+      {
+        "level": 3,
+        "text": "Information theory",
+        "slug": "information-theory"
+      },
+      {
+        "level": 3,
+        "text": "Theoretical computer science",
+        "slug": "theoretical-computer-science"
+      },
+      {
+        "level": 3,
+        "text": "Miscellaneous",
+        "slug": "miscellaneous"
       }
     ]
   },
