@@ -1,5 +1,40 @@
 [
   {
+    "slug": "reward-learning",
+    "title": "Reward Learning Theory",
+    "cluster": "A",
+    "frontmatter": {
+      "summary": "The theoretical foundations of reward learning — how RLHF can (in principle) recover an aligned objective, when underspecification and misspecification break that story, and how assistance games reframe the problem.",
+      "contributors": [
+        "Leon Lang (Iliad)",
+        "Joar Skalse (King's College London)"
+      ]
+    },
+    "position": -1,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 2,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "mysteries-of-deep-learning",
     "title": "Mysteries of Deep Learning",
     "cluster": "B",
@@ -130,41 +165,6 @@
         "level": 3,
         "text": "Miscellaneous",
         "slug": "miscellaneous"
-      }
-    ]
-  },
-  {
-    "slug": "reward-learning",
-    "title": "Reward Learning Theory",
-    "cluster": "A",
-    "frontmatter": {
-      "summary": "The theoretical foundations of reward learning — how RLHF can (in principle) recover an aligned objective, when underspecification and misspecification break that story, and how assistance games reframe the problem.",
-      "contributors": [
-        "Leon Lang (Iliad)",
-        "Joar Skalse (King's College London)"
-      ]
-    },
-    "position": 0,
-    "headings": [
-      {
-        "level": 2,
-        "text": "Prerequisites",
-        "slug": "prerequisites"
-      },
-      {
-        "level": 2,
-        "text": "Fast track",
-        "slug": "fast-track"
-      },
-      {
-        "level": 2,
-        "text": "Main content",
-        "slug": "main-content"
-      },
-      {
-        "level": 2,
-        "text": "Learn more",
-        "slug": "learn-more"
       }
     ]
   },
