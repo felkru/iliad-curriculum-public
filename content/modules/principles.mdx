@@ -1,0 +1,65 @@
+---
+title: Principles of Learning
+cluster: B
+contributors:
+  - "Zach Furman (The University of Melbourne)"
+summary: A broad overview of the three fundamental barriers to universal learning — approximation, generalization, and optimization — and how Solomonoff induction frames them.
+learningOutcomes:
+  - "Students can explain the three fundamental barriers to building a universal learning machine: approximation, generalization, and optimization, and articulate why they are sometimes/naively in tension with each other"
+  - "Students can explain what Solomonoff induction is, how it resolves the approximation and generalization barriers via a universal hypothesis class and simplicity prior, and why it fails on optimization (note that students are not expected to know the low-level details of Solomonoff induction, just understand the basic setup; students are aware of the optimality result for Solomonoff induction)"
+  - "Students can explain the bias-variance tradeoff and why it might suggest universal learning is impossible, and how the simplicity prior in Solomonoff induction sidesteps this"
+  - "Students can state the no free lunch theorem and explain what it does and does not imply about practical learning"
+  - "Students can explain, at a high level, why even polynomial-time hypothesis classes can be hard to learn over efficiently (the PRG/cryptographic hardness argument)"
+  - "Students can articulate why learning requires structure in the world, and what this implies about what we should expect from powerful learning machines"
+  - "Students understand the relevance of this material to AGI safety: if AGI is a learning machine, the three barriers constrain what it can look like, and Solomonoff induction serves as a theoretical reference point for reasoning about its capabilities"
+internalNotes: |
+  ### Some notes on intentions here
+
+  - There's a tradeoff between breadth and depth in what we cover: these first two learning theory days are something like a broad but shallow overview, whereas the next three days are more in-depth "case studies" on specific research directions
+  - Trying to avoid the failure mode where we just focus on particular hobby horses of existing researchers in the safety community - we want them to be aware of at least the basic phenomena the field is trying to explain
+  - Explicitly, the goal here is "awareness," not deep knowledge, unlike the "case study" days later in the sequence. What we cover will connect directly to later days, which explore particular solutions in depth
+---
+
+## Prerequisites
+
+- Probability theory basics: probability distributions, conditional probability, Bayes' theorem
+- Comfort with mathematical proofs and formal definitions
+- Some familiarity with the concept of Turing machines and computability (at the level of "know what a Turing machine is, why it's a universal model of computation, and what it means for a function to be computable")
+- No machine learning background assumed; no coding required
+- Helpful but not required: basic statistical concepts (bias, variance, estimators)
+
+### Fast track
+
+The content is already a very high-level overview, but to get the absolute basics, read the lecture slides and Sections 2-2.8 of Shane Legg's PhD thesis. Ideally this would still involve a decent amount of discussion (possibly with LLMs).
+
+### Main content
+
+Main lecture:
+
+- [PDF](https://drive.google.com/file/d/1xCeATLFViOeCttivpMW7tNyVtIpPj5VQ/view?usp=drive_link)
+
+Readings and exercises (in order):
+
+- [Bitter Lesson](http://www.incompleteideas.net/IncIdeas/BitterLesson.html)
+- Introduction to Solomonoff induction
+  - [Shane Legg's PhD thesis](https://www.vetta.org/documents/Machine_Super_Intelligence.pdf) (Sections 2-2.8)
+- [Solomonoff induction exercises](https://drive.google.com/file/d/1JQOJvhs2WuxJDq_GlZOfic0w_e9j2sdH/view?usp=drive_link)
+  - Solutions [here](https://drive.google.com/file/d/1tVfeZtZFRpxCmw3b1JX2wAkIGioX6R0V/view?usp=drive_link)
+- [Understanding the Bias-Variance tradeoff](https://scott.fortmann-roe.com/docs/BiasVariance.html)
+- [The No Free Lunch theorems and their Razor](https://www.lesswrong.com/posts/sdrCBWpqyvNBJSZH5/the-no-free-lunch-theorems-and-their-razor)
+- [Understanding Machine Learning: From Theory to Algorithms](https://www.cambridge.org/core/books/understanding-machine-learning/3059695661405D25673058E43C8BE2A6)
+  - Section 8.4 (Hardness of learning)
+
+### Learn more
+
+- [An intuitive explanation of Solomonoff induction](https://www.lesswrong.com/posts/Kyc5dFDzBg4WccrbK/an-intuitive-explanation-of-solomonoff-induction)
+- [A Semitechnical Introductory Dialogue on Solomonoff Induction](https://www.lesswrong.com/posts/EL4HNa92Z95FKL9R2/a-semitechnical-introductory-dialogue-on-solomonoff-1)
+- [A Technical Introduction to Solomonoff Induction without K-Complexity](https://www.lesswrong.com/posts/HSDumToH57nSRdLST/a-technical-introduction-to-solomonoff-induction-without-k)
+- [The Parable of Predict-O-Matic](https://www.lesswrong.com/posts/SwcyMEgLyd4C3Dern/the-parable-of-predict-o-matic)
+- [The Solomonoff Prior is Malign](https://www.lesswrong.com/posts/Tr7tAyt5zZpdTwTQK/the-solomonoff-prior-is-malign)
+- [The Speed Prior: A New Simplicity Measure Yielding Near-Optimal Computable Predictions](https://gwern.net/doc/reinforcement-learning/model/2002-schmidhuber.pdf)
+- [An Introduction to Kolmogorov Complexity and Its Applications](https://link.springer.com/book/10.1007/978-0-387-49820-1)
+  - Standard AIT textbook
+- [An Introduction to Universal Artificial Intelligence](https://hutter1.net/publ/uaibook2.pdf)
+  - Hutter's SI / AIXI book
+- [Understanding Machine Learning: From Theory to Algorithms](https://www.cambridge.org/core/books/understanding-machine-learning/3059695661405D25673058E43C8BE2A6)
