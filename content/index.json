@@ -1,53 +1,5 @@
 [
   {
-    "slug": "mysteries-of-deep-learning",
-    "title": "Mysteries of Deep Learning",
-    "cluster": "B",
-    "frontmatter": {
-      "title": "Mysteries of Deep Learning",
-      "cluster": "B",
-      "summary": "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and candidate explanations including the program-synthesis hypothesis.",
-      "contributors": [
-        "Zach Furman (The University of Melbourne)"
-      ],
-      "learningOutcomes": [
-        "Students can explain how the three barriers from Day B.1 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
-        "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning",
-        "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain",
-        "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations",
-        "Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible"
-      ]
-    },
-    "position": 0,
-    "headings": [
-      {
-        "level": 2,
-        "text": "Learning outcomes",
-        "slug": "learning-outcomes"
-      },
-      {
-        "level": 2,
-        "text": "Prerequisites",
-        "slug": "prerequisites"
-      },
-      {
-        "level": 2,
-        "text": "Fast track",
-        "slug": "fast-track"
-      },
-      {
-        "level": 2,
-        "text": "Main content",
-        "slug": "main-content"
-      },
-      {
-        "level": 2,
-        "text": "Learn more",
-        "slug": "learn-more"
-      }
-    ]
-  },
-  {
     "slug": "prerequisites",
     "title": "Prerequisites",
     "cluster": "0",
@@ -59,7 +11,7 @@
       "contributors": [],
       "learningOutcomes": []
     },
-    "position": 0,
+    "position": 1,
     "headings": [
       {
         "level": 2,
@@ -144,7 +96,7 @@
         "Joar Skalse (King's College London)"
       ]
     },
-    "position": 0,
+    "position": 102,
     "headings": [
       {
         "level": 2,
@@ -189,7 +141,7 @@
         "are aware of foundational discussions on the level of risk and different high-level approaches to solving the AI alignment problem"
       ]
     },
-    "position": 8,
+    "position": 103,
     "headings": [
       {
         "level": 2,
@@ -259,7 +211,7 @@
         "Feel at home reading most applied alignment papers."
       ]
     },
-    "position": 8,
+    "position": 104,
     "headings": [
       {
         "level": 2,
@@ -329,6 +281,54 @@
     ]
   },
   {
+    "slug": "mysteries-of-deep-learning",
+    "title": "Mysteries of Deep Learning",
+    "cluster": "B",
+    "frontmatter": {
+      "title": "Mysteries of Deep Learning",
+      "cluster": "B",
+      "summary": "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and candidate explanations including the program-synthesis hypothesis.",
+      "contributors": [
+        "Zach Furman (The University of Melbourne)"
+      ],
+      "learningOutcomes": [
+        "Students can explain how the three barriers from Day B.1 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
+        "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning",
+        "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain",
+        "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations",
+        "Students can articulate why solving these mysteries matters for AI safety: understanding the basic mechanisms by which deep learning works is necessary for any *systematic* (generalizing OOD) alignment interventions or measurements to even be possible"
+      ]
+    },
+    "position": 201,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Learning outcomes",
+        "slug": "learning-outcomes"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 2,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "principles",
     "title": "Principles of Learning",
     "cluster": "B",
@@ -350,7 +350,7 @@
         "Students understand the relevance of this material to AGI safety: if AGI is a learning machine, the three barriers constrain what it can look like, and Solomonoff induction serves as a theoretical reference point for reasoning about its capabilities"
       ]
     },
-    "position": 10,
+    "position": 202,
     "headings": [
       {
         "level": 2,
@@ -371,6 +371,51 @@
         "level": 3,
         "text": "Learn more",
         "slug": "learn-more"
+      }
+    ]
+  },
+  {
+    "slug": "reinforcement-learning",
+    "title": "Reinforcement Learning",
+    "cluster": "D",
+    "frontmatter": {
+      "summary": "Foundations of reinforcement learning — Markov decision processes, the Bellman equation, policy improvement, and the SARSA/Q-learning algorithms, with parallel empirical and theory tracks.",
+      "contributors": [
+        "Leon Lang (Iliad)",
+        "David Quarel (Australian National University)"
+      ]
+    },
+    "position": 401,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Lecture",
+        "slug": "lecture"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 2,
+        "text": "Further reading",
+        "slug": "further-reading"
       }
     ]
   }
