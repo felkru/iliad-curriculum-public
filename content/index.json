@@ -729,6 +729,61 @@
     ]
   },
   {
+    "slug": "abstractions-and-latents",
+    "title": "Abstractions and Latents",
+    "cluster": "C",
+    "frontmatter": {
+      "title": "Abstractions and Latents",
+      "cluster": "C",
+      "summary": "Formal frameworks for abstraction in alignment — the pointers problem, natural latents (mediation and redundancy), and condensation, with uniqueness and agreement guarantees.",
+      "contributors": [
+        "Daniel Chiang (Independent)",
+        "Satya Benson (Williams College)"
+      ],
+      "learningOutcomes": [
+        "Explain the alignment motivation for a mathematical theory of abstraction: why human values, as latent variables in world models, require solving the pointers problem to transfer goals to AI systems.",
+        "Explain why convergence of different agents onto the same abstractions (uniqueness/agreement) is important for making value translation tractable.",
+        "Explain the mediation and redundancy conditions that define a natural latent, and the role that they play.",
+        "Explain intuitively why the combination of mediation and redundancy pins down a unique natural latent (up to isomorphism), rather than leaving many candidates.",
+        "Explain the difference between condensation as organising knowledge into interpretable modular structure versus mere compression.",
+        "State the perfect condensation agreement result and explain its connection to the natural latent uniqueness guarantee."
+      ]
+    },
+    "position": 304,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
     "cluster": "D",

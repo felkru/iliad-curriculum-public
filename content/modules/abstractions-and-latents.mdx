@@ -1,0 +1,135 @@
+---
+title: Abstractions and Latents
+cluster: C
+contributors:
+  - Daniel Chiang (Independent)
+  - Satya Benson (Williams College)
+summary: Formal frameworks for abstraction in alignment — the pointers problem,
+  natural latents (mediation and redundancy), and condensation, with uniqueness
+  and agreement guarantees.
+learningOutcomes:
+  - "Explain the alignment motivation for a mathematical theory of abstraction:
+    why human values, as latent variables in world models, require solving the
+    pointers problem to transfer goals to AI systems."
+  - Explain why convergence of different agents onto the same abstractions
+    (uniqueness/agreement) is important for making value translation tractable.
+  - Explain the mediation and redundancy conditions that define a natural
+    latent, and the role that they play.
+  - Explain intuitively why the combination of mediation and redundancy pins
+    down a unique natural latent (up to isomorphism), rather than leaving many
+    candidates.
+  - Explain the difference between condensation as organising knowledge into
+    interpretable modular structure versus mere compression.
+  - State the perfect condensation agreement result and explain its connection
+    to the natural latent uniqueness guarantee.
+---
+## Overview
+
+Abstractions are the discrete, reusable concepts that agents use to compress and reason about the world. For alignment, the question is whether different agents — humans and AIs with different architectures and training — converge on the *same* abstractions, so that human values (themselves latent variables in human world models) can be translated into objectives an AI can pursue. This module surveys two formal frameworks for this question: **natural latents**, which characterise latents pinned down by mediation and redundancy, and **condensation**, which formalises how a world model organises into interpretable modular structure.
+
+## Prerequisites
+
+-   Background in statistical mechanics is useful for understanding the motivations for abstractions in general.
+    
+-   Familiarity with basic information theory properties and properties about KL divergence are assumed.
+    
+-   Familiarity with bayesian networks is helpful for understanding the diagrammatic proofs in natural latents.
+    
+-   Some background in measure theory is helpful for understanding condensation rigorously.
+    
+
+## Content
+
+### Fast track
+
+To achieve the most important learning outcomes within one hour, read the following three pieces in order:
+
+-   [The pointers problem](https://www.lesswrong.com/posts/gQY6LrTWJNkTv8YJR/the-pointers-problem-human-values-are-a-function-of-humans): This motivates why abstractions matter for alignment: human values are expressed in terms of latent variables in our world models, and transferring those values to an AI requires establishing a correspondence between the two agents' internal representations of the world.
+    
+-   [Natural latents: the concepts](https://www.lesswrong.com/posts/mMEbfooQzMwJERAJJ/natural-latents-the-concepts): This introduces the two core conditions (mediation and redundancy) that pin down a unique natural latent, and the guaranteed translatability theorem that makes value translation tractable.
+    
+-   [Condensation](https://www.lesswrong.com/posts/BstHXPgQyfeNnLjjp/condensation) by Abram Demski: This covers the complementary question of how a world model should be *organised* into discrete, interpretable concepts rather than merely compressed, and the agreement result showing that different agents will decompose their models into approximately the same conceptual pieces.
+    
+
+### Main content
+
+The content for abstractions day is also hosted [on the website](https://iliad.au.pe/). In particular, the website contains a 'Why abstractions' section which gives the motivation and introduction to abstractions. It also contains some refreshers to mathematical prerequisites such as information theory. These aren’t included in the links below, which otherwise contain all the website’s abstractions content, and additional slides that are not found on the website.
+
+Start with the [lecture slides](https://drive.google.com/file/d/1PzTxlPhu3V15VY0PR-yh1XK-DbMz27qb). The lecture slides give a bird's-eye view of the abstractions landscape, the key open problems, and why abstractions matter for alignment. Continue with the motivation readings below:
+
+#### Motivation
+
+Each of the following posts explains a different aspect of abstractions and why we care about them. Pick the post that seems most interesting to you and read it.
+
+-   [The pointers problem](https://www.lesswrong.com/posts/gQY6LrTWJNkTv8YJR)
+    
+-   [Condensation motivation](https://www.lesswrong.com/posts/BstHXPgQyfeNnLjjp/condensation)
+    
+-   [Natural abstractions: Key claims, theorems, critiques](https://www.lesswrong.com/posts/gvzW46Z3BsaZsLc25) – Read the Introduction section, Key high-level claims, and How is the natural abstractions agenda relevant to alignment?
+    
+-   [Ontology Identification](https://www.lesswrong.com/tag/ontology-identification-problem)
+    
+-   [Why care about natural latents](https://www.lesswrong.com/posts/RTiuLzusJWyepFpbN)
+    
+-   [What is abstraction](https://www.lesswrong.com/posts/wuJpYLcMEBz4kcgAn/what-is-abstraction-1)
+    
+-   [Understanding abstraction as a robust bottleneck](https://www.lesswrong.com/posts/HfqbjwpAEGep9mHhc/the-plan-2023-version) – Read section 3 (How is understanding abstraction a bottleneck to any alignment approach at all?)
+    
+
+#### Natural latent and condensation
+
+Natural latents and condensation are two different frameworks for formalising abstractions. Read the posts under both, and think about how the two frameworks relate to each other — where they overlap, where they differ, and what each captures that the other doesn't. After understanding some of the motivations and intuitions, you may also jump straight to the exercises underneath, which are mathematically self-contained.
+
+**Natural latents**
+
+-   [Natural Latents: The Concepts](https://www.lesswrong.com/posts/mMEbfooQzMwJERAJJ)
+    
+-   [Minimal latent approach to abstraction](https://www.lesswrong.com/posts/N2JcFZ3LCCsnK2Fep)
+    
+-   [Natural latents: Latent variables stable across ontologies](https://www.lesswrong.com/posts/Qdgo2jYAuFRMeMRJT)
+    
+
+**Condensation**
+
+-   [A summary of condensation](https://iliad.au.pe/sessions/abstractions/condensation-summary.html)
+    
+-   [Condensation](https://www.lesswrong.com/posts/BstHXPgQyfeNnLjjp/condensation) by Abram Demski
+    
+-   [Condensation paper](https://openreview.net/pdf?id=HwKFJ3odui)
+    
+
+Next, do the exercises to test your understanding of the readings.
+
+-   [Exercise 1](https://drive.google.com/file/d/1fxH73sbJyZpoSKdr-fyvC3eFNCgMC-wd)
+    
+-   [Exercise 2](https://drive.google.com/file/d/1xSYou5tJ35elKWaShfvtV3Nj1KBhx-iL)
+    
+
+Read the [takeaways](https://drive.google.com/file/d/1g82a86jmdQyfZtM46I34T-EoKC61BMpI) for exercise 2 after the exercises.
+
+### Learn more
+
+To go deeper, each of the following frameworks is relevant to different aspects of abstractions but may not have been developed with an alignment motivation. Pick one of the optional readings and think about its relationship with foundational questions in abstractions more broadly.
+
+-   [Factored space models](https://arxiv.org/abs/2412.02579v2)
+    
+-   [Coarse-graining in physics (by Margot Stakenborg)](https://eggplant-finch-558.notion.site/Coarse-Graining-and-Renormalisation-Physics-Overview-2d9212f4b689809da99cff896f4bfbd3)
+    
+-   [Algorithmic statistics](https://homepages.cwi.nl/~paulv/papers/algorithmicstatistics.pdf)
+    
+-   [Partial information decomposition](https://arxiv.org/pdf/2603.06678)
+    
+
+Each of the following posts extend the readings in the main content or provide underlying motivation for the frameworks. For instance, 'A Solomonoff inductor walks into a bar' reformulates natural latents using algorithmic information theory instead of Shannon information theory.
+
+-   [Algebra of bayesnet](https://www.lesswrong.com/posts/XHtygebvHoJSSeNPP)
+    
+-   [A solomonoff inductor walks into a bar](https://www.lesswrong.com/posts/QA7bQHpKymPBFBuHb)
+    
+-   [Softwareness in the natural world](https://arxiv.org/pdf/2402.09090)
+    
+-   [Towards a less bullshit model of semantics](https://www.lesswrong.com/posts/RrQftNoRHd5ya54cb)
+    
+-   [Specialization is a driver of natural ontology](https://www.lesswrong.com/posts/kczTWgMAxXczmBRyj)
+    
+-   [Abstraction as redundant information](https://www.lesswrong.com/posts/vvEebH5jEvxnJEvBC)
