@@ -1,0 +1,218 @@
+---
+title: Agent Foundations
+cluster: D
+contributors:
+  - Daniel Chiang (Independent)
+  - Satya Benson (Williams College)
+  - Cole Wyeth (University of Waterloo)
+  - Aram Ebtekar (Independent)
+summary: An introduction to agent foundations — embedded agency, reflective
+  stability, Löb's obstacle, and the prescriptive vs descriptive research
+  agendas for understanding agents.
+learningOutcomes:
+  - Explain why alignment requires reasoning about superintelligent agents in
+    advance, before such systems exist.
+  - Explain Goodhart's law and why a good theory of agency requires concepts
+    that remain meaningful under optimization pressure.
+  - Explain reflective stability and why safety properties that are not
+    invariant under self-modification provide weaker alignment guarantees.
+  - Explain the distinction between dualistic and embedded agents, and why the
+    embedded picture raises qualitatively new challenges.
+  - "Identify and explain the core subproblems of embedded agency: reasoning
+    about environments larger than the agent, reasoning about environments
+    containing copies of the agent, and reasoning about self-improvement and
+    successor construction."
+  - Explain the Löbian obstacle and why a consistent formal system cannot vouch
+    for the soundness of an equally powerful successor.
+  - "Explain what descriptive agent foundations is trying to do: characterize
+    what agents arising in the physical world actually look like, starting from
+    properties of the world (selection pressures, modularity, computational
+    constraints) rather than from idealized behavior."
+teachingGuide: >
+  - 1 hour of introductory lecture on the bird's eye view picture & motivation
+  of agent foundations.
+
+  - 2.5 hours of reading + discussion. Format: separate into fundamental reading
+  vs readings on specific topics. Each person reads a fundamental reading +
+  readings on one of the topics, then discusses with others who've read
+  different topics.
+    - Fundamental reading: Embedded agency; Why agent foundations; General purpose search; Reflective consistent degree of freedom.
+    - Topics: Consequentialist foundations; Löb's theorem and tiling agent; Logical induction; Decision theory; Optimization and thermodynamics; Descriptive agent foundations.
+  - 1 hour of lecture by Cole Wyeth on reflective oracles and nonrealizability.
+
+  - 1 hour of exercises on Löb's theorem, complete class and information theory.
+
+  - 1 hour of lecture by Aram Ebtekar on decision theory.
+
+
+  Cross-pollination prompts are provided for small-group discussions, each
+  connecting two topic readings (e.g. Logical Induction × Löb; Löb × Decision
+  Theory; Consequentialist Foundations × Optimization & Thermodynamics; etc.).
+---
+## Overview
+
+Agent foundations asks what an agent *is*, mathematically, in a way that remains meaningful when the agent is more capable than us, embedded in the world it reasons about, and able to modify itself. This module surveys the landscape — coherence arguments, embedded agency, Löb's obstacle, logical induction, decision theory, optimization, and the descriptive selection-theorems program — and points at the open problems that motivate the research agenda.
+
+## Prerequisites
+
+-   Content on AIXI (idealised agency day) should already be known.
+    
+-   A wide variety of background knowledge is helpful for understanding different agenda: Probability theory is helpful for understanding money-pumps and complete class theorems; Formal logic is helpful for understanding tiling agents and Vingean reflection; Computability theory is helpful for understanding reflective oracles; Information theory, causality and statistical mechanics is helpful for understanding the section on descriptive agent foundations.
+    
+-   In general, understanding the motivation of agent foundations research (such as [the rocket alignment problem](https://www.lesswrong.com/w/the-rocket-alignment-problem)) is out of scope.
+    
+
+## Content
+
+### Fast track
+
+To achieve the most important learning outcomes within one hour, read:
+
+-   [Embedded agency](https://www.lesswrong.com/posts/i3BTagvt3HbPMx6PN/embedded-agents) — read up to and including section 3.3, then read section 4.1.
+    
+-   [Why agent foundations](https://www.lesswrong.com/posts/FWvzwCDRgcjb9sigb/why-agent-foundations-an-overly-abstract-explanation)
+    
+-   [Reflective consistent degree of freedom](https://www.lesswrong.com/w/reflectively-consistent-degree-of-freedom)
+    
+
+### Main content
+
+Hosted [on the website](https://iliad.au.pe/) which contains a "Why agent foundations" section (different from the post above named the same) giving motivation and introduction. The website also contains some refreshers to mathematical prerequisites. These aren’t included in the links below, which otherwise contain all the website’s agent foundations content, and additional slides that are not found on the website.
+
+Start with the [lecture slides](https://drive.google.com/file/d/11q6mvNEbDKecZHnLDBq3nEhZWJazWX8i) which give a bird's eye view of the agent foundations landscape and what the key open problems are. Then continue with the following fundamental readings:
+
+-   [Embedded agency](https://www.lesswrong.com/posts/i3BTagvt3HbPMx6PN/embedded-agents) — read up to and including section 3.3, then read section 4.1.
+    
+-   [Why agent foundations](https://www.lesswrong.com/posts/FWvzwCDRgcjb9sigb/why-agent-foundations-an-overly-abstract-explanation) — read entirely.
+    
+-   [Reflective consistent degree of freedom](https://www.lesswrong.com/w/reflectively-consistent-degree-of-freedom) — read entirely.
+    
+-   [General Purpose Search](https://www.lesswrong.com/posts/6mysMAqvo9giHC4iX/general-purpose-search) — read entirely.
+    
+
+Next, do the [agency exercises](https://drive.google.com/file/d/1D5rEEO0n1u6_7h-Pnkz-ccCcuhPusIwe).
+
+Now, choose one of the following six topics and read the corresponding reading list.
+
+#### Consequentialist Foundations
+
+**Description:** One of the central challenges in aligning a future AI is that we have to reason about systems that don't yet exist, potentially far more capable than anything we've seen.. Coherence arguments give us an initial foothold. The basic insight is that if an agent's preferences are inconsistent — say, it prefers A to B, B to C, and C to A — a clever adversary can cycle it through trades that each look locally acceptable but leave it strictly worse off, wasting resources for no gain. Any agent that reliably avoids such "dominated strategies" must behave as if it has consistent preferences representable by a utility function. The Complete Class Theorem sharpens this: any decision strategy that is Pareto-optimal across all possible environments must be equivalent to maximizing expected utility under some probability distribution. Together, these results suggest that sufficiently capable, non-self-defeating agents will generically look like Bayesian expected utility maximizers from the outside.
+
+**Reading list:**
+
+-   [Coherent decisions imply consistent utilities](https://www.lesswrong.com/s/SgomvxZ3cJWy2SBCu/p/RQpNHSiWaXTvDxt6R) - Read the following sections:
+    
+    -   "Introduction", "Why not circular preferences?"
+        
+    -   Read "Probabilities and expected utilities" up to and including the "Conditional probability" subsection
+        
+    -   Read "Conclusion"
+        
+-   [The measuring stick of utility](https://www.lesswrong.com/posts/73pTioGZKNcfQmvGF/the-measuring-stick-of-utility-problem)\- Read Entirely
+    
+-   [Complete class: Consequentialist foundations](https://www.lesswrong.com/posts/sZuw6SGfmZHvcAAEP/complete-class-consequentialist-foundations)\- Read Entirely
+    
+
+#### Lob’s theorem and tiling agent
+
+**Description:** Any sufficiently advanced AI may eventually be able to modify its own code or build successor systems more capable than itself. But this raises a subtle problem: if the successor is genuinely smarter, the original agent cannot predict exactly what it will do. This means the original agent cannot verify that the successor is safe by simply simulating it — instead, it must reason abstractly about the *properties* of the successor's design, guaranteeing that any action the successor takes will fall within acceptable bounds, without knowing which specific action that will be. Tiling agent research formalizes this challenge in the language of mathematical logic, where it immediately runs into a fundamental obstacle. A theorem known as Löb's theorem implies that a formal system cannot, in general, trust the reasoning of another system of equal or greater logical strength — it can only trust strictly weaker systems. This creates a problem for self-improvement: an agent trying to verify its successor's reasoning appears forced to use a less powerful proof system at each step, making indefinitely long chains of safe self-modification seemingly impossible.
+
+**Reading list:**
+
+-   [Introduction to Lob’s theorem](https://intelligence.org/files/lob-notes-IAFF.pdf) - Read up to and including section 3
+    
+-   [Vingean reflection](https://www.lesswrong.com/w/vingean-reflection) - Read Entirely
+    
+-   [Walkthrough of Tiling agent](https://www.lesswrong.com/posts/QGrX3qK3qxQYK9D4C/walkthrough-of-the-tiling-agents-for-self-modifying-ai-paper) - Read from the start up to and including "Finite Descent Problem", then read the "What self-modifying agents need" section
+    
+
+#### Logical induction
+
+**Description:** Traditional Bayesian reasoning assumes logical omniscience: the agent already knows all the consequences of its beliefs and can instantly perform any computation at no cost. But a computationally bounded agent cannot do this — for instance, it may know the full source code of a program yet still be uncertain what the program outputs, or know the axioms of arithmetic yet be uncertain whether a given large number is prime. Logical induction extends the Dutch book argument underlying Bayesianism to handle this kind of logical uncertainty. Rather than requiring that no Dutch book exists at all, the logical induction criterion requires only that no *efficiently computable* trading strategy can exploit the agent for unbounded profit. This weaker but computationally realistic requirement turns out to be sufficient to derive many desirable properties: prices converge to coherent probabilities in the limit, the agent learns to respect logical relationships in a timely manner, and it assigns appropriate probabilities to statements that are computationally hard to evaluate even when their truth is in principle determined.
+
+**Reading list:**
+
+-   [An intuitive introduction to Garrabrant Induction](https://www.lesswrong.com/posts/y5GftLezdozEHdXkL/an-intuitive-guide-to-garrabrant-induction) - Read Entirely
+    
+-   [Logical induction paper](https://arxiv.org/pdf/1609.03543) - Read Chapters 1 and 3, Skim Chapter 4
+    
+
+#### Decision theory
+
+**Description:** For a [dualistic](https://www.lesswrong.com/posts/i3BTagvt3HbPMx6PN/embedded-agency-full-text-version#1_1__Dualistic_agents) agent with a well-defined environment, optimization is straightforward: the agent simply picks whichever action maximizes expected utility. The problem for [embedded agents](https://www.lesswrong.com/posts/i3BTagvt3HbPMx6PN/embedded-agency-full-text-version#1__Embedded_agents) is that their action is just another fact about the world, so there is no well-defined notion of "what would happen if I took a different action." Different decision theories correspond to different ways of constructing these counterfactuals: conditioning on the action as evidence (EDT), intervening causally on it (CDT), or reasoning about the logical consequences of being the kind of agent that runs a given decision procedure (FDT). Standard decision theories fail in characteristic ways when facing agents who can predict them or logical correlations between their action and the world. **A particularly important desideratum is** ***reflective consistency***\*\*: an agent reflecting on its own decision procedure should endorse\*\* it, in the sense that it would not wish to self-modify into an agent running a different procedure. This matters because a decision theory is a [reflectively consistent degree of freedom](https://www.lesswrong.com/w/reflectively-consistent-degree-of-freedom) — an agent using a "bad" decision theory will not automatically correct this flaw as it becomes more capable, in the way it might automatically correct a mistaken factual belief. Functional and updateless decision theories have been developed to address these failure modes, with the aim of specifying a decision procedure that an agent would reflectively endorse and stably preserve across self-modification.
+
+**Reading list:**
+
+-   [Function decision theory](https://arxiv.org/pdf/1710.05060)\- Read Chapter 1-5
+    
+    -   Alternatively, read the [An intuitive introduction to functional decision theory](https://www.lesswrong.com/s/q2WQMoQSexx7xqqZR) sequence if you find the above confusing
+        
+-   [Updateless Decision theory](https://www.lesswrong.com/w/updateless-decision-theory) - Read Entirely
+    
+    -   You may reference [this post](https://www.lesswrong.com/s/CCtgwXPXWxSiFWFnf/p/wfi5EGKhvYzzSDWag) for more details
+        
+
+#### Optimization and Thermodynamics
+
+**Description**: A useful way to characterize powerful agents is that they reliably steer the world into a narrow region of outcome space — one that would be extremely unlikely to arise under any random process. Intuitively, optimization is a form of local entropy reduction: an agent concentrating probability mass from a broad initial distribution over possible states into a tight final distribution around a convergent target.This connects naturally to thermodynamics; many of the concepts relevant to optimization such as entropy production, fluctuation theorems, the thermodynamic cost of information erasure, are already well-developed in frameworks such as stochastic thermodynamics, and hold far from equilibrium. [Algorithmic thermodynamics](https://arxiv.org/abs/2308.06927) (Ebtekar and Hutter) extends this by replacing Gibbs-Shannon entropy with Kolmogorov complexity, yielding laws that apply to individual states rather than ensembles. Much of the value here, especially for readers with a physics background, is less in new results than in translation: Reframing familiar thermodynamic intuitions in the language of information theory connects them to concepts native to agent foundations, such as world-modeling, optimization power and the physical constraints on embedded agents.
+
+**Reading list:**
+
+-   [The ground of optimization](https://www.lesswrong.com/posts/znfkdCoHMANwqc2WE/the-ground-of-optimization-1)\- Read up to and including the "Relationship to Garrabrant and Demski’s Embedded Agency" section
+    
+-   [Generalized heat engine](https://www.lesswrong.com/posts/uKWXktrR7KpbgZAs4/generalized-heat-engine) - Read Entirely
+    
+-   [Algorithmic thermodynamics and 3 types of optimization](https://www.lesswrong.com/posts/CJRxQiTKEzior7jGq/algorithmic-thermodynamics-and-three-types-of-optimization) - Read Entirely
+    
+-   Optional: [When bits of optimization implies bits of modelling](https://www.lesswrong.com/posts/6aqPCfp3wCk6CKW5J/when-bits-of-optimization-imply-bits-of-modeling-the)
+    
+
+#### Descriptive Agent foundations
+
+**Description:** While much of agent foundations focuses on normative questions about what an ideal, perfectly rational agent should look like, descriptive agent foundations instead asks what kinds of agents actually arise in the physical world and how to recognize them. The goal is to develop a framework that can take any system, from bacteria to neural networks to future AI systems, and identify its goals, world-model, and decision-making structure. This involves formalizing core components of agency such as optimization, meaning processes that reliably steer the world toward a narrow set of outcomes, as well as world-models and general-purpose search, while grounding them in physical constraints like modularity and computational limitations. Methodologically, descriptive foundations work bottom-up: rather than starting from ideal principles, they begin with properties of the world such as selection pressures and resource bounds, and derive what kinds of agent-like structures are likely to emerge. Selection theorems aim to formalize which agent properties are favored by these pressures, with a focus on giving a more mechanistic account of beliefs, goals, and decision-making beyond treating agents as abstract utility maximizers. Together, this line of research seeks to characterize the type signature of real-world agents and explain why agents with certain structures arise in the first place.
+
+**Reading list:**
+
+-   [Selection theorems](https://www.lesswrong.com/posts/G2Lne2Fi7Qra5Lbuf/selection-theorems-a-program-for-understanding-agents) - Read Entirely
+    
+-   [How we picture bayesian agents](https://www.lesswrong.com/posts/TiBsZ9beNqDHEvXt4/how-we-picture-bayesian-agents) - Read Entirely
+    
+-   [What selection theorems do we expect/want](https://www.google.com/search?q=https://www.lesswrong.com/posts/RuDD3aQWLDSb4eTXP/what-selection-therorems-do-we-expect-want) - Read Entirely
+    
+
+### Learn more
+
+You may want to read the lecture slides by Cole and Aram that were taught in the in-person component:
+
+-   [Embedded AIXI slides](https://drive.google.com/file/d/1Hsc9eyrH4exXEDbkDnaZ2YjUpRvQDPOo/view?usp=sharing): Guest lecture by Cole Wyeth
+    
+-   [Decision theory slides](https://drive.google.com/file/d/1WvEAwve1bNFEHBD5yGrcrrN7OJCiJlID/view?usp=sharing): Guest lecture by Aram Ebtekar
+    
+
+To go deeper, read any other topic readings that interest you from the main content above. The additional readings below either extend one of the topic readings in more depth or cover agent foundations topics not introduced in the topic readings, such as infra-Bayesianism and corrigibility.
+
+-   [Foundations of algorithmic thermodynamic](https://arxiv.org/abs/2308.06927)
+    
+-   [causal arrow of time](https://www.mdpi.com/1099-4300/26/9/776)
+    
+-   [Introduction To The Infra-Bayesianism Sequence](https://www.lesswrong.com/posts/zB4f7QqKhBHa5b37a/introduction-to-the-infra-bayesianism-sequence)
+    
+-   [The learning theoretic agenda](https://www.lesswrong.com/posts/ZwshvqiqCvXPsZEct/the-learning-theoretic-agenda-status-2023)
+    
+-   [Corrigibility](https://www.lesswrong.com/w/hard-problem-of-corrigibility)
+    
+-   [Corrigibility 2](https://www.lesswrong.com/posts/oLbpfPkdtcknABvvw/the-corrigibility-basin-of-attraction-is-a-misleading-gloss#My_argument__The_engineering_feedback_loop_will_use_up_all_its_fuel)
+    
+-   [Optimization at a distance](https://www.lesswrong.com/posts/d2n74bwham8motxyX/optimization-at-a-distance#eDJazk3ievW7STCgB)
+    
+-   [Tiling agent](https://intelligence.org/files/TilingAgentsDraft.pdf)
+    
+-   [Admissibility and complete class](https://www2.stat.duke.edu/~pdh10/Teaching/581/LectureNotes/admiss.pdf)
+    
+-   [Dutch book argument](https://www.stat.berkeley.edu/~census/dutchdef.pdf)
+    
+-   [Limit computable grains of truth](https://arxiv.org/pdf/2508.16245)
+    
+-   [Embeddedness Failures in Universal Artificial Intelligence](https://arxiv.org/pdf/2505.17882?)
+    
+-   [Value under ignorance](https://arxiv.org/pdf/2512.17086)

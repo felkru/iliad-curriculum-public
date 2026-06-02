@@ -886,6 +886,65 @@
     ]
   },
   {
+    "slug": "agent-foundations",
+    "title": "Agent Foundations",
+    "cluster": "D",
+    "frontmatter": {
+      "title": "Agent Foundations",
+      "cluster": "D",
+      "summary": "An introduction to agent foundations — embedded agency, reflective stability, Löb's obstacle, and the prescriptive vs descriptive research agendas for understanding agents.",
+      "contributors": [
+        "Daniel Chiang (Independent)",
+        "Satya Benson (Williams College)",
+        "Cole Wyeth (University of Waterloo)",
+        "Aram Ebtekar (Independent)"
+      ],
+      "teachingGuide": "- 1 hour of introductory lecture on the bird's eye view picture & motivation of agent foundations.\n- 2.5 hours of reading + discussion. Format: separate into fundamental reading vs readings on specific topics. Each person reads a fundamental reading + readings on one of the topics, then discusses with others who've read different topics.\n  - Fundamental reading: Embedded agency; Why agent foundations; General purpose search; Reflective consistent degree of freedom.\n  - Topics: Consequentialist foundations; Löb's theorem and tiling agent; Logical induction; Decision theory; Optimization and thermodynamics; Descriptive agent foundations.\n- 1 hour of lecture by Cole Wyeth on reflective oracles and nonrealizability.\n- 1 hour of exercises on Löb's theorem, complete class and information theory.\n- 1 hour of lecture by Aram Ebtekar on decision theory.\n\nCross-pollination prompts are provided for small-group discussions, each connecting two topic readings (e.g. Logical Induction × Löb; Löb × Decision Theory; Consequentialist Foundations × Optimization & Thermodynamics; etc.).\n",
+      "learningOutcomes": [
+        "Explain why alignment requires reasoning about superintelligent agents in advance, before such systems exist.",
+        "Explain Goodhart's law and why a good theory of agency requires concepts that remain meaningful under optimization pressure.",
+        "Explain reflective stability and why safety properties that are not invariant under self-modification provide weaker alignment guarantees.",
+        "Explain the distinction between dualistic and embedded agents, and why the embedded picture raises qualitatively new challenges.",
+        "Identify and explain the core subproblems of embedded agency: reasoning about environments larger than the agent, reasoning about environments containing copies of the agent, and reasoning about self-improvement and successor construction.",
+        "Explain the Löbian obstacle and why a consistent formal system cannot vouch for the soundness of an equally powerful successor.",
+        "Explain what descriptive agent foundations is trying to do: characterize what agents arising in the physical world actually look like, starting from properties of the world (selection pressures, modularity, computational constraints) rather than from idealized behavior."
+      ]
+    },
+    "position": 403,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "world-models",
     "title": "World Models",
     "cluster": "D",
