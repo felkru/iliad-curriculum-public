@@ -1,0 +1,55 @@
+B.4 Training Dynamics
+
+Contributor
+Guillaume Corlouer (Moirai)
+
+Learning outcomes
+Implicit regularization:
+- Understand the concepts of implicit regularization
+- Know of key results about loss landscape of Deep Linear Networks (DLNs)
+- Gain some intuition about non trivial loss landscape (DLNs) and their symmetries
+- Know about the edge of stability phenomena
+- Derive gradient flow equations in DLNs
+- Explain NTK
+- Understand the importance of symmetries and conserved quantities
+- Know that under assumptions we can interpret gradient flow in DLNs as minimizing a free energy
+- Derive the simplicity bias in simple DLNs example (saddle to saddle)
+- Explain the effect of initialization on training regime in DLNs (Lazy vs Rich)
+- Know that implicit biases of stochasticity depends on the training regime
+- Discuss why we care about implicit regularization for AI safety
+
+Emergence:
+- Know that there is a puzzle: emergent capabilities
+- Know about toy models and example of emergence:
+  - Silent alignment in DLNs
+  - Grokking as delayed generalization
+  - Induction heads
+  - Emergent misalignment
+- Explain the concept of phase transitions
+- Explain the idea of mean field theory
+- Understand the idea of dynamical mean field theory at a high level as a theory of emergence during training
+- Explain grokking as a lazy to rich transition during training using DMFT in a toy model
+- Discuss the importance of emergence for AI safety:
+  - Early detection of phase transition (early warning signals)
+  - Deriving order parameters that help us interpret the model (and simplifying the dynamics)
+
+Prerequisites
+- Basic of deep learning (SGD, network, loss function)
+- Transformer architectures and LLMs
+- Statistics
+- Linear algebra (singular value decomposition)
+- Ordinary differential equations
+- May help but not strictly required: Group actions, Stochastic differential equations, Statistical physics and statistical field theory
+
+Content
+
+Fast track
+- Read Andrew Saxe paper (https://arxiv.org/abs/1810.10531).
+- Read the emergence slides at https://github.com/gcorlouer/iliad_intensive_training_dynamics/blob/main/emergence/emergence_presentation.pdf.
+- If you have more time, read the key readings at https://github.com/gcorlouer/iliad_intensive_training_dynamics/blob/main/readings.md.
+
+Main content
+The main content is in the github repository https://github.com/gcorlouer/illiad_intensive. Go through the slides, exercises, and solutions.
+
+Learn more
+Go through the readings in the github repo at https://github.com/gcorlouer/iliad_intensive_training_dynamics/blob/main/readings.md.
