@@ -1,0 +1,63 @@
+C.2 Mechanistic Interpretability
+
+Contributor
+Julian Schulz (Meridian Research)
+
+Learning outcomes
+Basic Goals — Participants should understand:
+- The Goals of MechInterp
+- What is meant by feature & circuit
+- Have an overview of currently used methods for feature and circuit discovery
+- Have an overview of our current capabilities/frontier of knowledge in MechInterp
+- Be able to engage with/understand common critiques of MechInterp
+
+Advanced Goal — Participants should be able to:
+- implement common mechinterp methods
+- Know when to apply what method
+- read and fully understand new MechInterp publications
+- Be a useful discussion partner to MechInterp researchers
+
+Prerequisites
+- Knowing the basics of Machine Learning
+- Familiarity with the Transformer Architecture
+- Basic maths / linear algebra
+
+Content
+
+Fast track
+Go through the slides below.
+
+Main content
+Slides: Google Drive 1fQevIi9QUmQx2rYPyt6_aatKkbGSl31X
+Exercises:
+- Feature Viz (Colab Illiad_Mech_Interp/exercises/03_feature_viz)
+- Logit Lens (normal, hard) (Colab Illiad_Mech_Interp/exercises/01_logit_lens)
+- Neuronpedia: Features (https://www.neuronpedia.org/gemma-2-27b)
+- SAEs (Colab Illiad_Mech_Interp/exercises/04_saes)
+- Neuropedia: Circuits (https://www.neuronpedia.org/gemma-2-2b/graph)
+- Induction heads (normal, hard) (Colab Illiad_Mech_Interp/exercises/02_induction_heads)
+Reading:
+- A Pragmatic Vision for Interpretability (Nanda et al., 2025) ~15 min
+- Against Almost Every Theory of Impact of Interpretability (Segerie, 2023) ~20 min
+- The Misguided Quest for Mechanistic AI Interpretability (Hendrycks, 2025) ~20 min
+- Activation Space Interpretability May Be Doomed (Chughtai & Bushnaq, 2025) ~15 min
+
+Learn more
+- Arena Curriculum (https://learn.arena.education/chapter1_transformer_interp/), incl. SAE exercise and IOI exercise
+- Open Problems in Mechanistic Interpretability (https://arxiv.org/abs/2501.16496)
+- An Extremely Opinionated Annotated List of My Favourite Mechanistic Interpretability Papers v2 (Alignment Forum NfFST5Mio7BCAQHPA)
+
+Selected readings (organised by topic):
+Motivation and Foundations: Goal of mechanistic interpretability and its relevance for AI safety; AI safety ontology: features and circuits as the building blocks of neural network understanding (Olah et al., 2020).
+Historical MechInterp: Feature visualization and saliency maps in CNNs; Circuits in CNNs (Cammarata et al., 2020).
+MechInterp in Transformers – What is a feature?: Linear directions in activation space encode interpretable meanings (Mikolov et al., 2013); The linear representation hypothesis holds in LLMs (Park et al., 2024); Linear probes can read off internal representations, e.g. world models in Othello-GPT (Nanda et al., 2023); Steering vectors (Panickssery et al., 2024); Ablation of single directions can remove capabilities like refusal (Arditi et al., 2024).
+MechInterp in Transformers – Superposition and SAEs: Toy models show features are packed into fewer dimensions via superposition (Elhage et al., 2022); Compressed sensing motivation (Candes et al., 2004; Donoho, 2006); Sparse autoencoders (Bricken et al., 2023); Evaluating SAE quality (Karvonen et al., 2025); Crosscoders (Lindsey et al., 2024); Feature geometry, absorption, and splitting (Chanin et al., 2024); Activation oracles (Karvonen et al., 2025).
+Circuit Discovery: Success story: fully reverse-engineering a grokking model doing modular arithmetic (Nanda et al., 2023); Logit attribution and induction heads (Elhage et al., 2021); The logit lens (nostalgebraist, 2020); Path patching and the IOI circuit (Wang et al., 2022); ACDC (Conmy et al., 2023); Attribution graphs (Lindsey et al., 2025); Causal scrubbing (Chan et al., 2022); Is circuit discovery NP-hard? (Adolfi et al., 2025).
+Outlook: Real-world use — Claude Opus 4.5 system card used interp to investigate deceptive behavior (Anthropic, 2025); Open problems in mechanistic interpretability (Sharkey et al., 2025).
+Critiques of MechInterp: Pivoting from ambitious reverse-engineering to pragmatic, tool-oriented interp (Nanda et al., 2025); Against almost every theory of impact (de Segerie, 2023); The misguided quest (Hendrycks, 2025); Activation space interpretability may be doomed (Chughtai, 2025).
+
+Teaching guide
+- Present the slides, with the lecture notes in the pdf using pdfpc to make the speaker notes visible to yourself but not the participants.
+- Separate the group into tiers based on previous exposure to mechinterp concepts. When asking a question: in general let the tiers with less exposure answer first.
+- Whenever you hit a slide with links to exercises, let the participants do the exercises. For the links to neuropedia, give them 10-20 min to look around on neuropedia, find interesting features/circuits and get a hands on feeling for how these look like. Key takeaways: many features are mislabeled by the LLMs or still seem polysemantic; features generated with circuit tracing look extremely messy and are not straight forward to interpret.
+- After Lecture and Exercises, people should separate into groups, each reading and then discussing one of the MechInterp Criticism posts linked above. If enough time is left, one person from each discussion group can present a summary of the post and their discussion to the rest of class.

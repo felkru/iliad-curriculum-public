@@ -612,6 +612,64 @@
     ]
   },
   {
+    "slug": "mechanistic-interpretability",
+    "title": "Mechanistic Interpretability",
+    "cluster": "C",
+    "frontmatter": {
+      "title": "Mechanistic Interpretability",
+      "cluster": "C",
+      "summary": "Mechanistic interpretability for neural networks — features and circuits, methods for discovery, the frontier of knowledge, and critiques of the field.",
+      "contributors": [
+        "Julian Schulz (Meridian Research)"
+      ],
+      "teachingGuide": "- Present the slides, with the lecture notes in the pdf using pdfpc to make the speaker notes visible to yourself but not the participants.\n- Separate the group into tiers based on previous exposure to mechinterp concepts. When asking a question: in general let the tiers with less exposure answer first.\n- Whenever you hit a slide with links to exercises, let the participants do the exercises. For the links to neuropedia, give them 10-20 min to look around on neuropedia, find interesting features/circuits and get a hands on feeling for how these look like. Key takeaways: many features are mislabeled by the LLMs or still seem polysemantic; features generated with circuit tracing look extremely messy and are not straight forward to interpret.\n- After Lecture and Exercises, people should separate into groups, each reading and then discussing one of the MechInterp Criticism posts linked above. If enough time is left, one person from each discussion group can present a summary of the post and their discussion to the rest of class.\n",
+      "learningOutcomes": [
+        "Understand the goals of mechanistic interpretability",
+        "Understand what is meant by feature and circuit",
+        "Have an overview of currently used methods for feature and circuit discovery",
+        "Have an overview of the current capabilities and frontier of knowledge in mechanistic interpretability",
+        "Engage with and understand common critiques of mechanistic interpretability",
+        "Implement common mechinterp methods",
+        "Know when to apply what method",
+        "Read and fully understand new mechanistic interpretability publications",
+        "Be a useful discussion partner to mechanistic interpretability researchers"
+      ]
+    },
+    "position": 302,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
     "cluster": "D",
