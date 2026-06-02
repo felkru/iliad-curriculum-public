@@ -549,6 +549,69 @@
     ]
   },
   {
+    "slug": "intro-to-ml-engineering",
+    "title": "Intro to ML Engineering",
+    "cluster": "C",
+    "frontmatter": {
+      "title": "Intro to ML Engineering",
+      "cluster": "C",
+      "summary": "Hands-on ML engineering for AI safety experiments — PyTorch tensors, training loops, optimizers, model architectures, LLM lifecycle, and the practical tooling (Runpod, W&B) around empirical research.",
+      "contributors": [
+        "Julian Schulz (Meridian Research)",
+        "Adam Newgas (Timaeus)"
+      ],
+      "teachingGuide": "- Start with the quiz to give people a recommendation for which lecture 1 to join.\n- Then hold lecture 1a and 1b in parallel for about 4h.\n- Notes on holding lecture 1a: Get a feeling with what the audience is already familiar with, and quickly skip through those slides; take more time explaining the things that are new. When you hit a slide with an exercise, interrupt the lecture and give the participants time to do the exercise. It is okay if participants do not finish all the exercises. Enforce pair programming on exercises.\n- Notes on holding lecture 2: Again, we start with basic stuff most will already know. Get a feeling for the audience and skip through that part. Stop when hitting the slides for the exercises. If you hit the end of the slides before the end of the day, just un-hide the slides and keep going explaining reasoning models.\n",
+      "learningOutcomes": [
+        "Minimal: Be able to follow the rest of the intensive course content and complete its exercises; understand the considerations and constraints of running empirical AI safety experiments when working with an ML engineer.",
+        "Use PyTorch and tensor operations.",
+        "Write training loops and reason about hyperparameters and optimizers (including WandB).",
+        "Understand basic concepts in model architectures.",
+        "Ambitious: Run your own ML experiments with AI assistance and have a working command of the common tools/frameworks.",
+        "Run hyperparameter optimisations.",
+        "Implement model architectures in PyTorch.",
+        "Rent external compute (via Runpod) and run an experiment on it."
+      ]
+    },
+    "position": 301,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Lecture 1a — ML foundations",
+        "slug": "lecture-1a--ml-foundations"
+      },
+      {
+        "level": 3,
+        "text": "Lecture 1b — practical ML",
+        "slug": "lecture-1b--practical-ml"
+      },
+      {
+        "level": 3,
+        "text": "Lecture 2 — LLMs",
+        "slug": "lecture-2--llms"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
     "cluster": "D",

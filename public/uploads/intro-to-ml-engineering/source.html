@@ -1,0 +1,67 @@
+C.1 Intro to ML Engineering
+
+Contributors
+- Julian Schulz (Meridian Research) — Lecture 1a and 2
+- Slides of Lecture 2 are taken from ML4good
+- Adam Newgas (Timaeus) — Lecture 1b
+
+Learning outcomes
+Minimal Goal: Participants should be able to follow the content of the rest of the intensive course and be able to do the exercises. Participants who will be in a situation where they will work with ML engineer, should have a conceptual understanding of the relevant considerations and constraints that go into running empirical AI safety experiments.
+- Pytorch / tensor operations
+- Training loops, hyperparameters, optimizers (incl. WandB)
+- Basic concepts in Model architectures
+
+Ambitious Goal: Participants should be able to run their own ML experiments with AI assistance, and have a good understanding of the common tools/frameworks.
+- Run hyperparameter optimisations
+- Being able to implement some Model architectures in Pytorch
+- Rent external compute (via runpod) and run an experiment on it
+
+Prerequisites
+- You should have some knowledge of coding, and be prepared to lean heavily on AI assistance.
+- Bring your own laptop. You may wish to run through some of the setup instructions before the course.
+- Have some AI coding agent. Options include Cursor (free), Claude Code, or Codex.
+- You should know linear algebra, understand gradient descent.
+
+Content
+There are two parallel lectures/courses in the morning until lunch, separated by prior knowledge, and a single lecture in the afternoon.
+Course Selection Quiz: https://wusche1.github.io/Illiad_ML_Engineering/forms/track_selection.html
+
+Lecture 1a (Julian) – ML foundations
+- Training loop — forward/backward pass, gradient descent, stochastic batching, optimizer role
+- PyTorch tensors — basic operations, einops, batching & data loading, autograd/computational graph, devices & GPU
+- Loss functions — classification losses, RL/human-rater losses, sparsity, train vs. test loss, over/underfitting
+- Parameters, activations & hyperparameters — terminology + optimizers (momentum, RMSProp)
+- Architectures — activation functions, universal approximation, over/underparameterization, symmetries in architecture design, CNNs, transformers, residual streams
+- Hyperparameter optimization — sweeps, scaling laws
+Slides: Google Drive 106VSn4glC5TVColjvcikPeWszD6gQNKe
+Short exercises in between about: Pytorch basics; Optimizers; Model Architectures; play around with Hyperparameters at https://playground.tensorflow.org/.
+
+Lecture 1b (Adam) – practical ML
+Short opener about the changing dividing lines of research, engineering, and agents. Modular selection of self study/exercise topics from github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/:
+- Runpod + VSCode Remote Extension
+- Weights and Biases
+- Distributed Computing
+- Concurrent Computing
+- The Python and ML Ecosystem
+- Publishing Your Project
+
+Lecture 2 (Julian) LLMs
+- Tokenization - autoregressive generation
+- Transformer Architecture
+- Lifecycle of an LLM: Pretraining; Scaling laws / compute optimal training; RLHF / constitutional training; RLVR / reasoning training
+Slides: Lecture about Architecture and Lifecycle (Google Doc 1AC0Husviloy26R9sV39pyDB8zaiIGBlMgCQxT6bc3zs)
+Exercises: Play with tokenizer (huggingface Xenova/the-tokenizer-playground); Implement an MLP step by step; Implement Attention step by step.
+
+Learn more
+- RLHF Exercise (Colab 1y4uk-ZIyBrnCYOnJqoWPSRNtx0xWw26f)
+- ARENA Week 0 contains more exercises to try out (https://www.arena.education/chapter0)
+- Tips and Code for Empirical Research Workflows (Alignment Forum)
+- Pytorch tutorial (https://docs.pytorch.org/tutorials/beginner/basics/intro.html)
+- Most tools and libraries come with extensive docs that are quite readable: Python; Pytorch; TRL; Tinker; datasets; transformerlens; Inspect; git.
+- Deeper on the engineering side: Parallelism (ARENA, types of parallelism); Performance; Architecture; CS Lecture notes (e.g. big-O complexity).
+
+Teaching guide
+- Start with the quiz to give people a recommendation for which lecture 1 to join.
+- Then hold lecture 1a and 1b in parallel for about 4h.
+- Notes on holding lecture 1a: Get a feeling with what the audience is already familiar with, and quickly skip through those slides; take more time explaining the things that are new. When you hit a slide with an exercise, interrupt the lecture and give the participants time to do the exercise. It is okay if participants do not finish all the exercises. Enforce pair programming on exercises.
+- Notes on holding lecture 2: Again, we start with basic stuff most will already know. Get a feeling for the audience and skip through that part. Stop when hitting the slides for the exercises. If you hit the end of the slides before the end of the day, just un-hide the slides and keep going explaining reasoning models.

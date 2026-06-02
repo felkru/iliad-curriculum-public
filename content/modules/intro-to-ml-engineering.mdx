@@ -1,0 +1,142 @@
+---
+title: Intro to ML Engineering
+cluster: C
+contributors:
+  - Julian Schulz (Meridian Research)
+  - Adam Newgas (Timaeus)
+summary: Hands-on ML engineering for AI safety experiments — PyTorch tensors,
+  training loops, optimizers, model architectures, LLM lifecycle, and the
+  practical tooling (Runpod, W&B) around empirical research.
+learningOutcomes:
+  - "Minimal: Be able to follow the rest of the intensive course content and
+    complete its exercises; understand the considerations and constraints of
+    running empirical AI safety experiments when working with an ML engineer."
+  - Use PyTorch and tensor operations.
+  - Write training loops and reason about hyperparameters and optimizers
+    (including WandB).
+  - Understand basic concepts in model architectures.
+  - "Ambitious: Run your own ML experiments with AI assistance and have a
+    working command of the common tools/frameworks."
+  - Run hyperparameter optimisations.
+  - Implement model architectures in PyTorch.
+  - Rent external compute (via Runpod) and run an experiment on it.
+teachingGuide: >
+  - Start with the quiz to give people a recommendation for which lecture 1 to
+  join.
+
+  - Then hold lecture 1a and 1b in parallel for about 4h.
+
+  - Notes on holding lecture 1a: Get a feeling with what the audience is already
+  familiar with, and quickly skip through those slides; take more time
+  explaining the things that are new. When you hit a slide with an exercise,
+  interrupt the lecture and give the participants time to do the exercise. It is
+  okay if participants do not finish all the exercises. Enforce pair programming
+  on exercises.
+
+  - Notes on holding lecture 2: Again, we start with basic stuff most will
+  already know. Get a feeling for the audience and skip through that part. Stop
+  when hitting the slides for the exercises. If you hit the end of the slides
+  before the end of the day, just un-hide the slides and keep going explaining
+  reasoning models.
+---
+## Overview
+
+A practical introduction to the machine-learning engineering stack used throughout the intensive: PyTorch and tensor operations, training loops and optimizers, model architectures, hyperparameter optimisation, and the lifecycle of a modern LLM (pretraining, RLHF, RLVR). The day is split into two parallel morning tracks tuned to prior experience, followed by a shared afternoon lecture on LLMs.
+
+Julian Schulz was responsible for Lecture 1a and 2. Slides of Lecture 2 are taken from ML4good. Adam Newgas was responsible for *Lecture 1b*
+
+## Prerequisites
+
+-   You should have some knowledge of coding, and be prepared to lean heavily on AI assistance.
+    
+-   Bring your own laptop. You may wish to run through some of the setup instructions before the course.
+    
+-   Have some AI coding agent. Options include Cursor (free), Claude Code, or Codex.
+    
+-   You should know linear algebra, understand gradient descent.
+    
+
+## Content
+
+There are two parallel lectures/courses in the morning until lunch, separated by prior knowledge, and a single lecture in the afternoon.
+
+[Course Selection Quiz](https://wusche1.github.io/Illiad_ML_Engineering/forms/track_selection.html)
+
+### Lecture 1a — ML foundations
+
+-   **Training loop** — forward/backward pass, gradient descent, stochastic batching, optimizer role
+    
+-   **PyTorch tensors** — basic operations, einops, batching & data loading, autograd/computational graph, devices & GPU
+    
+-   **Loss functions** — classification losses, RL/human-rater losses, sparsity, train vs. test loss, over/underfitting
+    
+-   **Parameters, activations & hyperparameters** — terminology + optimizers (momentum, RMSProp)
+    
+-   **Architectures** — activation functions, universal approximation, over/underparameterization, symmetries in architecture design, CNNs, transformers, residual streams
+    
+-   **Hyperparameter optimization** — sweeps, scaling laws
+    
+
+[Slides](https://drive.google.com/file/d/106VSn4glC5TVColjvcikPeWszD6gQNKe/view)
+
+Short exercises in between about:
+
+-   [PyTorch basics](https://colab.research.google.com/github/wusche1/Illiad_ML_Engineering/blob/main/lectures/01_a_ml_foundations/exercises/01_pytorch_basics/notebook.ipynb)
+    
+-   [optimizers](https://colab.research.google.com/github/wusche1/Illiad_ML_Engineering/blob/main/lectures/01_a_ml_foundations/exercises/02_optimizers/notebook.ipynb)
+    
+-   [model architectures](https://colab.research.google.com/github/wusche1/Illiad_ML_Engineering/blob/main/lectures/01_a_ml_foundations/exercises/03_architectures/notebook.ipynb)
+    
+-   [play around with hyperparameters](https://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,2&seed=0.18122&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false)
+    
+
+### Lecture 1b — practical ML
+
+Short opener about the changing dividing lines of research, engineering, and agents. Modular selection of self-study/exercise topics from [github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/):
+
+-   [Runpod + VSCode Remote Extension](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/runpod_remote.md)
+    
+-   [Weights and Biases](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/wandb.md)
+    
+-   [Distributed Computing](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/distributed_computing.md)
+    
+-   [Concurrent Computing](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/concurrent_computing.md)
+    
+-   [The Python and ML Ecosystem](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/python_ml_ecosystem.md)
+    
+-   [Publishing Your Project](https://github.com/BorisTheBrave/illiad-ml-eng-track-b/blob/main/docs/publishing_your_project.md)
+    
+
+### Lecture 2 — LLMs
+
+-   **Tokenization** — autoregressive generation
+    
+-   **Transformer Architecture**
+    
+-   **Lifecycle of an LLM**: Pretraining; Scaling laws / compute-optimal training; RLHF / constitutional training; RLVR / reasoning training
+    
+
+Slides: [Lecture about Architecture and Lifecycle](https://docs.google.com/presentation/d/1AC0Husviloy26R9sV39pyDB8zaiIGBlMgCQxT6bc3zs/edit?slide=id.p#slide=id.p)
+
+Exercises:
+
+-   [Play with a tokenizer](https://huggingface.co/spaces/Xenova/the-tokenizer-playground)
+    
+-   [Implement an MLP step by step.](https://colab.research.google.com/github/wusche1/Illiad_ML_Engineering/blob/main/lectures/02_llm_architecture/exercises/01_mlp/notebook.ipynb)
+    
+-   [Implement Attention step by step.](https://colab.research.google.com/github/wusche1/Illiad_ML_Engineering/blob/main/lectures/02_llm_architecture/exercises/02_attention/notebook.ipynb)
+    
+
+### Learn more
+
+-   [RLHF Exercise](https://colab.research.google.com/drive/1y4uk-ZIyBrnCYOnJqoWPSRNtx0xWw26f?usp=drive_open)
+    
+-   [ARENA Week 0](https://learn.arena.education/chapter0_fundamentals/) contains more exercises to try out.
+    
+-   [Tips and Code for Empirical Research Workflows](https://www.alignmentforum.org/)
+    
+-   [PyTorch tutorial](https://docs.pytorch.org/tutorials/beginner/basics/intro.html) — this explains the code in the setup exercise.
+    
+-   Most tools and libraries come with extensive docs that are quite readable: Python; [PyTorch](https://docs.pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html); [TRL](https://huggingface.co/docs/trl/index); [Tinker](https://tinker-docs.thinkingmachines.ai/tinker/); datasets; transformerlens; Inspect; git.
+    
+-   Deeper on the engineering side: Parallelism ([ARENA](https://learn.arena.education/chapter0_fundamentals/03_optimization/3-distributed-training/), [types of parallelism](https://alessiodevoto.github.io/parallelism/)); Performance; Architecture; CS Lecture notes (e.g. big-O complexity).
