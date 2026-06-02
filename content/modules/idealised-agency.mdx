@@ -1,0 +1,73 @@
+---
+title: Idealised Agency
+cluster: D
+contributors:
+  - David Quarel (Australian National University)
+  - Fernando Rosas (University of Sussex)
+summary: Idealised agency through AIXI and decision theory — history-based RL,
+  the self-optimizing theorem, and how preferences relate to utility and reward.
+learningOutcomes:
+  - Learn the notation used in Universal Artificial Intelligence
+  - Be familiar with the history-based RL framework
+  - Promote previous RL day's material to non-Markovian histories
+  - "Prove three main properties of AIXI: on-policy value convergence; AIXI
+    can't be fooled by deterministic environments; the Self-optimizing Theorem"
+  - "Understand the difference between preferences, utility, and reward:
+    preferences being a primary, largely uncontroversial notion, and utility and
+    rewards being derived notions resting on specific assumptions"
+  - Be able to derive the relationship between various preference structures and
+    rationality axioms
+  - Critically assess alternative notions of rationality, and the consequences
+    of dropping various classical decision theory assumptions
+teachingGuide: >-
+  - Lecture by David (30 min)
+
+  - Rest of the day spent on doing exercises in pairs
+
+  - Later in the day, Fernando gave a second lecture on preferences and reward
+  functions.
+---
+## Overview
+
+This module covers two complementary perspectives on idealised agency. The first, **AIXI**, formalises a universal reinforcement learner in a history-based RL framework and establishes its key optimality properties. The second, **From preferences to rewards**, examines the conceptual foundation of decision theory — treating preferences as primary and utility/reward as derived notions resting on specific rationality axioms.
+
+## Prerequisites
+
+-   Some material from the reinforcement learning module: Agent-environment interaction loop; definitions of return, reward, value, policy, the Bellman equation, optimal, better. Don't need to have done any coding. Don't need Q-learning.
+    
+-   Everything is redefined in the AIXI worksheet, it's very self-contained.
+    
+
+## Content
+
+### Fast track
+
+-   **For AIXI**: Best to read the solution sheet and try to understand each statement and the proofs. Hard to speedrun this section any faster than just doing the exercises. Stop at Problem 6, skip problem 5 and every exercise marked with (\*).
+    
+-   **For preferences and rewards**: read the notes, skip the math and the consequences of dropping the axioms.
+    
+
+### Main content
+
+-   **AIXI**, [all content](https://drive.google.com/drive/u/1/folders/1iv2jKnZMX5F1vMgSmYC9Kb-uA3QTxxGy). Lecture slides are self contained. Students work together in pairs on the AIXI exercises.
+    
+-   **From preferences to rewards** [lecture notes](https://drive.google.com/file/d/1BswdlampgcnCduj2_ij_5RoGwYWo9hQw/view).
+    
+
+### Learn more
+
+-   See the references in the slides and the worksheets, for AIXI.
+    
+-   [Introduction to Universal Artificial Intelligence](https://www.hutter1.net/ai/uaibook2.htm): Chapter 2 just covers background; Chapter 3.1, 3.2, 3.9; Chapter 6.1, 6.2, 6.6; Chapter 7.
+    
+-   For 'From preferences to rewards':
+    
+    -   [LessWrong post on the independence axiom](https://www.lesswrong.com/posts/MsjWPWjAerDtiQ3Do)
+        
+    -   [Talk about the fifth axiom to turn vNM utility into rewards](https://www.youtube.com/watch?v=P8nm8fR9gK8) (includes also other good discussions regarding RL)
+        
+    -   [Coherent decisions imply consistent utility](https://www.lesswrong.com/w/expected-utility-formalism?lens=coherent-decisions-imply-consistent-utilities)
+        
+    -   [Selection theorems](https://www.lesswrong.com/tag/selection-theorems)
+        
+    -   You may also take a look at the references at the end of the lecture notes.
