@@ -442,6 +442,59 @@
     ]
   },
   {
+    "slug": "data-attribution",
+    "title": "Data Attribution",
+    "cluster": "B",
+    "frontmatter": {
+      "title": "Data Attribution",
+      "cluster": "B",
+      "summary": "Data attribution for alignment — the chain from causality to counterfactuals, Shapley values, leave-one-out, and first-order perturbation methods, with influence functions, Bayesian influence functions, and unrolling.",
+      "contributors": [
+        "Louis Jaburi (EleutherAI)"
+      ],
+      "learningOutcomes": [
+        "Internalize the importance of data attribution for alignment (see papers in the slides)",
+        "Understand the chain of approximations causality → counterfactual → Shapley values → LOO → first-order approximation of perturbations",
+        "Can frame data attribution methods (IF, BIF, Unrolling) in terms of the map B → W at the end of Section 1",
+        "Can explain what IF, BIF, and unrolling are (in terms of above map). Highlight their limitations",
+        "Are able to compute influence scores, if given a magical oracle that turns mathematical formulas into clean ML code"
+      ]
+    },
+    "position": 205,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
     "cluster": "D",
