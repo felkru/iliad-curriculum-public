@@ -884,5 +884,59 @@
         "slug": "learn-more"
       }
     ]
+  },
+  {
+    "slug": "world-models",
+    "title": "World Models",
+    "cluster": "D",
+    "frontmatter": {
+      "title": "World Models",
+      "cluster": "D",
+      "summary": "Theoretical and practical foundations of world models — from control theory, neuroscience, and RL framings (POMDPs, belief MDPs, transducers) to modern systems (Ha & Schmidhuber, Dreamer, Genie, JEPA) and the role of symmetries in building abstractions.",
+      "contributors": [
+        "Fernando Rosas (University of Sussex)"
+      ],
+      "learningOutcomes": [
+        "Obtain a theoretical understanding of how world models are understood and used in AI, and also in other disciplines including control theory, neuroscience, and cognitive science.",
+        "Develop a conceptual understanding of how world models are used in modern AI systems, including Ha & Schmidhuber, Dreamer, Genie, and JEPA.",
+        "Have a critical understanding of why world models matter — how agents can use world models, and what can they do with world models that they couldn't do without them.",
+        "Become familiar with the notion of transducer / stochastic automata as a general architecture of world models, and how it generalises various kinds of world models in reinforcement learning (e.g. POMDPs and beliefs MDPs).",
+        "Reason about how agents can build abstractions as coarse-grainings of world models.",
+        "Understand the role of symmetries in the construction of abstractions in world models."
+      ]
+    },
+    "position": 404,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   }
 ]
