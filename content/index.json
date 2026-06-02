@@ -670,6 +670,65 @@
     ]
   },
   {
+    "slug": "computational-mechanics",
+    "title": "Computational Mechanics",
+    "cluster": "C",
+    "frontmatter": {
+      "title": "Computational Mechanics",
+      "cluster": "C",
+      "summary": "Computational mechanics for AI safety — hidden Markov models, generalised HMMs, belief states, mixed-state presentations, and evidence that transformers represent belief geometry in their residual streams.",
+      "contributors": [
+        "Xavier Poncini (Simplex)"
+      ],
+      "teachingGuide": "### Day plan\n\n- **Block 1 (10:00–10:30) — Overview & Scope (Lecture):** How does comp-mech help with AI safety? Where is the program currently at? What will we be focusing on today?\n- **Block 2 (10:30–11:30) — Foundations: Hidden Markov models.** Lecture: What is a hidden Markov model (HMM)? Examples of HMMs; notions of minimality and uniqueness; what is a generalised HMM? Exercises: Implement a GHMM in your favourite programming language.\n- **Block 3 (11:30–12:30) — Foundations: Prediction.** Lecture: What are convergent structures of optimal prediction? Belief states; next-token prediction; the mixed-state-presentation (MSP). Exercises: Implement a function that computes belief states and next-token probability distributions.\n- **Lunch (12:30–13:30).**\n- **Block 4 (13:30–14:30) — Application: Designing processes worth studying.** Tutorial: Based on the desiderata, split into pairs and design HMM processes. Presentation: Each group presents their results for 2–3 minutes.\n- **Block 5 (14:30–15:30) — Application: Identifying belief geometry in transformers.** Reading session: Read Shai et al. [Extension] Riechers et al. Group discussion: Break up into groups of 3–4 based on how much they read.\n- **Afternoon break (15:30–16:00).**\n- **Block 6 (16:00–17:00) — Application: How do transformers do it?** Tutorial: Present sensors & actuators perspective, work on either track.\n- **Block 7 (17:00–18:00) — Expert Q&A with Adam Shai and Paul Riechers.** Feedback survey (10–15 minutes).\n",
+      "learningOutcomes": [
+        "Construct their own hidden Markov models.",
+        "Explain the motivation for introducing generalised hidden Markov models (GHMMs).",
+        "Explain why the belief state is a useful object for making predictions about GHMM data.",
+        "Compute the belief state of a GHMM.",
+        "Explain the difference between the belief state of a HMM and the belief state of a GHMM (that is itself not an HMM).",
+        "Explain the relationship between belief states and next-token observation probabilities for GHMMs.",
+        "Compute the mixed state presentation (MSP) for GHMMs.",
+        "Explain why generating data is easier than predicting data.",
+        "Explain the evidence for the claim: transformers represent belief state geometry in their residual stream.",
+        "Develop hypotheses for where transformers represent: belief states, observation probabilities, log observation probabilities."
+      ]
+    },
+    "position": 303,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "reinforcement-learning",
     "title": "Reinforcement Learning",
     "cluster": "D",

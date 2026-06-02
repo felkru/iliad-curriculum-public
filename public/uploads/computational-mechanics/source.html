@@ -1,0 +1,65 @@
+C.3 Computational Mechanics
+
+Contributors
+This module was compiled by Xavier Poncini (Simplex). Adam Shai and Paul Riechers (Simplex) participated in the Q&A.
+
+Learning outcomes
+After completing this module, students are able to:
+- Construct their own hidden Markov models.
+- Explain the motivation for introducing generalised hidden Markov models (GHMMs).
+- Explain why the belief state is a useful object for making predictions about GHMM data.
+- Compute the belief state of a GHMM.
+- Explain the difference between the belief state of a HMM and the belief state of a GHMM (that is itself not an HMM).
+- Explain the relationship between belief states and next-token observation probabilities for GHMMs.
+- Compute the mixed state presentation (MSP) for GHMMs.
+- Explain why generating data is easier than predicting data.
+- Explain the evidence for the claim: transformers represent belief state geometry in their residual stream.
+- Develop hypotheses for where transformers represent: belief states, observation probabilities, log observation probabilities.
+
+Prerequisites
+Module C.2 (Mechanistic Interpretability). Familiarity with the goals and basic methodology of mechanistic interpretability, including the notions of features and circuits; the linear representation hypothesis; linear probes as a method for reading off internal representations; and a basic understanding of the transformer architecture. Students should be comfortable with the idea that one can train a linear map from model activations to some target structure and evaluate its quality (e.g. via MSE or R²).
+Mathematical background. The module is mathematically self-contained – all formal definitions (HMMs, GHMMs, belief states, MSPs) are introduced from scratch. However, students will engage with the material more fluently if they are comfortable with the following:
+- Linear algebra: row-stochastic matrices, rank and invertibility, null spaces (kernels).
+- Probability: conditional probability, Bayes' rule, probability distributions over finite sets, the probability simplex.
+- Basic machine learning: next-token prediction, loss functions (cross-entropy), the concept of model activations.
+
+Content
+
+Fast track
+Read 'Transformers represent belief state geometry in their residual stream' (https://arxiv.org/pdf/2405.15943). Focus on being able to answer the following questions:
+- What is a hidden Markov model (HMM)?
+- What is a belief state?
+- What is the mixed state presentation (MSP)?
+- About the map learnt from activations to belief states: What is the source? What is the target? How is the quality of the map evaluated?
+
+Main content
+1. Overview and scope (Lecture slides)
+  a. What is computational mechanics?
+  b. Computational mechanics & AI safety
+  c. Where is the research program at?
+  d. What will we cover today?
+2. Computational mechanics foundations
+  a. Hidden Markov Models (HMMs) — Lecture slides & exercise sheet. What is an HMM? Notions of minimality & uniqueness. What is a generalised HMM (GHMM)? (see Neural networks leverage nominally quantum and post-quantum representations, https://arxiv.org/pdf/2507.07432)
+  b. Prediction — Lecture slides & exercise sheet. Belief states; Next-token (probability) vectors; Mixed-state-presentation (MSP) (see Mixed States of Hidden Markov Processes and Their Presentations, https://csc.ucdavis.edu/~cmg/papers/msc.pdf)
+3. Applications
+  a. Designing processes worth studying — Tutorial sheet. Heuristic ensuring beliefs are meaningfully richer than obs probs; Non-ergodic; Factors (Transformers learn factored representations, https://arxiv.org/pdf/2602.02385v1)
+  b. Identifying belief geometry in transformers — Reading guide. For HMMs: Read Shai et al. (https://arxiv.org/pdf/2405.15943). [extension] For GHMMs: Read Riechers et al. (https://arxiv.org/pdf/2507.07432).
+  c. How do transformers do it? — Tutorial sheet. How do transformers construct representations of belief states? Partial answer in narrow setting — Read 'Constrained belief updates explain geometric structures in transformer representations' (https://arxiv.org/pdf/2502.01954v2). How do they decode from belief states to log obs probs then obs probs? This is an open problem!
+
+Learn more
+- Beyond toy architectures – in-context learning. LLMs have an amazing ability to adapt internal representations in-context — Read 'In-Context Learning of Representations' (https://arxiv.org/pdf/2501.00070). LLMs can predict HMM data in-context — Read 'Pre-trained Large Language Models Learn Hidden Markov Models In-context' (https://arxiv.org/pdf/2506.07298). This suggests that internal representations of LLMs predicting GHMM data in-context, may resemble belief states.
+- Processes consisting of GHMMs with richer structure — Transformers learn factored representations (https://arxiv.org/pdf/2602.02385v1)
+- Review article of computational mechanics — Between order and chaos (https://www.nature.com/articles/nphys2190)
+- Simplex (https://www.simplexaisafety.com/) is a non-profit research organisation working on applying computational mechanics to AI safety.
+
+Teaching guide
+Day plan:
+Block 1 (10:00–10:30) — Overview & Scope (Lecture): How does comp-mech help with AI safety? Where is the program currently at? What will we be focusing on today?
+Block 2 (10:30–11:30) — Foundations: Hidden Markov models. Lecture: What is a hidden Markov model (HMM)? Examples of HMMs; Notions of minimality and uniqueness; what is a generalised HMM? Exercises: Implement a GHMM in your favourite programming language.
+Block 3 (11:30–12:30) — Foundations: Prediction. Lecture: What are convergent structures of optimal prediction? Belief states; Next-token prediction; The mixed-state-presentation (MSP). Exercises: Implement a function that computes belief states and next-token probability distributions.
+Lunch (12:30–13:30).
+Block 4 (13:30–14:30) — Application: Designing processes worth studying. Tutorial: Based on the desiderata, split into pairs and design HMM processes. Presentation: Each group presents their results for 2-3 minutes.
+Block 5 (14:30–15:30) — Application: Identifying belief geometry in transformers. Reading session: Read Shai et al. [Extension] Riechers et al. Group discussion: Break up into groups of 3-4 based on how much they read.
+Afternoon break (15:30–16:00).
+Block 6 (16:00–17:00) — Application: How do transformers do it? Tutorial: Present sensors & actuators perspective, work on either track.
+Block 7 (17:00–18:00) — Expert Q&A with Adam Shai and Paul Riechers. Feedback survey (10-15 minutes).
