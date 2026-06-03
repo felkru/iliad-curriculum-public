@@ -1054,6 +1054,59 @@
     ]
   },
   {
+    "slug": "steganography-and-backdoors",
+    "title": "Steganography & Backdoors",
+    "cluster": "E",
+    "frontmatter": {
+      "title": "Steganography & Backdoors",
+      "cluster": "E",
+      "summary": "Hidden communication in LLM outputs — perfect vs computational steganography, a practical PRF-based scheme, and what undetectable channels and backdoors mean for chain-of-thought monitoring.",
+      "contributors": [
+        "Stephan Wäldchen (Independent)",
+        "Louis Jaburi (EleutherAI)"
+      ],
+      "teachingGuide": "In-person schedule covering both steganography and backdoors:\n\n- **10:00** — Fun exercise: The Stego Game.\n- **11:30** — Short whiteboard presentations about steganography theory and practice: informational vs computational indistinguishability; the basic idea behind undetectable steganography for language models (using pseudo-randomness to design a universal scheme).\n- **12:00** — Discussion: what is the relevance of steganography for AI safety? Paper reading (in breakout rooms):\n  - Models can hide CoT with steganography.\n  - Steganography can arise and is not easily prevented by paraphrasing.\n  - Model weight extractions.\n\n  Discussion prompts: Why is this scenario a danger? What are sender, receiver, adversary? What is the channel used? How was the secret key exchanged? Is the steganography successful? How does it emerge? Give a small example of a possible stego-text and payload.\n- **12:30** — Lunch break.\n- **13:30** — Discussion: How would you plant a backdoor in an LLM?\n- **14:00** — Paper reading: ['Unelicitable Backdoors via Cryptographic Transformer Circuits'](https://arxiv.org/html/2406.02619v1). Also [Cryptographic Backdoors](https://arxiv.org/pdf/2204.06974); 'Backdoor Defense, Learnability and Obfuscation' (Christiano); 'Injecting Undetectable Backdoors in Obfuscated Neural Networks and Language Models'. Discussion: limitations of current approaches; relation to worst-case interp; properties we want for a good backdoor.\n- **15:00** — Exercise: Construction of the Random ReLU two-layer network based on Shafi Goldwasser et al. (Cryptographic Backdoors). Calculate that this works as intended (`ReLU_Exercise.pdf`, Google Drive `1tDucCvSSEK7wd7TJfg_PT7wF7xiArm9r`). Also fixes a slight mistake in the paper (no normalisation of the input vector, so just making the norm larger is already a backdoor).\n- **16:00** — Pause.\n- **16:30** — Presentation: Merlin–Arthur Classifiers (`Merlin_Arthur_Classifiers.pdf`, Google Drive `13zokrgrsrUYqM9khxaPz_WD72-FMQVfP`).\n- **17:30** — Debate between Claude and ChatGPT: Explain the debate format to both AIs. Topic: *'Should Frontier AI labs have to undergo external safety reviews?'*.\n- **18:00** — Dinner.\n",
+      "learningOutcomes": [
+        "Understand the basic idea of steganography as a technique to hide messages and that it makes CoT reasoning illegible.",
+        "Get an intuitive grasp on how it's possible to hide messages in innocent-looking text via the Stego Game, and learn the specific technique using the pseudo-random function.",
+        "Think about the steganographic setup in many different contexts and recognise sender, receiver, channel, cover distribution, message space, etc., so as to reason about questions in steganographic terms."
+      ]
+    },
+    "position": 502,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "worst-case-interpretability",
     "title": "Worst-Case Interpretability",
     "cluster": "E",
