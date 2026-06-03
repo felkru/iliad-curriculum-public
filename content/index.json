@@ -93,9 +93,6 @@
       "title": "AI Alignment Introduction",
       "cluster": "A",
       "summary": "An opinionated tour of the AI alignment problem: alignment targets, problem decompositions (outer/inner alignment, training stories, inductive biases), goal-directedness and instrumental convergence, the risk landscape, and high-level solution approaches.",
-      "difficulty": 2,
-      "importance": 5,
-      "timeMinutes": 90,
       "contributors": [
         "Leon Lang (Iliad)"
       ],
@@ -117,48 +114,23 @@
       },
       {
         "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
         "text": "Fast track",
         "slug": "fast-track"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Main content",
         "slug": "main-content"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Learn more",
         "slug": "learn-more"
-      },
-      {
-        "level": 3,
-        "text": "Problem overviews",
-        "slug": "problem-overviews"
-      },
-      {
-        "level": 3,
-        "text": "Alignment targets",
-        "slug": "alignment-targets"
-      },
-      {
-        "level": 3,
-        "text": "Alignment problem decompositions",
-        "slug": "alignment-problem-decompositions"
-      },
-      {
-        "level": 3,
-        "text": "Goal-directedness",
-        "slug": "goal-directedness"
-      },
-      {
-        "level": 3,
-        "text": "Forecasting risks",
-        "slug": "forecasting-risks"
-      },
-      {
-        "level": 3,
-        "text": "Theoretical vs. empirical vs. other approaches",
-        "slug": "theoretical-vs-empirical-vs-other-approaches"
       }
     ]
   },
