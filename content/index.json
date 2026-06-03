@@ -997,5 +997,57 @@
         "slug": "learn-more"
       }
     ]
+  },
+  {
+    "slug": "worst-case-interpretability",
+    "title": "Worst-Case Interpretability",
+    "cluster": "E",
+    "frontmatter": {
+      "title": "Worst-Case Interpretability",
+      "cluster": "E",
+      "summary": "The limits of average-case interpretability evaluation, compact proofs as a rigorous alternative, and ARC's heuristic arguments agenda as a middle path.",
+      "contributors": [
+        "Louis Jaburi (EleutherAI)"
+      ],
+      "learningOutcomes": [
+        "Understand the difficulty of evaluating and validating interpretations.",
+        "Formalize interpretations as lossy compressions with quantifiable faithfulness and compactness, and identify the three sources of exponential blowup (error along paths, number of paths, input space coverage).",
+        "Articulate why worst-case bounds become vacuous even on simple models, and why this motivates an intermediate approach between worst-case and average-case evaluation.",
+        "Describe at a high level ARC's heuristic arguments agenda as a response to these limitations."
+      ]
+    },
+    "position": 503,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
   }
 ]
