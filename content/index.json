@@ -375,7 +375,7 @@
     "frontmatter": {
       "title": "Singular Learning Theory",
       "cluster": "B",
-      "summary": "An invitation to singular learning theory — parameter–function map degeneracy, the local learning coefficient via volume scaling, and Watanabe's free energy formula for Bayesian phase transitions.",
+      "summary": "An invitation to singular learning theory — parameter–function map degeneracy, the local learning coefficient via volume scaling, and Watanabe's free energy formula for Bayesian inference.",
       "contributors": [
         "Kai Ogden (University of Oxford)",
         "Matthew Farrugia-Roberts (University of Oxford)",
