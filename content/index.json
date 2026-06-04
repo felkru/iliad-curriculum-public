@@ -1138,7 +1138,7 @@
     "frontmatter": {
       "title": "Worst-Case Interpretability",
       "cluster": "E",
-      "summary": "The limits of average-case interpretability evaluation, compact proofs as a rigorous alternative, and ARC's heuristic arguments agenda as a middle path.",
+      "summary": "The limits of average-case interpretability evaluation, compact proofs as an idealised alternative, and ARC's heuristic arguments agenda as a potentially tractable middle path.",
       "contributors": [
         "Louis Jaburi (EleutherAI)"
       ],
