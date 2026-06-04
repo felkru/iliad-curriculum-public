@@ -976,6 +976,7 @@
       "contributors": [
         "Fernando Rosas (University of Sussex)"
       ],
+      "teachingGuide": "* The current rendition was done as follows:  \n  * Morning lecture about general introduction to world models (1hr).  \n  * Discussion (1hr)  \n  * Lunch break.  \n  * Afternoon lecture on formal approaches to world modelling \\+ discussion (1.5hr).  \n  * Break.  \n  * Late afternoon session on abstractions in world models (1hr).\n\n**Notes**\n\n* The current rendition was heavily focused on lectures. There may be reasons to change this in the future, including exercises and more discussion.  \n* The overall structure of the session I think is adequate: first providing a general overview, then going into formalisations of world modeling, and then connecting it with the idea of abstractions from C.4. However, the delivery of these contents may be made less based on lectures and more based on discussions and exercises.",
       "learningOutcomes": [
         "Obtain a theoretical understanding of how world models are understood and used in AI, and also in other disciplines including control theory, neuroscience, and cognitive science.",
         "Develop a conceptual understanding of how world models are used in modern AI systems, including Ha & Schmidhuber, Dreamer, Genie, and JEPA.",
@@ -983,7 +984,8 @@
         "Become familiar with the notion of transducer / stochastic automata as a general architecture of world models, and how it generalises various kinds of world models in reinforcement learning (e.g. POMDPs and beliefs MDPs).",
         "Reason about how agents can build abstractions as coarse-grainings of world models.",
         "Understand the role of symmetries in the construction of abstractions in world models."
-      ]
+      ],
+      "notesForFutureIterations": "* The content for the morning session was prepared a bit in a rush. The basic content is going in a good direction, but future iterations may want to further develop and polish the notes, and the slides.  \n* The slides for the afternoon sessions is good, but are a bit too centered on my own work (Fernando). It would be good to expand the content to be more inclusive and include more perspectives.  \n* This iteration didn’t include exercises just because of lack of time to properly prepare them. It would be useful for the next iteration to prepare a good set of exercises."
     },
     "position": 404,
     "headings": [
