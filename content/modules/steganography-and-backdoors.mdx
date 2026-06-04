@@ -16,58 +16,115 @@ learningOutcomes:
   - Think about the steganographic setup in many different contexts and
     recognise sender, receiver, channel, cover distribution, message space,
     etc., so as to reason about questions in steganographic terms.
-teachingGuide: >
-  In-person schedule covering both steganography and backdoors:
+teachingGuide: "
+
+  This teaching guide outlines how the materials on both steganography and
+  backdoors were taught in-person.
 
 
-  - **10:00** — Fun exercise: The Stego Game.
+  | Schedule | 26.04. Steganography/Backdoors |
 
-  - **11:30** — Short whiteboard presentations about steganography theory and
-  practice: informational vs computational indistinguishability; the basic idea
-  behind undetectable steganography for language models (using pseudo-randomness
-  to design a universal scheme).
+  | :---- | ----- |
 
-  - **12:00** — Discussion: what is the relevance of steganography for AI
-  safety? Paper reading (in breakout rooms):
-    - Models can hide CoT with steganography.
-    - Steganography can arise and is not easily prevented by paraphrasing.
-    - Model weight extractions.
+  | 10:00 | **Fun exercise: The Stego Game** |
 
-    Discussion prompts: Why is this scenario a danger? What are sender, receiver, adversary? What is the channel used? How was the secret key exchanged? Is the steganography successful? How does it emerge? Give a small example of a possible stego-text and payload.
-  - **12:30** — Lunch break.
+  | 11:30 | Short whiteboard presentations about steganography theory and
+  practice. We explain the difference between informational and computational
+  indistinguishability, how the former one would require a very large random
+  seed, while the latter can be implemented efficiently, while being secure only
+  against computationally constrained adversaries (which is a reasonable
+  assumption).
+  [Steganography\\_Introduction.pdf](https://drive.google.com/file/d/1hl45fOJMO\
+  E7ChJWn52JpudBLJ1lFDwGN/view?usp=drive_link) Then we go trough the basic idea
+  behind: [Undetectable Steganography for Language
+  models](https://openreview.net/pdf?id=fq6aQoMSHz), using pseudo-randomness to
+  design universal scheme for LLM-based steganography. |
 
-  - **13:30** — Discussion: How would you plant a backdoor in an LLM?
+  | 12:00 | Ask the students what they think the relevancy of steganography is
+  for AI safety.\v\vPaper Reading (in breakout rooms if possible): [Models can
+  hide COT with steganography](https://arxiv.org/html/2506.01926v2)
+  [Steganography can arise and not easily prevented by
+  paraphrasing](https://arxiv.org/pdf/2410.03768) [Model weight
+  extractions](https://arxiv.org/pdf/2511.02620) Discussion Prompts for the
+  papers: Why is this scenario a danger to AI safety? What are sender, receiver,
+  adversary? What is the channel used How was the secret key exchanged? Is the
+  steganography successful? How does it emerge? Give a small example of a
+  possible stego-text and payload |
 
-  - **14:00** — Paper reading: ['Unelicitable Backdoors via Cryptographic
-  Transformer Circuits'](https://arxiv.org/html/2406.02619v1). Also
-  [Cryptographic Backdoors](https://arxiv.org/pdf/2204.06974); 'Backdoor
-  Defense, Learnability and Obfuscation' (Christiano); 'Injecting Undetectable
-  Backdoors in Obfuscated Neural Networks and Language Models'. Discussion:
-  limitations of current approaches; relation to worst-case interp; properties
-  we want for a good backdoor.
+  |  |  |
 
-  - **15:00** — Exercise: Construction of the Random ReLU two-layer network
-  based on Shafi Goldwasser et al. (Cryptographic Backdoors). Calculate that
-  this works as intended (`ReLU_Exercise.pdf`, Google Drive
-  `1tDucCvSSEK7wd7TJfg_PT7wF7xiArm9r`). Also fixes a slight mistake in the paper
-  (no normalisation of the input vector, so just making the norm larger is
-  already a backdoor).
+  | 12:30 | **Lunch Break** |
 
-  - **16:00** — Pause.
+  | 13:30 |  **Discussion**: How would you plant a backdoor in an LLM? Here the
+  students are just asked to brainstorm ideas about how to possibly plant a
+  backdoor in an LLM, thinking about the architectural challenges. |
 
-  - **16:30** — Presentation: Merlin–Arthur Classifiers
-  (`Merlin_Arthur_Classifiers.pdf`, Google Drive
-  `13zokrgrsrUYqM9khxaPz_WD72-FMQVfP`).
+  | 14:00 | Paper reading: [**Unelicitable Backdoors via Cryptographic
+  Transformer Circuits**](https://arxiv.org/html/2406.02619v1) What is the
+  advantage of their backdoor in Section 4.2 compared to Section 4.1? What are
+  the limitations of the current approaches? How bad would this be for the
+  worst-case interp stuff from yesterday (in the current form and in a more
+  sophisticated setting)? |
 
-  - **17:30** — Debate between Claude and ChatGPT: Explain the debate format to
-  both AIs. Topic: *'Should Frontier AI labs have to undergo external safety
-  reviews?'*.
+  | 14:00 | Paper Reading: [**Unelicitable Backdoors via Cryptographic
+  Transformer Circuits**](https://arxiv.org/html/2406.02619v1) **[Cryptographic
+  Backdoors](https://arxiv.org/pdf/2204.06974)** [\"Backdoor Defense,
+  Learnability and Obfuscation\"](https://arxiv.org/abs/2409.03077) (Pau
+  Christiano) [\"Injecting Undetectable Backdoors in Obfuscated Neural Networks
+  and Language Models\"](https://arxiv.org/abs/2406.05660) Explaining the papers
+  to each other What are the limitations of the current approaches? How does
+  this relate to the worst-case interp stuff from module E.3? What is the
+  advantage of their backdoor in Section 4.2 compared to Section 4.1? What are
+  the properties we would like to have for a good backdoor?  **[Cryptographic
+  Backdoors](https://arxiv.org/pdf/2204.06974)**  |
 
-  - **18:00** — Dinner.
+  | 15:00 | **Exercise**: Construction of the Random ReLU two-layer network from
+  Based on the paper: [**Shafi Goldwasser**](https://arxiv.org/pdf/2204.06974)
+  et al. Calculate that this will work as intended, also there is a slight
+  mistake in the paper that is fixed with this exercise. Potentially ask the
+  students why the version in the paper won’t work as intended (Answer: It’s
+  that there is no normalisation of the input vector, so just making the norm
+  larger is already a backdoor). The exercise is broken down into intermediate
+  steps that are simple enough for the students to go
+  through.  [ReLU\\_Exercise.pdf](https://drive.google.com/file/d/1tDucCvSSEK7w\
+  d7TJfg_PT7wF7xiArm9r/view?usp=drive_link)  |
+
+  | 16:00 | **Pause** |
+
+  | 16:30 | Presentation: **Merlin-Arthur
+  Classifiers   [Merlin\\_Arthur\\_Classifiers.pdf](https://drive.google.com/fi\
+  le/d/13zokrgrsrUYqM9khxaPz_WD72-FMQVfP/view?usp=drive_link)** |
+
+  | 17:30 | **Debate between Claude and ChatGPT: Explain the debate format to
+  both AIs As a topic we had “Should Frontier AI labs have to undergo external
+  safety  So far implemented by just repeated copy-paste, one of the students
+  built an automatic process that could be used** |
+
+  | 18:00 | Dinner |"
+notesForFutureIterations: >-
+  * The game was a success, but it can be made harder. One way would be to make
+  the adversary team guess which message out of four was produced by the
+  encoding team. The encoding team knows which messages they have to hide behind
+  when writing the cover text. This would also make it easier for the adversary
+  to win their round, as guessing the hidden message is not really possible.
+  Also, this would be closer to the idea of steganography. This should be set up
+  over a channel in discord for easier time, ideally prepare beforehand if you
+  know the participants.  
+
+  * The ReLU exercise could be made more relevant, less computational perhaps.
+  Potentially put it into a more conceptual and less nitty-gritty form.  
+
+  * There could be a computational exercise for the Merlin-Arthur topic or
+  generally for steganography for the tabular data with the hiring decision with
+  a simple classifier for example. This is relatively straightforward to
+  implement with a neural network and doesn't require transformer training.  
+
+  * Noah Topper proposes to refocus the backdoors section (D.3) to be more about
+  CoT monitoring and alignment auditing instead.
 ---
 ## Overview
 
-Steganography is the art and science of hidden communication: unlike cryptography, which protects message *content*, steganography hides the very *existence* of the message. For AI safety this matters because chain-of-thought (CoT) monitoring is currently our most practical window into how LLMs reason — and any optimisation pressure on CoT to censor certain thoughts can push models toward steganographic encodings that make their reasoning illegible. This module introduces the steganographic setup, contrasts perfect with computational steganography, walks through a universal PRF-based scheme for LLMs, and connects the picture to undetectable backdoors.
+This module covers steganography and cryptographic backdoors as two classes of techniques that challenge interpretability, monitoring, and control of AI systems. It introduces steganography as the concealment of hidden messages inside innocent-looking outputs such as text, emphasizing cryptographically secure schemes that are computationally undetectable and discussing how channels like paraphrasing can destroy hidden communication. Students will study why steganographic behaviour is difficult to detect or prevent, including Merlin–Arthur classifiers as a possible counter-strategy, and examine theoretical foundations such as the proof that perfect steganography requires secret randomness satisfying H(M)≤H(K), alongside practical computationally secure schemes. The module also explores cryptographic backdoors in LLMs, including unelicitable backdoors based on computational hardness and white-box-undetectable approaches that hide triggers in random weight distributions, highlighting their implications for theoretical interpretability. Through paper readings, exercises, and discussions—including CoT obfuscation, collusion, weight exfiltration, cryptographic transformer circuits, and Goldwasser et al.’s ReLU construction—students will analyze how covert communication and hidden triggers could emerge in advanced AI systems and how such mechanisms might be designed, detected, or mitigated.
 
 ## Prerequisites
 
