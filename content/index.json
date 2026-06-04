@@ -294,8 +294,9 @@
       "contributors": [
         "Zach Furman (The University of Melbourne)"
       ],
+      "teachingGuide": "Some notes on intentions:\n\nAs with Day B.1, the goal is awareness and broad context, not deep technical mastery. The subsequent days (SLT, training dynamics, influence functions) go deep on specific approaches; this day ensures students know what those approaches are trying to explain\n\nThe reading list is deliberately longer than can be comfortably covered in one day. The TA should select a subset based on audience interest and pacing. The \"Deep Learning as Program Synthesis\" post is the one reading that should not be cut, as it provides the overarching framework and connects back to Day B.1\n\nThis day is reading-and-discussion-heavy rather than exercise-heavy. That's appropriate given the survey nature of the content, but it means discussion quality matters a lot",
       "learningOutcomes": [
-        "Students can explain how the three barriers from Day B.1 (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
+        "Students can explain how the three barriers from the day on the Principles of Learning (approximation, generalization, optimization) manifest specifically in the context of deep learning, and why classical theoretical frameworks (e.g. bias-variance tradeoff, universal approximation) actively counterpredicted deep learning's success",
         "Students are aware of the key empirical mysteries of deep learning: data-dependent generalization despite overparameterization, effectiveness of SGD on non-convex landscapes, representational alignment across architectures, and in-context learning",
         "Students have encountered at least one candidate explanation for each mystery and can articulate what it does and doesn't explain",
         "Students understand the \"program synthesis\" hypothesis as one proposed framework connecting deep learning to Solomonoff induction, and can evaluate its strengths and limitations",
@@ -306,26 +307,26 @@
     "headings": [
       {
         "level": 2,
-        "text": "Learning outcomes",
-        "slug": "learning-outcomes"
-      },
-      {
-        "level": 2,
         "text": "Prerequisites",
         "slug": "prerequisites"
       },
       {
         "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
         "text": "Fast track",
         "slug": "fast-track"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Main content",
         "slug": "main-content"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Learn more",
         "slug": "learn-more"
       }
