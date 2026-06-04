@@ -32,22 +32,85 @@ learningOutcomes:
 internalNotes: |+
   
 teachingGuide: >-
-  ### Some notes on intentions here
+  First, start with the lecture, which should take 1-1.5 hours. Ask for
+  questions and discuss.
 
 
-  - There's a tradeoff between breadth and depth in what we cover: these first
-  two learning theory days are something like a broad but shallow overview,
-  whereas the next three days are more in-depth "case studies" on specific
-  research directions
+  For readings:
 
-  - Trying to avoid the failure mode where we just focus on particular hobby
-  horses of existing researchers in the safety community - we want them to be
-  aware of at least the basic phenomena the field is trying to explain
 
-  - Explicitly, the goal here is "awareness," not deep knowledge, unlike the
-  "case study" days later in the sequence. What we cover will connect directly
-  to later days, which explore particular solutions in depth
+  - Read each piece one at a time, set a timer for how long you expect the
+  reading to take (underestimate is good), and assess people’s progress when the
+  timer runs out and possibly/likely run the timer again. Then discuss in small
+  groups (\~4 people) for 10-30 mins, depending on the importance of the content
+  and how much there is to digest. During small group discussions, you can walk
+  around different groups and participate in different discussions  
+
+  - In the case where the piece is too long to digest comfortably in a single
+  setting, or is very dense, break it down into smaller chunks of 20-40 mins,
+  with intermediate discussions. For A.2, this should only be the case for the
+  Solomonoff induction reading (Shane Legg’s thesis)
+
+
+  For exercises:
+
+
+  - Break the exercises into chunks depending on content and duration (aim for
+  20-40 mins). Set a timer for how long you expect the chunk to take
+  (underestimate is good), and assess people’s progress when the timer runs out
+  and possibly/likely run the timer again. Explicitly tell the students they can
+  ask for help at any time. After the chunk is up, ask questions of the class
+  (“what answer did you get here? what pattern might that suggest?” etc), make
+  some remarks about takeaways, etc. Repeat.
+
+
+  Throughout: ensure to take breaks regularly, every hour or two for at least
+  10-20 mins, and also the lunch break.
+
+
+  Only one TA is strictly required, though more can assist with facilitating
+  discussions and exercises.
+notesForFutureIterations: >
+  - Making a comprehensive set of lecture notes that actually ties the readings
+  together rather than just listing them would be nice. Or at a minimum just an
+  annotated reading list  
+
+  - Motivate better what the Solomonoff exercises are building toward  
+
+  - Mathematically showing the exact decomposition of empirical risk into
+  approximation, generalization, optimization in e.g. the ERM framework would be
+  helpful, to make these categories less hand-wave-y  
+
+  - Approximation theory and the curse of dimensionality should be covered today
+  (e.g. the parameter count lower bound from
+  [here](https://gwern.net/doc/cs/algorithm/1989-devore.pdf)), I just couldn’t
+  find any good existing resources so this might need to be created  
+
+  - This covered a lot of ground in one day and people felt a bit rushed  
+
+  - Preparing explicit discussion prompts ahead of time for readings could be a
+  good idea  
+
+  - Small group discussions (\~4 people) generally work better than full class
+  discussions  
+
+  - Learning goals should be made more clear. People generally did not realize
+  that the end goal here was *awareness* of these broader learning theory  
+
+  - Spend more time talking about why this is useful for alignment  
+
+  - People’s backgrounds are very different, and some people will read 2x slower
+  than others \- this can sometimes mean a tradeoff between letting people slip
+  behind or boring the most capable students. Not sure how to handle  
+
+  - I (Zach Furman) am not an expert in Solomonoff induction but nevertheless
+  ended up having to cover it, and my lack of knowledge was noticeable. Would
+  have gone worse without other TAs there who knew more
 ---
+## Overview
+
+We ask: if AGI is a learning machine, what can we say about it in principle? We draw on the fields of statistical learning theory and algorithmic information theory. We first explore three fundamental barriers that any powerful learning system must overcome — approximation (can the hypothesis class express the truth?), generalization (can finite data distinguish truth from noise?), and optimization (can the learner find good hypotheses efficiently?) — and examine why these barriers are in tension with each other. We then introduce Solomonoff induction, which elegantly resolves the first two barriers via a universal hypothesis class and a simplicity prior, but completely fails on the third. Along the way, we cover the bias-variance tradeoff, the no free lunch theorem, and cryptographic hardness arguments for why efficient universal learning is impossible in the worst case. This is necessarily a lightning tour of large fields; the goal is to establish a shared conceptual vocabulary and theoretical reference point that the rest of the deep learning theory cluster builds on.​​​​​​​​​​​​​​​​
+
 ## Prerequisites
 
 -   Probability theory basics: probability distributions, conditional probability, Bayes' theorem
