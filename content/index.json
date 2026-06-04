@@ -1084,7 +1084,7 @@
     "frontmatter": {
       "title": "Steganography & Backdoors",
       "cluster": "E",
-      "summary": "Hidden communication in LLM outputs — perfect vs computational steganography, a practical PRF-based scheme, and relations with chain-of-thought monitoring.",
+      "summary": "Hidden communication in LLM outputs — perfect vs computational steganography, a practical PRF-based scheme, and relations with chain-of-thought monitoring; furthermore, hidden backdoors.",
       "contributors": [
         "Stephan Wäldchen (Independent)",
         "Louis Jaburi (EleutherAI)"
