@@ -750,10 +750,10 @@
       "cluster": "D",
       "summary": "Foundations of reinforcement learning — Markov decision processes, the Bellman equation, policy improvement, and the SARSA/Q-learning algorithms, with parallel empirical and theory tracks.",
       "contributors": [
-        "Leon Lang (Iliad)",
-        "David Quarel (Australian National University)"
+        "David Quarel (Australian National University)",
+        "Leon Lang (Iliad)"
       ],
-      "internalNotes": "- Theory Workshop material produced by Leon Lang (Iliad) and David Quarel (Australian National University)\n- Lecture slides taken from the ARENA program (authored by David Quarel)\n- Empirical exercises taken from Day 1 of the ARENA program\n- Content was delivered by David Quarel\n",
+      "internalNotes": "",
       "teachingGuide": "- (1 hr) David gives intro lecture or play recording.\n- Split students into theory and empirical track, and then put them in pairs.\n  - Empirical track then works together through the ARENA RL Day 1 (Colab Exercises + solutions notebooks).\n  - Theory track works through a problem sheet.\n- TAs wander around the room and assist people as needed. No readings or discussion groups, just solving problems together in pairs. People should be chatty, and the pairs encourage this. Take a break at 15:30 for 30mins to rest.\n- Don't force people to work in pairs if they really don't want to, but at least from my (DavidQ) experience with ARENA, they're a lot more productive in pairs.\n",
       "learningOutcomes": [
         "Understand Markov Decision Processes and the goal of the agent, for known environments.",
@@ -780,8 +780,8 @@
       },
       {
         "level": 2,
-        "text": "Lecture",
-        "slug": "lecture"
+        "text": "Content",
+        "slug": "content"
       },
       {
         "level": 3,
@@ -794,9 +794,9 @@
         "slug": "main-content"
       },
       {
-        "level": 2,
-        "text": "Further reading",
-        "slug": "further-reading"
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
       }
     ]
   },

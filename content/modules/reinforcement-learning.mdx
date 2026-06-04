@@ -2,8 +2,8 @@
 title: Reinforcement Learning
 cluster: D
 contributors:
-  - Leon Lang (Iliad)
   - David Quarel (Australian National University)
+  - Leon Lang (Iliad)
 summary: Foundations of reinforcement learning — Markov decision processes, the
   Bellman equation, policy improvement, and the SARSA/Q-learning algorithms,
   with parallel empirical and theory tracks.
@@ -38,19 +38,20 @@ teachingGuide: >
   - Don't force people to work in pairs if they really don't want to, but at
   least from my (DavidQ) experience with ARENA, they're a lot more productive in
   pairs.
-internalNotes: >
-  - Theory Workshop material produced by Leon Lang (Iliad) and David Quarel
-  (Australian National University)
-
-  - Lecture slides taken from the ARENA program (authored by David Quarel)
-
-  - Empirical exercises taken from Day 1 of the ARENA program
-
-  - Content was delivered by David Quarel
+internalNotes: ""
 ---
 ## Overview
 
 An introduction to reinforcement learning covering Markov decision processes, the Bellman equation, and the policy improvement theorem, with parallel empirical and theory tracks. The empirical track implements SARSA, Q-learning, and TD(λ) via the ARENA RL Day 1 exercises; the theory track works through proofs of convergence and optimality properties of the Bellman equations.
+
+-   Theory Workshop material produced by Leon Lang and David Quarel
+    
+-   Lecture slides taken from the ARENA program (authored by David Quarel)
+    
+-   Empirical exercises taken from Day 1 of the ARENA program
+    
+-   Content was delivered by David Quarel
+    
 
 ## Prerequisites
 
@@ -59,7 +60,7 @@ An introduction to reinforcement learning covering Markov decision processes, th
 -   The theory track requires familiarity with proofs.
     
 
-## Lecture
+## Content
 
 ### Fast track
 
@@ -72,25 +73,39 @@ Pretty hard to fast track it, best approach I would give is to read and understa
 
 ### Main content
 
--   Self-contained lecture notes (Overleaf `nzcgzksgzgvz#4f4bf3`). This has everything that both empirical and theory track should need for reference.
+-   [Self-contained lecture notes](https://www.overleaf.com/read/nzcgzksgzgvz#4f4bf3)
     
--   Empirical track: Work through [ARENA RL Day 1](https://learn.arena.education/chapter2_rl/01_intro_rl/intro)
+    -   This has everything that both empirical and theory track should need for reference.
+        
+-   **Empirical track:** Work through [ARENA RL Day 1](https://learn.arena.education/chapter2_rl/01_intro_rl/intro)
     
--   Theory track works through a problem sheet (Overleaf `wcsvcksbnkzr#86bb1e`)
+-   **Theory track** works through a [problem sheet](https://www.overleaf.com/read/wcsvcksbnkzr#86bb1e)
     
 
-Static compiled versions of lecture slides + theory exercises are available on Google Drive (folder `1Qrh7OIvu6Fh2CQFuFNyTJGKqL2g4yW9N`).
+(static compiled versions of lecture slides + theory exercises [here](https://drive.google.com/drive/folders/1Qrh7OIvu6Fh2CQFuFNyTJGKqL2g4yW9N?usp=drive_link))
 
-## Further reading
+### Learn more
 
--   [Sutton & Barto](https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf): Chapter 3 (3.1–3.6), Chapter 4 (4.1–4.4), Chapter 6 (6.1, 6.3 — especially Example 6.4). Note that Section 6.1 talks about TD updates for the value function ; we will instead be using TD updates for the Q-value . Don't worry about the references to Monte Carlo in Chapter 5.
+-   [Sutton&Barto](https://www.andrew.cmu.edu/course/10-703/textbook/BartoSutton.pdf)
     
--   Q-Learning: The original paper where Q-learning is first described. Kind of a hard read. Probably not worth bothering with.
+    -   Chapter 3: Sections 3.1, 3.2, 3.3, 3.4, 3.5, 3.6
+        
+    -   Chapter 4: Sections 4.1, 4.2, 4.3, 4.4
+        
+    -   Chapter 6, Section 6.1, 6.3 (Especially Example 6.4)
+        
+        -   Note that Section 6.1 talks about temporal difference (TD) updates for the value function V . We will instead be using TD updates for the Q-value Q .
+            
+        -   Don't worry about the references to Monte Carlo in Chapter 5.
+            
+-   [Q-Learning](https://link.springer.com/article/10.1007/BF00992698) : The original paper where Q-learning is first described. Kind of a hard read. Probably not worth bothering with.
     
--   David Silver's RL Lecture series, Parts 1 and 2.
+-   [David Silver’s RL Lecture series](https://www.youtube.com/playlist?list=PLzuuYNsE1EZAXYR4FJ75jcJseBmo4KQ9-)
     
--   [David Quarel's RL lecture for ARENA](https://www.youtube.com/watch?v=Q2cFcq3I0G8) — I (David) delivered this exact same lecture on the day.
+    -   Parts 1 and 2
+        
+-   [David Quarel’s RL lecture for ARENA](https://www.youtube.com/watch?v=Q2cFcq3I0G8) (I (David) delivered this exact same lecture on the day)
     
--   [The entire RL chapter of ARENA](https://learn.arena.education/chapter2_rl/).
+-   [The entire RL chapter of ARENA](https://learn.arena.education/chapter2_rl/)
     
--   [A good summary of SOTA algorithms for RL](https://aweers.de/blog/2026/rl-for-llms/).
+-   [A good summary of SOTA algorithms for RL](https://aweers.de/blog/2026/rl-for-llms/)
