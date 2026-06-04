@@ -99,7 +99,7 @@
     "frontmatter": {
       "title": "AI Alignment Introduction",
       "cluster": "A",
-      "summary": "An opinionated tour of the AI alignment problem: alignment targets, problem decompositions (outer/inner alignment, training stories, inductive biases), goal-directedness and instrumental convergence, the risk landscape, and high-level solution approaches.",
+      "summary": "An opinionated tour of the AI alignment problem: alignment targets, problem decompositions, goal-directedness and instrumental convergence, the risk landscape, and high-level solution approaches.",
       "contributors": [
         "Leon Lang (Iliad)"
       ],
