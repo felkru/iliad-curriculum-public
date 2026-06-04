@@ -34,10 +34,28 @@ learningOutcomes:
   - "Discuss the importance of emergence for AI safety: early detection of phase
     transition (early warning signals), deriving order parameters that help us
     interpret the model (and simplifying the dynamics)"
+teachingGuide: >-
+  * What is your proposal for how the content can be taught within a day? Note
+  that a typical day contains around 6.5 hours of intensive work between 10am
+  and 6pm (I.e., plan roughly for a 1 hour lunch break and a 30 minutes
+  afternoon break). *Make sure to allow 5-10 minutes at the end to fill in a
+  feedback form on the day.*  
+    * Lecture 1h30 in the morning \+ 2h30 exercises on implicit regularizations  
+    * Lecture 1h in the afternoon \+ 1h exercises or reading grokking lazy to rich during the emergence session
+notesForFutureIterations: >-
+  * Notes for future improvements of this module. You may think about:  
+    * I would only spend an entire day on implicit regularization. Making lecture a bit more accessible, and include a numerics session in addition to pen and paper work (or have it as a parallel stream). Also could have reading session \+ discussion for people who don’t want to do the numerics  
+    * Need another day on emergence which covers statistical field theory methods for deep learning (phase transitions  
+      * **Big gap currently in the materials**  
+  * Retrospective:   
+    * My lecture could have been more accessible, giving more intuitions and examples.  
+    * Should split implicit regularization and emergence over two days  
+  * Noah Topper feedback:  
+    * The lecture notes are not very self-contained. Very hard to get an understanding of what's going on just from reading them without the lecture. The exercises are also a whole lot of dense algebra. Doesn't seem super well-motivated or like a big payoff.
 ---
 ## Overview
 
-This module explores the training dynamics of neural networks through two interlinked themes: **implicit regularization** — the inductive biases that gradient-based optimization imposes on over-parameterized models — and **emergence** — the puzzle of capabilities that appear abruptly during training. Deep linear networks (DLNs) serve as the central toy model, alongside grokking, induction heads, and emergent misalignment, with dynamical mean field theory introduced as a framework for understanding training-time phase transitions.
+This module discusses some key results of learning dynamics in deep neural networks, focusing on implicit regularization and emergence. The implicit regularization section examines how the training process, specifically stochastic gradient descent, can have an implicit bias towards simple solutions. The topics include loss landscape geometry, the edge of stability, simplicity bias, the neural tangent kernel (NTK), and the influence of initialization on training regimes (lazy vs. rich) in deep linear networks as an important toy model of deep learning. The emergence section investigates the puzzle of unexpected "emergent capabilities" (e.g., grokking, induction heads, silent alignment). It uses theoretical concepts like phase transitions to explain these phenomena, such as viewing grokking as a transition from the lazy to the rich regime. One application of this phase transition perspective is to understand and enable the early detection of emergence for AI safety.
 
 ## Prerequisites
 

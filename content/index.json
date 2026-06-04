@@ -434,6 +434,7 @@
       "contributors": [
         "Guillaume Corlouer (Moirai)"
       ],
+      "teachingGuide": "* What is your proposal for how the content can be taught within a day? Note that a typical day contains around 6.5 hours of intensive work between 10am and 6pm (I.e., plan roughly for a 1 hour lunch break and a 30 minutes afternoon break). *Make sure to allow 5-10 minutes at the end to fill in a feedback form on the day.*  \n  * Lecture 1h30 in the morning \\+ 2h30 exercises on implicit regularizations  \n  * Lecture 1h in the afternoon \\+ 1h exercises or reading grokking lazy to rich during the emergence session",
       "learningOutcomes": [
         "Understand the concepts of implicit regularization",
         "Know of key results about loss landscape of Deep Linear Networks (DLNs)",
@@ -454,7 +455,8 @@
         "Understand the idea of dynamical mean field theory at a high level as a theory of emergence during training",
         "Explain grokking as a lazy to rich transition during training using DMFT in a toy model",
         "Discuss the importance of emergence for AI safety: early detection of phase transition (early warning signals), deriving order parameters that help us interpret the model (and simplifying the dynamics)"
-      ]
+      ],
+      "notesForFutureIterations": "* Notes for future improvements of this module. You may think about:  \n  * I would only spend an entire day on implicit regularization. Making lecture a bit more accessible, and include a numerics session in addition to pen and paper work (or have it as a parallel stream). Also could have reading session \\+ discussion for people who don’t want to do the numerics  \n  * Need another day on emergence which covers statistical field theory methods for deep learning (phase transitions  \n    * **Big gap currently in the materials**  \n* Retrospective:   \n  * My lecture could have been more accessible, giving more intuitions and examples.  \n  * Should split implicit regularization and emergence over two days  \n* Noah Topper feedback:  \n  * The lecture notes are not very self-contained. Very hard to get an understanding of what's going on just from reading them without the lecture. The exercises are also a whole lot of dense algebra. Doesn't seem super well-motivated or like a big payoff."
     },
     "position": 204,
     "headings": [
