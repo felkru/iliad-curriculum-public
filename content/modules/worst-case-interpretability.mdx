@@ -16,10 +16,29 @@ learningOutcomes:
     average-case evaluation.
   - Describe at a high level ARC's heuristic arguments agenda as a response to
     these limitations.
+notesForFutureIterations: >-
+  * As I said above, having some ARC stuff that is more worked out is the way to
+  go  
+
+  * Either have someone from ARC provide material or take more time to work
+  through it  
+
+  * Preparing this material took me longer than anticipated and needs more
+  attention, hence the rather compact summary/structure
+teachingGuide: >-
+  * In practice my content filled half a day, the other should focus on more ARC
+  stuff  
+
+  * Have a guest lecture or maybe even half a day done by someone who does a lot
+  of ARC  
+
+  * Develop better and more difficult examples that actually use something like
+  low-rank SVD to generate a worst-case bound, could be well as an extension of
+  the notebook
 ---
 ## Overview
 
-Current interpretability methods are typically evaluated using fragile average-case faithfulness metrics. This module surveys a more rigorous alternative — formalizing interpretations as compact proofs with quantifiable faithfulness and compactness — examines why worst-case bounds become vacuous even on toy models, and introduces ARC's heuristic arguments agenda as a proposed middle ground.
+Any interpretation of a neural network is a lossy compression: it trades the model's full complexity for a shorter, human-understandable description. How to formally deal with the resulting approximation error is unclear. We discuss proofs as a rigorous, but pessimistic, approach that immediately yields quantifiable metrics for faithfulness and compactness. A concrete example shows that worst-case pessimizations are too strict to be scalable and will lead to vacuous bounds even on simple models. This suggests that neither pure worst-case nor pure average-case evaluation is adequate on its own, opening the door for an intermediate approach. We conclude by connecting this to ARC's agenda of heuristic arguments.
 
 ## Prerequisites
 

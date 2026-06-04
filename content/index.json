@@ -1142,12 +1142,14 @@
       "contributors": [
         "Louis Jaburi (EleutherAI)"
       ],
+      "teachingGuide": "* In practice my content filled half a day, the other should focus on more ARC stuff  \n* Have a guest lecture or maybe even half a day done by someone who does a lot of ARC  \n* Develop better and more difficult examples that actually use something like low-rank SVD to generate a worst-case bound, could be well as an extension of the notebook",
       "learningOutcomes": [
         "Understand the difficulty of evaluating and validating interpretations.",
         "Formalize interpretations as lossy compressions with quantifiable faithfulness and compactness, and identify the three sources of exponential blowup (error along paths, number of paths, input space coverage).",
         "Articulate why worst-case bounds become vacuous even on simple models, and why this motivates an intermediate approach between worst-case and average-case evaluation.",
         "Describe at a high level ARC's heuristic arguments agenda as a response to these limitations."
-      ]
+      ],
+      "notesForFutureIterations": "* As I said above, having some ARC stuff that is more worked out is the way to go  \n* Either have someone from ARC provide material or take more time to work through it  \n* Preparing this material took me longer than anticipated and needs more attention, hence the rather compact summary/structure"
     },
     "position": 503,
     "headings": [
