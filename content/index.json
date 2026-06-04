@@ -430,7 +430,7 @@
     "frontmatter": {
       "title": "Training Dynamics",
       "cluster": "B",
-      "summary": "Implicit regularization and emergence in deep learning — loss landscapes of deep linear networks, lazy vs rich regimes, grokking, and dynamical mean field theory as a theory of training-time phase transitions.",
+      "summary": "Implicit regularization and emergence in deep learning — loss landscapes of deep linear networks, lazy vs rich regimes, grokking, and dynamical mean field theory and training-time phase transitions.",
       "contributors": [
         "Guillaume Corlouer (Moirai)"
       ],
