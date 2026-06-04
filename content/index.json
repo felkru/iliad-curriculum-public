@@ -499,7 +499,7 @@
     "frontmatter": {
       "title": "Data Attribution",
       "cluster": "B",
-      "summary": "Data attribution for alignment — the chain from causality to counterfactuals, Shapley values, leave-one-out, and first-order perturbation methods, with influence functions, Bayesian influence functions, and unrolling.",
+      "summary": "Data attribution for alignment via three connected frameworks — influence functions, Bayesian influence functions, and unrolling — for measuring how reweighting training points counterfactually affects model behavior.",
       "contributors": [
         "Louis Jaburi (EleutherAI)"
       ],
