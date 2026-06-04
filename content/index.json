@@ -4,11 +4,12 @@
     "title": "Prerequisites",
     "cluster": "0",
     "frontmatter": {
+      "title": "Prerequisites",
+      "cluster": "0",
       "summary": "A curated reading list of background worldview material and technical prerequisites (math, CS, deep learning) recommended before the Iliad Intensive.",
-      "difficulty": 1,
-      "importance": 5,
-      "timeMinutes": 60,
-      "contributors": [],
+      "contributors": [
+        "Leon Lang (Iliad)"
+      ],
       "learningOutcomes": []
     },
     "position": 1,
@@ -45,8 +46,8 @@
       },
       {
         "level": 3,
-        "text": "Engineering prerequisites",
-        "slug": "engineering-prerequisites"
+        "text": "Engineering",
+        "slug": "engineering"
       },
       {
         "level": 3,
