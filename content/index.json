@@ -320,7 +320,7 @@
     "frontmatter": {
       "title": "Mysteries of Deep Learning",
       "cluster": "B",
-      "summary": "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and candidate explanations including the program-synthesis hypothesis.",
+      "summary": "A survey of the empirical mysteries of deep learning — generalization despite overparameterization, optimization on non-convex landscapes, representational alignment, and in-context learning — and the program-synthesis hypothesis as a potential explanation.",
       "contributors": [
         "Zach Furman (The University of Melbourne)"
       ],
