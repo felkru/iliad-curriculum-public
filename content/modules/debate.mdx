@@ -21,45 +21,92 @@ learningOutcomes:
   - "Most important Take-Away: Debate is a form of scalable oversight: it seeks
     to extend a reward signal for honest solutions to difficult problems while
     reducing the amount of human judgment needed by an exponential factor."
-teachingGuide: >
-  ### Schedule 28.04. Debate
+teachingGuide: "Here we outline how the material was taught in-person in April:
 
 
-  - **10:00** Fun exercise 'Wrong but convincing proofs' (`Wrong_Proofs.pdf`,
-  Google Drive `16jEJXkg5F590kHyvTzub5zV5A51RrZE5`). A series of wrong proofs is
-  presented and students find the mistake. They basically take the role of 'Bob'
-  who points out the flaws in Alice's proofs.
+  |  | Schedule 28.04. Debate |
 
-  - **10:30** In-depth explanation of the main formalisms of debate and
-  cross-examination including formal definition, proof sketches for the
-  hardness-reduction for PSPACE and NEXP respectively (sketched at the
-  whiteboard with computation table of a Turing machine), and a few exercises.
-  Based on `Debate_Proofs_and_Exercises.pdf`.
+  | :---- | ----- |
 
-  - **12:30** Lunch Break.
+  | 10:00 | Fun exercise “Wrong but convincing proofs”. In this exercise, a
+  series of wrong proofs is presented and the students are asked to find the
+  mistake in the proof. The students basically take the role of “Bob” who points
+  out the flaws in Alice’s proofs.\v\vThis gives an intuition that even
+  mathematical proofs can sound very convincing, and finding a mistake as a
+  human judge is often non-trivial. I will produce 4 such proofs in increasing
+  difficulty. It also leads up to the argument
+  that   [Wrong\\_Proofs.pdf](https://drive.google.com/file/d/16jEJXkg5F590kHyv\
+  Tzub5zV5A51RrZE5/view?usp=drive_link) The first three proofs are good, the
+  fourth is a bit too obviously wrong, the fifth is too difficult for most
+  students. Potentially replace the last two with better ones.  |
 
-  - **13:30** Splitting the group into 3 to read some critiques of AI safety via
-  debate: Critique by Marius Hobbhahn with replies by Rohin Shah; Critique by
-  Michael Cohen with replies by Paul Christiano; Obfuscated Arguments by Beth
-  Barnes. Include also the discussion in the comments under the posts! Guided
-  Discussion: What have people criticised about AISvD? Which criticisms are
-  sustained and which have been conceded? Which do you think are the strongest?
+  | 10:30 | This part is an In-depth explanation of the main formalisms of
+  debate and cross-examination. This includes Formal Definition of the setup
+  Proof sketches for the hardness-reduction for PSPACE and NEXP respectively.
+  These can be sketched at the whiteboard with computation table of a Turing
+  machine A few exercises  This is based on this (still evolving) document:
+  [Debate\\_Proofs\\_and
+  Exercises.pdf](https://drive.google.com/file/d/16A0hSaMEaBNUPYNvv6c2B5kp1lYfG\
+  550/view?usp=drive_link) To illustrate the power of the debate setup, this
+  section also includes an example  |
 
-  - **14:30** Pause.
+  | 12:30 | **Lunch Break** |
 
-  - **15:30** Reading session: The AI safety case of the AISI
-  ([arxiv.org/pdf/2505.03989](https://arxiv.org/pdf/2505.03989)) as preparation
-  for the later talk. The goal is that the students can follow the talk and
-  already ask questions while it is given.
+  | 13:30 | Splitting the group into 3 to read some critiques of AI safety via
+  debate. [Critique by Marius Hobbhahn with replies by Rohin
+  Shah](https://www.lesswrong.com/posts/kguLeJTt6LnGuYX4E/the-limits-of-ai-safe\
+  ty-via-debate)  [Critique by Michael Cohen with replies by Paul
+  Christiano:](https://www.alignmentforum.org/posts/L3QDs6of4Rb2TgpRD/the-ai-de\
+  bate-debate)  [Obfuscated Arguments by Beth
+  Barnes](https://www.lesswrong.com/posts/PJLABqQ962hZEqhdB/debate-update-obfus\
+  cated-arguments-problem) Include also the discussion in the comments under the
+  posts\\!  **Guided Discussion:** What have people criticised about AISvD?
+  Which criticisms are sustained and which have been conceded in the comments?
+  Which criticisms do you think are the strongest and the hardest to rectify?  |
 
-  - **16:00** Talk 'AISI Debate Safety Case'. This presentation explains the
-  AISI's idea of the safety case based on AI safety via debate.
+  | 14:30 | **Pause** |
 
-  - **17:00** End.
+  | 15:30 | Reading session: [The AI safety case of the
+  AISI](https://arxiv.org/pdf/2505.03989) as preparation for the later talk. The
+  idea is that the students already know the structure of the talk: The general
+  idea The many assumptions that the safety case makes The path towards
+  automated research and ultimately alignment The goal is that the students can
+  follow the talk and already ask questions while it is given. |
+
+  | 16:00 | Talk **“AISI Debate Safety Case”.** This presentation explains the
+  AISI’s idea of the safety case based on AI safety via debate. |
+
+  | 17:00 | **End** |\n"
+notesForFutureIterations: >-
+  * The idea behind debate needs further motivation. Some suggestion: The
+  lecture starts with the game about finding mistakes in a proof. Continue with
+  a small checkable proof by an AI for a proof checker. Then continue to
+  something like a business plan, a chess game, etc. Argue that if the latter
+  was more like the former, we could extend reward for honest/helpful behaviour
+  and catch defection.  
+
+  * Most participants likely will have weak intuition about PSPACE and NEXP.
+  Rather establish that the amount of human oversight gets drastically reduced
+  by the idea of debate, and that this is crucial to make it work.  
+
+  * I think that having pro and contra argument is intuitively clearly helpful
+  to judge the soundness of the argument, but it’s a bit divorced from the
+  complexity theory. Ideally, find a way to bridge that more.  
+
+  * Students asked a lot about practical feasibility and experimental results.
+  These should be more included in the curriculum.  
+
+  * Ideally, we would get a more active researcher who is currently working on
+  debate to give the guest talk. There were a lot of questions that went
+  unanswered.  
+
+  * Finally, the whole day might be split between Debate and Provably safe AI,
+  which is very similar in spirit. This still has to be developed.  
+    * \[Leon:\] From discussion with Stephan, this might be combined with replacing human judge by a world model
 ---
 ## Overview
 
-Debate is a form of scalable oversight: it seeks to extend a reward signal for honest solutions to difficult problems while reducing the amount of human judgment needed by an exponential factor.
+How can we extend a reward signal for problem solving when AI systems may become smarter than their human evaluators? In purely syntactic domains, such as formal mathematics, correctness can in principle be verified by checking formal proofs step by step, but this becomes infeasible for exponentially long computations and does not apply cleanly to semantic, real-world tasks that depend on costly human judgment. The Debate framework addresses this by having two AI systems argue against each other, reducing difficult global verification problems to sequences of small local checks; in idealized settings, this yields logarithmic-depth verification and, in cross-examination settings, even constant-size local consistency checks. This course covers proof checkers, syntactic vs. semantic tasks, the complexity-theoretic power of Debate and Cross-Examination (including proofs that DEBATE=PSPACE and CX=NEXP), the practical limitations of finite debaters such as obfuscated arguments, the prover-estimator approach, and the UK AISI debate-based alignment safety case and its open problems.
 
 ## Prerequisites
 
