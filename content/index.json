@@ -971,6 +971,61 @@
     ]
   },
   {
+    "slug": "debate",
+    "title": "Debate",
+    "cluster": "E",
+    "frontmatter": {
+      "title": "Debate",
+      "cluster": "E",
+      "summary": "AI safety via debate as scalable oversight — proof checkers, the PSPACE debate protocol, cross-examination up to NEXP, obfuscated arguments, prover-estimator debate, and the AISI safety case.",
+      "contributors": [
+        "Stephan Wäldchen (Independent)"
+      ],
+      "teachingGuide": "### Schedule 28.04. Debate\n\n- **10:00** Fun exercise 'Wrong but convincing proofs' (`Wrong_Proofs.pdf`, Google Drive `16jEJXkg5F590kHyvTzub5zV5A51RrZE5`). A series of wrong proofs is presented and students find the mistake. They basically take the role of 'Bob' who points out the flaws in Alice's proofs.\n- **10:30** In-depth explanation of the main formalisms of debate and cross-examination including formal definition, proof sketches for the hardness-reduction for PSPACE and NEXP respectively (sketched at the whiteboard with computation table of a Turing machine), and a few exercises. Based on `Debate_Proofs_and_Exercises.pdf`.\n- **12:30** Lunch Break.\n- **13:30** Splitting the group into 3 to read some critiques of AI safety via debate: Critique by Marius Hobbhahn with replies by Rohin Shah; Critique by Michael Cohen with replies by Paul Christiano; Obfuscated Arguments by Beth Barnes. Include also the discussion in the comments under the posts! Guided Discussion: What have people criticised about AISvD? Which criticisms are sustained and which have been conceded? Which do you think are the strongest?\n- **14:30** Pause.\n- **15:30** Reading session: The AI safety case of the AISI ([arxiv.org/pdf/2505.03989](https://arxiv.org/pdf/2505.03989)) as preparation for the later talk. The goal is that the students can follow the talk and already ask questions while it is given.\n- **16:00** Talk 'AISI Debate Safety Case'. This presentation explains the AISI's idea of the safety case based on AI safety via debate.\n- **17:00** End.\n",
+      "learningOutcomes": [
+        "Understand the difference between syntactic and semantic problems and why human judgment is necessary for a reward signal",
+        "Understand the basic idea behind AI Safety via Debate as a Scalable Oversight Technique: If a task can be recursively decomposed in a debate, this technique allows us to extend a training signal on reasoning tasks into a regime where AI systems are smarter than humans",
+        "Get an intuition about debate and cross-examination, and why they so drastically reduce the need for human oversight",
+        "Understand the limitations inherent to the setup, and some of the open problems/counterarguments",
+        "Are familiar with the UK AISI safety case, and are able to defend/critique it",
+        "Most important Take-Away: Debate is a form of scalable oversight: it seeks to extend a reward signal for honest solutions to difficult problems while reducing the amount of human judgment needed by an exponential factor."
+      ]
+    },
+    "position": 501,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "steganography-and-backdoors",
     "title": "Steganography & Backdoors",
     "cluster": "E",
