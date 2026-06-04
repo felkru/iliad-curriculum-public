@@ -557,8 +557,6 @@ teachingGuide: >
   measured amount of effort, and that number is what every safety claim
   ultimately rests on.
 ---
-[Link to slides](https://drive.google.com/file/d/1-a7CovBXUMTKuB1MaDQabf8f63KIdD0N/view?usp=drive_link)
-
 ## Prerequisites
 
 The students should have good high-level understanding of the following:
@@ -576,15 +574,19 @@ The students should have good high-level understanding of the following:
 
 Some of these topics are taught in other modules of this course.
 
-Test
+## Content
 
-## Fast track
+### Fast track
 
 The main content is split into parts that correspond to different phases in the model training pipeline. The parts are relatively independent, so you can skip around as you wish depending on your interests.
 
 If you have limited time and don't know what to focus on, we recommend reading through the notes on the three main sections: pre-training, post-training, and deployment 1. After this, you will have a good high-level understanding of the main ways that models are aligned in practice.
 
-## Pre-training
+### Main Content
+
+[Link to slides](https://drive.google.com/file/d/1-a7CovBXUMTKuB1MaDQabf8f63KIdD0N/view?usp=drive_link)
+
+#### Pre-training
 
 During pretraining, massive compute builds the model's representations from scratch. What it learns here is deep, broad, and hard to change afterward. The model is learning hard facts, but it's also forming a proto-understanding of what AI is and how AI assistants behave by reading conversations between users and AI assistants, safety papers, and science fiction about robots. This opens **two strategies** for safety interventions in this phase: shaping what knowledge the model obtains, and shaping what the model does *with* the knowledge it obtains. Both are constrained by the same limitation: you're operating before seeing behavior, the feedback loop is slow, and you can't anticipate every failure mode.
 
@@ -596,7 +598,7 @@ During pretraining, massive compute builds the model's representations from scra
 
 Why does this work? The [persona selection model (PSM)](https://alignment.anthropic.com/2026/psm/) provides the conceptual frame. Building on the [simulators hypothesis](https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators) — that an LLM is a *simulator* capable of producing diverse *simulacra* (characters, agents) — PSM holds that pretraining builds a repertoire of personas, and post-training helps shape the "Assistant." Alignment pretraining works because it shapes the **prior over personas**: saturating the training data with positive AI archetypes biases the model toward an aligned Assistant. PSM recommends treating this deliberately — curating AI discourse in pre-training data as a first-class alignment intervention.
 
-## Post-training
+#### Post-training
 
 In pre-training, a large investment of compute and data produces large changes to the model. In post-training, we enter a different regime: **the amount of behavioral change becomes decoupled from the amount of compute invested**. Because we are building on top of existing representations and heuristics, even a small, focused intervention can induce surprisingly broad behavioral changes. This cuts both ways — it enables powerful alignment techniques, but also means that small amounts of training data can have outsized negative effects. The amount of compute invested still matters, though: **as a rough intuition, the compute needed to *undo* a behavioral change is comparable to the compute needed to *create* it**, provided you know what you are targeting. A shallow change that chains together existing heuristics and only slightly shifts existing representations can be behaviorally large but easy to reverse.
 
@@ -608,7 +610,7 @@ Post-training can also induce deeper changes that influence which persona the mo
 
 Post-training can also change the model's factual knowledge. [Synthetic document fine-tuning](https://alignment.anthropic.com/2025/believe-it-or-not/) can implant false beliefs that the model appears to genuinely hold, as verified by both behavioral tests and internal probes — though models resist the most egregiously false facts. Going in the other direction, unlearning attempts to *remove* specific knowledge (e.g., about bioweapons) from a trained model. However, current unlearning methods are [not robust](https://arxiv.org/abs/2402.16835): unlearned knowledge is dormant, not deleted, which is relevant if we assume that an adversary is trying to pry the knowledge out of the model. The best way to measure the robustness of an unlearning method is to fine-tune the unlearned model and observe when the capability returns. By this measure, no cheap unlearning method has yet been shown to be both cheap *and* robust — for example, [fine-tuning on even unrelated data can make the knowledge re-emerge](https://arxiv.org/abs/2505.22310). The [UNDO](https://arxiv.org/abs/2506.06278) paper proposes a partial solution: distilling an unlearned model into a randomly initialized student transfers desired behaviors while leaving undesired capabilities behind, nicely illustrating the tradeoff between robustness and amount of compute invested in the unlearning process.
 
-## Deployment 1: Strategy
+#### Deployment 1: Strategy
 
 Once the model is trained, the work shifts. We are no longer mainly trying to shape the model; we are trying to build and maintain a structured argument that releasing it makes sense, supported by enough evidence that other people — colleagues, regulators, the public — can inspect it, push on it, and decide whether to trust it. Frontier labs do this somewhat differently, but the underlying logic is shared, and it mirrors the structure of a *safety case*. In this module we lay out that logic in four steps; the next two modules go deep on the two technical ones of these four.
 
@@ -630,7 +632,7 @@ Each policy is in effect specifying how the lab will build and clear a safety ca
 
 Pulling this back together: when we want to deploy a model, we need to build and maintain a structured argument that release is acceptable, and the safety case is the artifact that this argument lives in. The four steps are how the safety case gets built — what risks it covers, what evidence it rests on, what defenses it commits to, and how it is communicated and kept current. None of this is ever finished. The world the model is deployed into keeps changing, new failure modes get found, expectations tighten, and the case has to keep up.
 
-## Deployment 2: Understanding the Model
+#### Deployment 2: Understanding the Model
 
 When we deploy the model, the focus shifts from the model itself to the whole deployed system: the model, but also external input/output safety classifiers, probes for classifying model intent, deployment policies, and so on. We want to understand how the system behaves and use that information to improve its safety properties. This process is an ongoing loop:
 
@@ -663,7 +665,7 @@ The tools for analyzing observed behavior range from blackbox methods (most usef
 
 The most common external defense is safety classifiers around the model. [Constitutional classifiers](https://arxiv.org/abs/2501.18837) are input/output classifiers trained from synthetic data generated by prompting LLMs with natural-language safety rules, adding only a 0.38% absolute increase in false refusals and 23.7% inference overhead. [This overhead can be reduced](https://alignment.anthropic.com/2025/cheap-monitors/) by reusing the base model's own activations: linear probes on intermediate representations achieve comparable detection performance at near-zero additional compute. For agentic systems that take many steps and use tools, stateless input/output classifiers are insufficient — [OpenAI's coding agent monitors](https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/) illustrate stateful trajectory monitoring, watching full sequences of tool calls, code edits, and reasoning across an extended task. Going deeper still, [linear probes for deception detection](https://arxiv.org/abs/2502.03407) target not whether the output text is harmful (which is what content classifiers do) but whether the model's internal state indicates deceptive intent — a promising but not yet robust standalone defense. In the future, the system might also incorporate [access controls](https://arxiv.org/abs/2410.04332) that tailor safeguards to different user populations.
 
-## Deployment 3: Building the Safety System
+#### Deployment 3: Building the Safety System
 
 When we deploy a model, we cannot prove it is safe. Instead, we make **statistical claims about its safety behavior under pressure**: the deployed system — model plus runtime safeguards — is subjected to substantial adversarial effort. The strength of the safety claim is bounded by how hard we tried to break it. Two activities go hand in hand: **building out the safety system** around the model, and **red-teaming** that system to see where it cracks. The goal is not proving the impossibility of misuse but **making it impractical for a realistic adversary**, with the effort we invest into breaking the system scaling roughly with the capabilities of the model (which we characterized in the previous chapter). We get defense in depth, never a proof of safety.
 
@@ -695,9 +697,9 @@ Finally, even pure black-box settings can benefit from white-box models, through
 
 The takeaway is the one we started with. There's no proof that a deployed model is safe. There's only the empirical fact that we built an external safety system around it, that we and others spent real effort trying to break that system in every way we currently know how, and that the best universal attack we found required this much work to pull off. That number — how much effort it took — is what every safety claim ultimately rests on.
 
-## Learn more
+### Learn more
 
-### Pre-training
+#### Pre-training
 
 Data filtering
 
@@ -725,7 +727,7 @@ Simulators and persona selection
 -   [The Persona Selection Model: Why AI Assistants might Behave like Humans](https://alignment.anthropic.com/2026/psm/)
     
 
-### Post-training
+#### Post-training
 
 Post-training for safety
 
@@ -762,7 +764,7 @@ Unlearning
 -   [Open Problems in Machine Unlearning for AI Safety](https://arxiv.org/abs/2501.04952)
     
 
-### Deployment 1: Strategy
+#### Deployment 1: Strategy
 
 Deployment frameworks
 
@@ -793,7 +795,7 @@ Law and compliance
 -   [Guidelines for providers of general-purpose AI models](https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers)
     
 
-### Deployment 2: Understanding the Model
+#### Deployment 2: Understanding the Model
 
 Chain-of-thought monitoring
 
@@ -837,7 +839,7 @@ Runtime safeguards
 -   [Detecting Strategic Deception Using Linear Probes](https://arxiv.org/abs/2502.03407)
     
 
-### Deployment 3: Building the Safety System
+#### Deployment 3: Building the Safety System
 
 Runtime safeguards
 
