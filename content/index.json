@@ -859,7 +859,7 @@
         "David Quarel (Australian National University)",
         "Fernando Rosas (University of Sussex)"
       ],
-      "teachingGuide": "- Lecture by David (30 min)\n- Rest of the day spent on doing exercises in pairs\n- Later in the day, Fernando gave a second lecture on preferences and reward functions.",
+      "teachingGuide": "* Lecture by David (30min)  \n* Rest of the day spent on doing exercises in pairs",
       "learningOutcomes": [
         "Learn the notation used in Universal Artificial Intelligence",
         "Be familiar with the history-based RL framework",
@@ -868,7 +868,8 @@
         "Understand the difference between preferences, utility, and reward: preferences being a primary, largely uncontroversial notion, and utility and rewards being derived notions resting on specific assumptions",
         "Be able to derive the relationship between various preference structures and rationality axioms",
         "Critically assess alternative notions of rationality, and the consequences of dropping various classical decision theory assumptions"
-      ]
+      ],
+      "notesForFutureIterations": "AIXI:\n\n* Section 1-7 are thoroughly double-checked by David and he’s happy with the current state of it.   \n* David still not 100% happy with sections 8-10, there’s a lot of heavy notation for not that great a payoff,   \n  * Don’t like having to introduce martingales  \n  * Section 9: change of measure is just Markov’s inequality  \n  * Exercise 10.3 is a headache and could be skipped and just be given without proof.  \n* In general, far too much material to reasonably share a day, let alone a full day. Sections 1-7 probably should fill a day, and then 8-10 for extreme stretch goal.\n\n\nNotes for the preferences part:\n\n* The notes are a reasonable first draft of the content. But they could be polished and extended.  \n* Right now there are no slides, as the presentation/discussion was done on the whiteboard. It could be worth thinking if using some slides could help.  \n* There is plenty of room for improvement for the exercises, which were done in a rush and not much optimised.  \n* Noah Topper’s comment: “I think maybe worth including something like \"Reward is not the optimization target\" ([https://www.alignmentforum.org/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target](https://www.alignmentforum.org/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target)). I think even Fernando's explanation in the lesson, that reward is a local decomposition of utility, still doesn't align with what Turner thinks reward is all about. This additional perspective is probably good to see. ”  \n* Someone on Lesswrong wrote: “But I'm surprised to see this being said, and surprised to see that [this post](https://www.lesswrong.com/posts/yCuzmCsE86BTu9PfA/there-are-no-coherence-theorems) isn't referenced anywhere. I'm biased of course, but I think it makes a true and important point. The post stirred up some controversy at the time (and of course it's better to talk about the object-level issues), but I take the controversy to have mostly resolved in favor of the point I make. See e.g. [this retrospective](https://www.lesswrong.com/posts/GPuXM3ufXfmaktYXZ/what-do-coherence-arguments-actually-prove-about-agentic) and [Vanessa Kosoy calling the-coherence-argument-as-stated-in-the-quote-above a weak man](https://www.lesswrong.com/posts/yCuzmCsE86BTu9PfA/there-are-no-coherence-theorems?commentId=kJnxk78Sc7JgnErsJ). ”"
     },
     "position": 402,
     "headings": [

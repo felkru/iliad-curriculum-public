@@ -19,17 +19,35 @@ learningOutcomes:
     rationality axioms
   - Critically assess alternative notions of rationality, and the consequences
     of dropping various classical decision theory assumptions
-teachingGuide: >-
-  - Lecture by David (30 min)
+notesForFutureIterations: |-
+  AIXI:
 
-  - Rest of the day spent on doing exercises in pairs
+  * Section 1-7 are thoroughly double-checked by David and he’s happy with the current state of it.   
+  * David still not 100% happy with sections 8-10, there’s a lot of heavy notation for not that great a payoff,   
+    * Don’t like having to introduce martingales  
+    * Section 9: change of measure is just Markov’s inequality  
+    * Exercise 10.3 is a headache and could be skipped and just be given without proof.  
+  * In general, far too much material to reasonably share a day, let alone a full day. Sections 1-7 probably should fill a day, and then 8-10 for extreme stretch goal.
 
-  - Later in the day, Fernando gave a second lecture on preferences and reward
-  functions.
+
+  Notes for the preferences part:
+
+  * The notes are a reasonable first draft of the content. But they could be polished and extended.  
+  * Right now there are no slides, as the presentation/discussion was done on the whiteboard. It could be worth thinking if using some slides could help.  
+  * There is plenty of room for improvement for the exercises, which were done in a rush and not much optimised.  
+  * Noah Topper’s comment: “I think maybe worth including something like "Reward is not the optimization target" ([https://www.alignmentforum.org/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target](https://www.alignmentforum.org/posts/pdaGN6pQyQarFHXF4/reward-is-not-the-optimization-target)). I think even Fernando's explanation in the lesson, that reward is a local decomposition of utility, still doesn't align with what Turner thinks reward is all about. This additional perspective is probably good to see. ”  
+  * Someone on Lesswrong wrote: “But I'm surprised to see this being said, and surprised to see that [this post](https://www.lesswrong.com/posts/yCuzmCsE86BTu9PfA/there-are-no-coherence-theorems) isn't referenced anywhere. I'm biased of course, but I think it makes a true and important point. The post stirred up some controversy at the time (and of course it's better to talk about the object-level issues), but I take the controversy to have mostly resolved in favor of the point I make. See e.g. [this retrospective](https://www.lesswrong.com/posts/GPuXM3ufXfmaktYXZ/what-do-coherence-arguments-actually-prove-about-agentic) and [Vanessa Kosoy calling the-coherence-argument-as-stated-in-the-quote-above a weak man](https://www.lesswrong.com/posts/yCuzmCsE86BTu9PfA/there-are-no-coherence-theorems?commentId=kJnxk78Sc7JgnErsJ). ”
+teachingGuide: |-
+  * Lecture by David (30min)  
+  * Rest of the day spent on doing exercises in pairs
 ---
 ## Overview
 
-This module covers two complementary perspectives on idealised agency. The first, **AIXI**, formalises a universal reinforcement learner in a history-based RL framework and establishes its key optimality properties. The second, **From preferences to rewards**, examines the conceptual foundation of decision theory — treating preferences as primary and utility/reward as derived notions resting on specific rationality axioms.
+This day is split into two parts. 
+
+Part (1) on AIXI closely follows [*An Introduction to Universal Artificial Intelligence*](https://hutter1.net/ai/uaibook2.htm) (UAI)*.* This theory module is based on a set of self-contained exercises that introduce the history-based RL framework that UAI works in. We prove some results about interaction measures over histories and Bayesian mixtures, we define the optimal Bayesian agent AIXI, we prove well-defineness of the optimal value and existence of optimal policies, and we build up to three main results: The Bayesian mixture converges on-policy to the true environment, AIXI cannot be fooled by deterministic environments, and AIXI can learn to perform well in an environment in which learning is possible (the self-optimizing property). 
+
+Part (2) introduces the notion of *preferences* as a general way to encode goals and/or desires of general agents. Then, it presents which are the necessary and sufficient assumptions (in the form of axioms) to represent preferences as maximising (i) an utility function, (ii) an expected utility, and (iii) an expected discounted future reward. It also explores what are the consequences of dropping different axioms. It also briefly discusses the difference between these results related with representation of preferences, with stronger results pertaining to coherence and selection of agents.
 
 -   David Quarel wrote the exercises/slides for the AIXI section, taking heavily from [the book](https://www.hutter1.net/ai/uaibook2.htm).
     
