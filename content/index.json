@@ -742,6 +742,7 @@
         "Daniel Chiang (Independent)",
         "Satya Benson (Williams College)"
       ],
+      "teachingGuide": "* 1 hour of introductory [lecture](https://drive.google.com/file/d/1PzTxlPhu3V15VY0PR-yh1XK-DbMz27qb/view?usp=sharing) on motivation and existing work on abstractions  \n* 2.5 hour readings and discussions on natural latents, condensation & factored space models/algorithmic statistics/coarse graining in physics  \n* 3 hours of exercises",
       "learningOutcomes": [
         "Explain the alignment motivation for a mathematical theory of abstraction: why human values, as latent variables in world models, require solving the pointers problem to transfer goals to AI systems.",
         "Explain why convergence of different agents onto the same abstractions (uniqueness/agreement) is important for making value translation tractable.",
@@ -749,7 +750,8 @@
         "Explain intuitively why the combination of mediation and redundancy pins down a unique natural latent (up to isomorphism), rather than leaving many candidates.",
         "Explain the difference between condensation as organising knowledge into interpretable modular structure versus mere compression.",
         "State the perfect condensation agreement result and explain its connection to the natural latent uniqueness guarantee."
-      ]
+      ],
+      "notesForFutureIterations": "* Add solutions to exercises  \n* Have a short lecture at the end on the takeaways for the exercises  \n* Participants expressed feedback on lack of experiments  \n* Maybe it would be fruitful to have a doom day/a day that explains and motivates the underlying considerations behind conceptual agendas like abstractions"
     },
     "position": 304,
     "headings": [
