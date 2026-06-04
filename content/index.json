@@ -503,13 +503,15 @@
       "contributors": [
         "Louis Jaburi (EleutherAI)"
       ],
+      "teachingGuide": "Overall I would keep the day pretty light on lectures and encourage people to work on the material themselves. IMO no TAs needed, LLMs can solve all exercises and explain them, but also if the lecturer goes around that is sufficient.\n\n**Schedule**\n\n| Time | Block | Content |\n| ----- | ----- | ----- |\n| 10:00–11:00 | Lecture | Slides into \\+ Chapter 1 (causality, counterfactuals, notation) and brief into to Section 2.1 |\n| 11:15–12:20 | Exercises | Part 1: Read and do up to Exercise 2.4 (linear regression). Students work individually or in groups. Announce which parts to prioritize: (a)–(c) and (e) are essential, (d) is optional. Part 2: Read Section 2.2, Do more exercise if someone is very fast. |\n| 12:20–12:30 | Whiteboard  | Sync in and quick recap |\n| 12:30–13:30 | Lunch |  |\n| 13:30–13:50 | Whiteboard | Show papers related to Chapter 2, motivate Chapter 3 |\n| 13:50–15:15 | Exercises | Chapter 3: Bayesian Influence functions, read the chapter and solve the first two exercises. Very ambitious people can go to the optimal transport part |\n| 15:15–15:30 | Whiteboard | Discuss the chapter, show relevant papers |\n| 15:30–16:00 | Break  | Take a walk  |\n| 16:00–16:10 | Whiteboard | Introduce Chapter 4 |\n| 16:10–17:00 | Exercises | Chapter 4: Unrolling, read it, understand the calculus (high-level enough) |\n| 17:00–17:30 | Whiteboard+ Lecture | Wrap up unrolling, discuss future perspectives (second part of the slides), Q\\&A |\n| 17:30–17:50 | Feedback | Feedback form. |",
       "learningOutcomes": [
         "Internalize the importance of data attribution for alignment (see papers in the slides)",
         "Understand the chain of approximations causality → counterfactual → Shapley values → LOO → first-order approximation of perturbations",
         "Can frame data attribution methods (IF, BIF, Unrolling) in terms of the map B → W at the end of Section 1",
         "Can explain what IF, BIF, and unrolling are (in terms of above map). Highlight their limitations",
         "Are able to compute influence scores, if given a magical oracle that turns mathematical formulas into clean ML code"
-      ]
+      ],
+      "notesForFutureIterations": "**Content**\n\n* Still need to write Chapter 5 of lecture notes   \n* Maybe add some coding part, people really seemed to like that idea?  \n* To what extent and in what proportions each of the three sections should get attention is unclear to me: IF are very popular (used by labs) but badly motivated, BIF is better motivated but harder to scale, Unrolling is the promising but has some training stability issues   \n* Address Noah Topper’s comment: I think you've gotten this feedback in other places, but in this chapter especially I'd like more motivation for how this is useful for safety. Could just be me, but while I can see without too much trouble how understanding DL theory and SLT might be useful, I find it harder to see at a glance how attributing lower loss to certain training examples helps us.  \n  * [This paper makes a case](https://arxiv.org/abs/2502.05475)"
     },
     "position": 205,
     "headings": [
