@@ -186,10 +186,19 @@
     "title": "Reward Learning Theory",
     "cluster": "A",
     "frontmatter": {
+      "title": "Reward Learning Theory",
+      "cluster": "A",
       "summary": "The theoretical foundations of reward learning — how RLHF can (in principle) recover an aligned objective, when underspecification and misspecification break that story, and how assistance games reframe the problem.",
       "contributors": [
         "Leon Lang (Iliad)",
-        "Joar Skalse (King's College London)"
+        "Joar Skalse (Deducto Limited, King's College London)"
+      ],
+      "learningOutcomes": [
+        "Learn the place of reward learning in the AI alignment landscape",
+        "Reason about the (speculative) assumptions that motivate this research area as a whole",
+        "Understand the strong conditions under which the simplest reward learning technique, RLHF via trajectory comparisons, would lead to an aligned objective",
+        "Reason about situations where such conditions do not hold, like underspecification and misspecification, and efforts to account for, or correct, such issues",
+        "Understand how reward learning can be embedded into the framework of assistance games, which can be regarded as one conceptualization of the entire alignment problem"
       ]
     },
     "position": 104,
@@ -201,16 +210,21 @@
       },
       {
         "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
         "text": "Fast track",
         "slug": "fast-track"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Main content",
         "slug": "main-content"
       },
       {
-        "level": 2,
+        "level": 3,
         "text": "Learn more",
         "slug": "learn-more"
       }
