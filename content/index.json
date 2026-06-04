@@ -559,7 +559,7 @@
         "Julian Schulz (Meridian Research)",
         "Adam Newgas (Timaeus)"
       ],
-      "teachingGuide": "- Start with the quiz to give people a recommendation for which lecture 1 to join.\n- Then hold lecture 1a and 1b in parallel for about 4h.\n- Notes on holding lecture 1a: Get a feeling with what the audience is already familiar with, and quickly skip through those slides; take more time explaining the things that are new. When you hit a slide with an exercise, interrupt the lecture and give the participants time to do the exercise. It is okay if participants do not finish all the exercises. Enforce pair programming on exercises.\n- Notes on holding lecture 2: Again, we start with basic stuff most will already know. Get a feeling for the audience and skip through that part. Stop when hitting the slides for the exercises. If you hit the end of the slides before the end of the day, just un-hide the slides and keep going explaining reasoning models.\n",
+      "teachingGuide": "* Start with the quiz to give people a recommendation for which lecture 1 to join  \n* Then hold lecture 1a and 1b in parallel for about 4h   \n* Notes on holding lecture 1a:  \n  * Get a feeling with what the audience is already familiar with, and quickly skip through those slides, take more time explaining the things that are new to people  \n  * When you hit a slide with an exercise, interrupt the lecture and give the participants time to do the exercise  \n  * It is okay if participants do not finish all the exercises. Ideally the fastest have enough time to finish while the slowest have gotten far enough to learn something  \n  * Enforce pair programming on exercises  \n* Notes on holding lecture 2:  \n  * Again, we start with basic stuff most will already know. Get a feeling for the audience and skip through that part  \n  * Stop when hitting the slides for the exercises, same as lecture 1a   \n  * If you hit the end of the slides before the end of the day, just un-hide the slides and keep going explaining reasoning models",
       "learningOutcomes": [
         "Minimal: Be able to follow the rest of the intensive course content and complete its exercises; understand the considerations and constraints of running empirical AI safety experiments when working with an ML engineer.",
         "Use PyTorch and tensor operations.",
@@ -569,7 +569,8 @@
         "Run hyperparameter optimisations.",
         "Implement model architectures in PyTorch.",
         "Rent external compute (via Runpod) and run an experiment on it."
-      ]
+      ],
+      "notesForFutureIterations": "* We had a rather uneven split in the quizz, with almost everyone going to lecture 1b, and only 3 people left in lecture 1a  \n* I would make lecture 1a harder, go over less basics and do more advanced stuff like:  \n  * LoRas  \n  * RL algorithms  \n  * Multi GPU stuff  \n* From the feedback from:  \n  * Make material available earlier  \n  * Slow down presentation of part 2  \n  * Potentially make slides describing transformer architecture more interactive (not convinced this is necessary, but one participant wanted this)  \n* On 1b:  \n  * Runpod logistics \\- definitely learn a lesson from last time  \n  * Demonstration Coding session \\- this is an interesting idea. It might serve as a break from people to watch me at work. Stressful though."
     },
     "position": 301,
     "headings": [

@@ -20,28 +20,41 @@ learningOutcomes:
   - Run hyperparameter optimisations.
   - Implement model architectures in PyTorch.
   - Rent external compute (via Runpod) and run an experiment on it.
-teachingGuide: >
-  - Start with the quiz to give people a recommendation for which lecture 1 to
-  join.
+teachingGuide: >-
+  * Start with the quiz to give people a recommendation for which lecture 1 to
+  join  
 
-  - Then hold lecture 1a and 1b in parallel for about 4h.
+  * Then hold lecture 1a and 1b in parallel for about 4h   
 
-  - Notes on holding lecture 1a: Get a feeling with what the audience is already
-  familiar with, and quickly skip through those slides; take more time
-  explaining the things that are new. When you hit a slide with an exercise,
-  interrupt the lecture and give the participants time to do the exercise. It is
-  okay if participants do not finish all the exercises. Enforce pair programming
-  on exercises.
+  * Notes on holding lecture 1a:  
+    * Get a feeling with what the audience is already familiar with, and quickly skip through those slides, take more time explaining the things that are new to people  
+    * When you hit a slide with an exercise, interrupt the lecture and give the participants time to do the exercise  
+    * It is okay if participants do not finish all the exercises. Ideally the fastest have enough time to finish while the slowest have gotten far enough to learn something  
+    * Enforce pair programming on exercises  
+  * Notes on holding lecture 2:  
+    * Again, we start with basic stuff most will already know. Get a feeling for the audience and skip through that part  
+    * Stop when hitting the slides for the exercises, same as lecture 1a   
+    * If you hit the end of the slides before the end of the day, just un-hide the slides and keep going explaining reasoning models
+notesForFutureIterations: >-
+  * We had a rather uneven split in the quizz, with almost everyone going to
+  lecture 1b, and only 3 people left in lecture 1a  
 
-  - Notes on holding lecture 2: Again, we start with basic stuff most will
-  already know. Get a feeling for the audience and skip through that part. Stop
-  when hitting the slides for the exercises. If you hit the end of the slides
-  before the end of the day, just un-hide the slides and keep going explaining
-  reasoning models.
+  * I would make lecture 1a harder, go over less basics and do more advanced
+  stuff like:  
+    * LoRas  
+    * RL algorithms  
+    * Multi GPU stuff  
+  * From the feedback from:  
+    * Make material available earlier  
+    * Slow down presentation of part 2  
+    * Potentially make slides describing transformer architecture more interactive (not convinced this is necessary, but one participant wanted this)  
+  * On 1b:  
+    * Runpod logistics \- definitely learn a lesson from last time  
+    * Demonstration Coding session \- this is an interesting idea. It might serve as a break from people to watch me at work. Stressful though.
 ---
 ## Overview
 
-A practical introduction to the machine-learning engineering stack used throughout the intensive: PyTorch and tensor operations, training loops and optimizers, model architectures, hyperparameter optimisation, and the lifecycle of a modern LLM (pretraining, RLHF, RLVR). The day is split into two parallel morning tracks tuned to prior experience, followed by a shared afternoon lecture on LLMs.
+This module equips participants with the practical skills needed to follow the rest of the intensive and run their own empirical experiments. Split into two parallel morning tracks by prior experience, participants learn the essentials of training neural networks in PyTorch: tensor operations, training loops, autograd, optimizers, loss functions, and core architectures like CNNs and transformers, alongside the engineering realities of empirical work, including renting GPUs via Runpod, tracking experiments with WandB, lightweight experimentation through fine-tuning APIs and Tinker, and managing datasets and checkpoints on Huggingface. The afternoon turns to LLMs specifically: tokenization, the transformer architecture, and the full lifecycle of a modern language model from pretraining and scaling laws to RLHF and reasoning training, with hands-on exercises implementing an MLP and attention step by step.
 
 Julian Schulz was responsible for Lecture 1a and 2. Slides of Lecture 2 are taken from ML4good. Adam Newgas was responsible for *Lecture 1b*
 
