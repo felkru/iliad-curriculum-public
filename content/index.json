@@ -10,10 +10,16 @@
       "contributors": [
         "Leon Lang (Iliad)"
       ],
-      "learningOutcomes": []
+      "learningOutcomes": [],
+      "notesForFutureIterations": "* Outsource writing prerequisites next time to make it *really good*?  \n* The prerequisites, especially the background worldview section, could say more on why we should work on theory in particular to solve the problems listed here. Why so foundational?  \n* Make sure the prerequisites here cover the best pointers for prerequisites from all the individual modules.   \n* We could think about creating “lecture notes” that teach all needed prerequisites\\!  \n* It should probably be rewritten to make no reference anymore to ARENA (except perhaps to acknowledge them) since this is a bit too much clicking…"
     },
     "position": 1,
     "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
       {
         "level": 2,
         "text": "Background worldview and assumptions",
