@@ -622,7 +622,7 @@
       "contributors": [
         "Julian Schulz (Meridian Research)"
       ],
-      "teachingGuide": "- Present the slides, with the lecture notes in the pdf using pdfpc to make the speaker notes visible to yourself but not the participants.\n- Separate the group into tiers based on previous exposure to mechinterp concepts. When asking a question: in general let the tiers with less exposure answer first.\n- Whenever you hit a slide with links to exercises, let the participants do the exercises. For the links to neuropedia, give them 10-20 min to look around on neuropedia, find interesting features/circuits and get a hands on feeling for how these look like. Key takeaways: many features are mislabeled by the LLMs or still seem polysemantic; features generated with circuit tracing look extremely messy and are not straight forward to interpret.\n- After Lecture and Exercises, people should separate into groups, each reading and then discussing one of the MechInterp Criticism posts linked above. If enough time is left, one person from each discussion group can present a summary of the post and their discussion to the rest of class.\n",
+      "teachingGuide": "* Present the slides, with the lecture notes in the pdf using [pdfpc](https://pdfpc.github.io) to make the speaker notes visible to yourself but not the participants  \n  * Separate the group into tears based on previous exposure to mechinterp concepts  \n  * When asking a question: in general let the tears with less exposure answer first  \n* Whenever you hit a slide with links to exercises, let the participants do the exercises  \n* For the links to neuropedia, let give them 10-20 min to look around on neuropedia, find interesting features/circuits and get a hands on feeling for how these look like  \n  * Key takeaways can be: many features are mislabeled by the LLMs or still seem polysemantic  \n  * In general features generated with circuit tracing look extremely messy and are not straight forward to interpret  \n* After Lecture and Exercises, people should separate into groups, each reading and then discussing one of the MechInterp Criticism posts linked above  \n* If enough time is left, one person from each discussion group can present a summary of the post and their discussion to the rest of class",
       "learningOutcomes": [
         "Understand the goals of mechanistic interpretability",
         "Understand what is meant by feature and circuit",
@@ -633,7 +633,8 @@
         "Know when to apply what method",
         "Read and fully understand new mechanistic interpretability publications",
         "Be a useful discussion partner to mechanistic interpretability researchers"
-      ]
+      ],
+      "notesForFutureIterations": "* Improve/remove Exercise 1, it is not pedagogically useful. Instead just make a 5 min break around that time  \n* Things to include:  \n  * Activation Oracles  \n  * Steering awareness  \n  * Circuit breakers  \n  * Parameter Decomposition  \n* Some of the plots on the slides are extracted form the papers via a pipeline that makes them look ugly. Later i developed a better looking pipeline, but some slides are still in the old format, i need to re-extract those plots  \n* From the Feedback:  \n  * Make Material available days before the lecture  \n  * Multiple participants found the long lecture with stop and go exercises very exhausting and would have wished for more breaks/discussing the material within breaks in the lecture"
     },
     "position": 302,
     "headings": [

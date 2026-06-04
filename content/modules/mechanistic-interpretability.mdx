@@ -17,29 +17,46 @@ learningOutcomes:
   - Know when to apply what method
   - Read and fully understand new mechanistic interpretability publications
   - Be a useful discussion partner to mechanistic interpretability researchers
-teachingGuide: >
-  - Present the slides, with the lecture notes in the pdf using pdfpc to make
-  the speaker notes visible to yourself but not the participants.
+teachingGuide: >-
+  * Present the slides, with the lecture notes in the pdf using
+  [pdfpc](https://pdfpc.github.io) to make the speaker notes visible to yourself
+  but not the participants  
+    * Separate the group into tears based on previous exposure to mechinterp concepts  
+    * When asking a question: in general let the tears with less exposure answer first  
+  * Whenever you hit a slide with links to exercises, let the participants do
+  the exercises  
 
-  - Separate the group into tiers based on previous exposure to mechinterp
-  concepts. When asking a question: in general let the tiers with less exposure
-  answer first.
-
-  - Whenever you hit a slide with links to exercises, let the participants do
-  the exercises. For the links to neuropedia, give them 10-20 min to look around
-  on neuropedia, find interesting features/circuits and get a hands on feeling
-  for how these look like. Key takeaways: many features are mislabeled by the
-  LLMs or still seem polysemantic; features generated with circuit tracing look
-  extremely messy and are not straight forward to interpret.
-
-  - After Lecture and Exercises, people should separate into groups, each
+  * For the links to neuropedia, let give them 10-20 min to look around on
+  neuropedia, find interesting features/circuits and get a hands on feeling for
+  how these look like  
+    * Key takeaways can be: many features are mislabeled by the LLMs or still seem polysemantic  
+    * In general features generated with circuit tracing look extremely messy and are not straight forward to interpret  
+  * After Lecture and Exercises, people should separate into groups, each
   reading and then discussing one of the MechInterp Criticism posts linked
-  above. If enough time is left, one person from each discussion group can
-  present a summary of the post and their discussion to the rest of class.
+  above  
+
+  * If enough time is left, one person from each discussion group can present a
+  summary of the post and their discussion to the rest of class
+notesForFutureIterations: >-
+  * Improve/remove Exercise 1, it is not pedagogically useful. Instead just make
+  a 5 min break around that time  
+
+  * Things to include:  
+    * Activation Oracles  
+    * Steering awareness  
+    * Circuit breakers  
+    * Parameter Decomposition  
+  * Some of the plots on the slides are extracted form the papers via a pipeline
+  that makes them look ugly. Later i developed a better looking pipeline, but
+  some slides are still in the old format, i need to re-extract those plots  
+
+  * From the Feedback:  
+    * Make Material available days before the lecture  
+    * Multiple participants found the long lecture with stop and go exercises very exhausting and would have wished for more breaks/discussing the material within breaks in the lecture
 ---
 ## Overview
 
-Mechanistic interpretability (mechinterp) seeks to reverse-engineer the internal computations of neural networks into human-understandable features and circuits. This module surveys the goals of the field, the methods used for feature and circuit discovery, the current frontier of what we can and cannot interpret, and the major critiques of the field's theories of impact.
+We take a look at the science of reverse engineering the learned structures of a neural network. By going through the history of mechanistic interpretability, we examine the methods used to identify features and circuits, the ontology and assumptions underlying those methods, and we sample the main findings that mechinterp has made so far. We start with early work on CNNs and then turn to transformers, looking specifically at linear probes, steering vectors, and directional ablations; superposition and sparse autoencoders, including their compressed sensing motivation, evaluation, and known failure modes like feature absorption and splitting; and circuit discovery via logit attribution, the logit lens, path patching, ACDC, attribution graphs, and causal scrubbing. Throughout, we include hands-on exercises on feature visualization, logit lens, induction heads, SAE training, and exploration of Neuronpedia. The day closes with a group discussion of major critiques of the field.
 
 ## Prerequisites
 
