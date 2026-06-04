@@ -28,30 +28,71 @@ learningOutcomes:
     what agents arising in the physical world actually look like, starting from
     properties of the world (selection pressures, modularity, computational
     constraints) rather than from idealized behavior."
-teachingGuide: >
-  - 1 hour of introductory lecture on the bird's eye view picture & motivation
-  of agent foundations.
+notesForFutureIterations: |-
+  * More focused scope which focuses on the big picture  
+  * Maybe develop self-sufficient lecture notes that tie together different topics  
+  * Develop a list of "what we should take away from this day"  
+  * More time for exercises and cross pollination discussions  
+  * Maybe it would be fruitful to have a doom day/a day that explains and motivates the considerations behind agent foundations research. E.g. [security mindset](https://www.lesswrong.com/posts/8gqrbnW758qjHFTrH/security-mindset-and-ordinary-paranoia), or something similar to degrees of freedom from Jeremy’s talk
+teachingGuide: |-
+  * 1 hour of introductory lecture on the bird’s eye view picture & motivation of agent foundations  
+  * 2.5 hours of reading \+ discussion  
+    * Format: We separate into fundamental reading vs readings on specific topics, each person reads a fundamental reading+ readings on one of the topics, then discuss with others who’ve read different topics  
+    * Fundamental reading:  
+      * Embedded agency  
+      * Why agent foundations  
+      * General purpose search  
+      * Reflective consistent degree of freedom  
+    * Topics:  
+      * Consequentialist foundations (coherence & complete class theorems)  
+      * Lob’s theorem and tiling agent  
+      * Logical induction  
+      * Decision theory  
+      * Optimization and thermodynamics  
+      * Descriptive agent foundations  
+  * 1 hour of lecture by Cole Wyeth on [reflective oracles and nonrealizability](https://drive.google.com/file/d/1lV82lyZeY1nLMu-LMd4WlhF4D-iL-cer/view?usp=sharing)  
+  * 1 hour of exercises on [Lob’s theorem, complete class and information theory](https://drive.google.com/file/d/1eQE_i8vImFuSj-bsKpMtsNr3fe1xUXQ3/view?usp=sharing)  
+  * 1 hour of lecture by Aram Ebtekar on [decision theory](https://drive.google.com/file/d/1lV82lyZeY1nLMu-LMd4WlhF4D-iL-cer/view?usp=sharing)
 
-  - 2.5 hours of reading + discussion. Format: separate into fundamental reading
-  vs readings on specific topics. Each person reads a fundamental reading +
-  readings on one of the topics, then discusses with others who've read
-  different topics.
-    - Fundamental reading: Embedded agency; Why agent foundations; General purpose search; Reflective consistent degree of freedom.
-    - Topics: Consequentialist foundations; Löb's theorem and tiling agent; Logical induction; Decision theory; Optimization and thermodynamics; Descriptive agent foundations.
-  - 1 hour of lecture by Cole Wyeth on reflective oracles and nonrealizability.
+  If running this module in person, have participants each read a different topic reading beforehand, then form small groups where each member has read a different topic. Have them discuss how their respective topics relate to each other and to the core problems in agent foundations. The following are prompts for small group discussions, each connecting two topic readings.
 
-  - 1 hour of exercises on Löb's theorem, complete class and information theory.
+  ## Cross Pollinations {#cross-pollinations}
 
-  - 1 hour of lecture by Aram Ebtekar on decision theory.
+  ### Logical Induction × Löb's Theorem & Tiling Agents
 
+  The self-trust property (Section 4.12 of [logical induction](https://arxiv.org/pdf/1609.03543)) says that a logical inductor's current credence in any sentence is a weighted average of its expected future credences — it defers to its future self without needing to witness the reasoning trace of its future self. The tiling agent's core desideratum is similar: a parent agent should be able to trust that its successor will act well without inspecting individual actions. Both involve a system placing trust in a future or downstream version of itself. Discuss the relationship between these two notions of self-trust.
 
-  Cross-pollination prompts are provided for small-group discussions, each
-  connecting two topic readings (e.g. Logical Induction × Löb; Löb × Decision
-  Theory; Consequentialist Foundations × Optimization & Thermodynamics; etc.).
+  ### Löb's Theorem × Decision Theory
+
+  Löb's theorem constrains what a proof system can prove about its own soundness. Reflective consistency requires that an agent would endorse its own decision procedure if it could choose one from scratch. FDT requires reasoning about the logical consequences of being "the kind of agent that runs this procedure", which involves the agent reasoning about its own source code. Discuss what these three ideas have in common regarding self-reference.
+
+  ### Consequentialist Foundations × Optimization & Thermodynamics
+
+  The ground of optimization and generalized heat engine describe optimization as a process that produces low-entropy (near-deterministic) outputs by moving uncertainty elsewhere — analogous to a heat engine exploiting a temperature gradient. The coherence theorems describe rational agency as EU maximization over uncertain outcomes. Both frameworks are trying to characterize what it means to pursue goals under uncertainty. Discuss how these two pictures of goal-directed behavior relate to each other. Can the thermodynamic picture offer a "measuring stick of utility"?
+
+  ### Logical Induction x Consequentialist Foundations
+
+  Logical uncertainty might seem disentangled from empirical uncertainty, but are there cases where logical uncertainty may be entangled with empirical uncertainty? (E.g. Does the output of a program (whose source code you already know) ever lead you to update on empirical facts about the world? Do new observations ever reduce your uncertainty about logical facts?)
+
+  ### Logical Induction × Decision Theory
+
+  Standard decision theory assumes agents have well-defined credences over empirical states of the world, but many core decision-theoretic scenarios involve uncertainty over logical facts: whether a particular program halts, what a Newcomb predictor has computed, what other instances of one's own decision procedure will output. Discuss what decision-theoretic problems relate to problems of logical uncertainty, and how the logical induction framework bears on them.
+
+  ### Optimization & Thermodynamics × Descriptive Agent Foundations
+
+  The generalized heat engine describes optimization as moving uncertainty around — producing low-entropy outputs by exploiting entropy gradients elsewhere — with the second law as a hard physical constraint on what is possible. Selection theorems ask what agent type signatures are selected for by optimization processes like evolution or ML training, treating the environment as the external constraint. Discuss how these two perspectives relate to each other, e.g. what constraints might thermodynamics impose on the selection environment?
+
+  ### Consequentialist Foundations × Descriptive Agent Foundations
+
+  The complete class theorem is representational: it shows that any agent avoiding dominated strategies *can be described as* an EU maximizer, without making claims about its internal structure. Descriptive agent foundations and selection theorems take the complementary direction, asking what agents actually are and what pressures give rise to them. Discuss the relationship between the representational and mechanistic perspectives on agency.
+
+  ### Consequentialist Foundations × Logical Induction
+
+  The Dutch book argument underlying coherence theorems assumes the agent can assign the correct probability to any bet — but this implicitly presupposes logical omniscience, since computing expected utilities requires knowing the logical consequences of one's beliefs. The logical induction criterion is motivated by an analogous "no polynomial-time Dutch book" argument, extended to cover logical uncertainty. Discuss how logical uncertainty interacts with the
 ---
 ## Overview
 
-Agent foundations asks what an agent *is*, mathematically, in a way that remains meaningful when the agent is more capable than us, embedded in the world it reasons about, and able to modify itself. This module surveys the landscape — coherence arguments, embedded agency, Löb's obstacle, logical induction, decision theory, optimization, and the descriptive selection-theorems program — and points at the open problems that motivate the research agenda.
+A central challenge in alignment is that we must reason about the behavior of superintelligent agents before such systems exist and before we can learn from mistakes. This module develops formal tools for doing so across several agendas: coherence arguments and the Complete class theorem, Löb's theorem and the Löbian obstacle to safe self-modification, tiling agents and Vingean reflection, logical induction and reasoning under logical uncertainty, functional and updateless decision theory, and the thermodynamics of optimization.
 
 ## Prerequisites
 
