@@ -13,15 +13,71 @@ learningOutcomes:
   - Name the main alignment methods used in each phase, and intuitively
     understand the throughlines that connect the methods within each phase.
   - Feel at home reading most applied alignment papers.
-teachingGuide: >
+notesForFutureIterations: >-
+  TA’s experience from teaching this program:
+
+
+  - It seemed useful to split the discussion/content 1:1 instead of 1:2. The
+  important thing is to feel the room and to abide by the rough module
+  timeslots.  
+
+  - The design challenge / debate basically took 2 hours. We needed to skip most
+  of the discussion and some slides in the Deployment 2 and Deployment 3 to be
+  on time. With the debate, longer discussions, students asking questions and
+  reacting etc, if we went fully according to the original content, we’d be 1hr
+  overtime.  
+
+  - Students often interjected with questions and comments during discussions
+  and presentations. This sometimes messed with the timing but it was great\! I
+  think having a 1hr buffer when re-planning this day would be good.  
+
+  - Takeaways from the debate  
+    - It’s important to keep the spirit of the game, but at the same time, try to get everybody to slightly steelman the arguments they’re hearing. In our debate, Red 1 presented a badly explained attack, but Blue 2 took it, explained “this wouldn’t work, but this better version of it might work, and this is how we’d defend” and this kept the debate alive.  
+    - In our debate, multiple speakers presented each speech (e.g. if Blue 1 had three sections, three people would explain it). This isn’t usual for debates, but I liked it\!  
+    - Cross-examination Qs are very important. It’s often easy to mis-understand what the other side is trying to say and it’s better to clear this up asap in the questions.  
+  - It was easy to forget to go back to the methods mentioned in the discussion
+  during the presentation phase of each module. Try to utilize the whiteboard
+  with the sticky notes more.
+
+
+  Based on student feedback, keep:
+
+
+  - Discussion format within each module and the large debate game. Students
+  loved it.  
+
+  - Overview of different alignment topics (pre-training, post-training,
+  red-teaming, …). Different students appreciated different topics differently,
+  it’s good to have something for everyone.  
+
+  - As many technical details, papers, and techniques as possible. Students
+  liked that they learned about this many new applied methods.  
+
+  - Jailbreaks. Many students seemed to have enjoyed hearing about jailbreaks
+  and could probably take more in-depth content about them.  
+
+  - A good balance between technical depth and breadth. Students liked that this
+  day was easier than the other days and that they’ve gotten a broad overview of
+  many different methods.
+
+
+  Based on student feedback, change:
+
+
+  - Consider reducing the amount of content per day.   
+    - Some students said they felt there was a little bit too much content, and separately, that the module-discussions could’ve been longer and more in-depth.  
+    - Students separately said that they can imagine having two days of content like this in Iliad — that’d be one way to decrease the burden of content. Another way would be to shorten Deployment 2; nobody named that module as their favorite.  
+  - Explain the rules of the debate game clearly, especially what each team is
+  and is not supposed to do. Perhaps have more examples to illustrate do’s and
+  dont’s.
+teachingGuide: >-
   The day is structured around five modules that walk students through the
   stages at which a frontier model is built and released — pretraining,
   post-training, and three stages of deployment — and at each stage, surface the
   safety-relevant ideas, methods, and open problems.
 
 
-  Morning: 15min intro, 1h pre-training, 1h 15min post-training
-
+  Morning: 15min intro, 1h pre-training, 1h 15min post-training  
 
   Afternoon: 30m deployment 1, 1h design discussion, 30m break, 1h deployment 2,
   1h deployment 3, 15m closing session
@@ -56,7 +112,7 @@ teachingGuide: >
   collapsing it.
 
 
-  ### Pre-training
+  ### Pre-training {#pre-training-2}
 
 
   The session is 20 minutes of discussion followed by 40 minutes of
@@ -124,7 +180,7 @@ teachingGuide: >
   every failure mode. This motivates the next slot.
 
 
-  ### Post-training
+  ### Post-training {#post-training-2}
 
 
   The session is 30 minutes of discussion followed by 45 minutes of
@@ -164,8 +220,8 @@ teachingGuide: >
   them discover inoculation prompting — the misalignment disappears. Explain
   that one reason why inoculation prompting works could be that we shift from
   training the model to have the "gets asked for safe code, provides unsafe code
-  => evil" persona to rather have a "gets asked for unsafe code => writes unsafe
-  code => helpful" persona. Then ask: can we use this persona-shaping
+  \=\> evil" persona to rather have a "gets asked for unsafe code \=\> writes
+  unsafe code \=\> helpful" persona. Then ask: can we use this persona-shaping
   deliberately, for alignment? Steer toward Constitutional AI.
 
 
@@ -190,7 +246,7 @@ teachingGuide: >
   misalignment). Close by repeating the high-level story one more time.
 
 
-  ### Deployment 1: Strategy
+  ### Deployment 1: Strategy {#deployment-1:-strategy-2}
 
 
   The session is 20 minutes of discussion followed by 20 minutes of
@@ -258,10 +314,10 @@ teachingGuide: >
   pressure).
 
 
-  ### Design Challenge: Red-Blue debate
+  ### Design Challenge: Red-Blue debate {#design-challenge:-red-blue-debate}
 
 
-  The session runs after Deployment 1, before Deployment 2 and 3. It is 20
+  The session runs after Deployment 1, before Deployment 2 and 3\. It is 20
   minutes of preparation, an hour of structured debate, and about 15 minutes of
   evaluation and closing.
 
@@ -269,12 +325,12 @@ teachingGuide: >
   **The setup.** Students are split into three teams. Blue Team (5 people) plays
   the role of a lab preparing to deploy a new frontier model; Red Team (5
   people) plays external red-teamers trying to break the deployment; Judges
-  (remaining people) evaluate the debate at the end.
+  (remaining people) evaluate the debate at the end. 
 
 
   The TA gives everyone a fixed deployment scenario — a reasoning model will be
   deployed as a general-purpose assistant with chat, API, and FT API access. The
-  goal is to design the system in a way that it doesn't provide meaningful
+  goal is to design the system in a way that it doesn’t provide meaningful
   uplift on developing bioweapons.
 
 
@@ -284,7 +340,7 @@ teachingGuide: >
   design is not itself a safety case — Blue is not running evaluations or
   producing evidence — but it is the kind of system on top of which a safety
   case could later be built, and Blue should be able to say what evidence they
-  would eventually need to collect to argue the deployment is safe.
+  would eventually need to collect to argue the deployment is safe. 
 
 
   Red's deliverable is a concrete attack scenario that reaches the harmful
@@ -325,9 +381,9 @@ teachingGuide: >
 
 
   **Structure.** The debate is strictly timed, with slides driving the timer
-  (one phase per slide). The phases are: 20 min prep, A1 (8) + cross-Qs (3),
-  think break (5), B1 (8) + cross-Qs (3), think break (5), A2 (5) + cross-Qs
-  (3), B2 (5), judges' deliberation (5), judge summaries and TA closing (~15).
+  (one phase per slide). The phases are: 20 min prep, A1 (8) \+ cross-Qs (3),
+  think break (5), B1 (8) \+ cross-Qs (3), think break (5), A2 (5) \+ cross-Qs
+  (3), B2 (5), judges' deliberation (5), judge summaries and TA closing (\~15).
   A1 and A2 are Blue's two speakers; B1 and B2 are Red's. A1 presents Blue's
   initial design; B1 presents Red's attack scenario(s) against it; A2 responds
   with concessions and modifications; B2 delivers a final attack showing the
@@ -342,15 +398,15 @@ teachingGuide: >
 
 
   **Rules that do the work.** Three rules carry the exercise and should be on
-  the slides, not just in the TA's head.
+  the slides, not just in the TA's head. 
 
 
   1. One primary method per stage for Blue — this blocks the "throw everything
-  at the wall" failure mode and forces real commitments that Red can attack.
+  at the wall" failure mode and forces real commitments that Red can attack.   
 
   2. Attacks must be concrete and composed for Red — a single end-to-end
   scenario that walks through all three of Blue's defenses, not three
-  disconnected what-ifs.
+  disconnected what-ifs.   
 
   3. Prefer the weakest adversary that breaks the system for Red — a chat-only
   user finding a gap is a stronger argument than a state actor with stolen
@@ -383,6 +439,7 @@ teachingGuide: >
 
 
   ### Deployment 2: Understanding the Model
+  {#deployment-2:-understanding-the-model-2}
 
 
   The session is 30 minutes of discussion followed by 30 minutes of
@@ -467,6 +524,7 @@ teachingGuide: >
 
 
   ### Deployment 3: Building the Safety System
+  {#deployment-3:-building-the-safety-system-2}
 
 
   The session is 30 minutes of discussion followed by 30 minutes of
@@ -509,8 +567,8 @@ teachingGuide: >
   struggle for a minute. They will likely propose benchmarks or evaluation
   suites; accept this, then push: what does it mean to "pass"? Steer toward the
   realization that we cannot prove anything, and that what we can do is report
-  *how much adversarial effort the system withstood before breaking*. Name this
-  as the central idea of the module: safety claims are effort-bounded
+  **how much adversarial effort the system withstood before breaking**. Name
+  this as the central idea of the module: safety claims are effort-bounded
   statistical claims, not proofs. Mention briefly that internal red teams at the
   labs and external bodies like UK AISI run open-ended attempts and report how
   long it took experts to find a universal jailbreak.
@@ -557,6 +615,10 @@ teachingGuide: >
   measured amount of effort, and that number is what every safety claim
   ultimately rests on.
 ---
+## Overview
+
+We step through the model development pipeline — pretraining, post-training, deployment — and build intuitions about what affordances each of the development phases gives us for model alignment. We then illustrate these affordances by discussing the state of the art methods employed by the major labs in each of the phases. We also mention key empirical results that are useful to build an intuitive model of LLM behavior. In the deployment phase specifically, we take a high-level view and briefly discuss the non-technical parts of aligning models — responsible scaling policies, safety cases, economic impacts of AI, and AI governance.
+
 ## Prerequisites
 
 The students should have good high-level understanding of the following:
