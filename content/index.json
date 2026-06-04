@@ -154,7 +154,7 @@
     "frontmatter": {
       "title": "Alignment in practice",
       "cluster": "A",
-      "summary": "A tour of how frontier LLMs are actually aligned in practice — interventions at pre-training, post-training, and three stages of deployment — including methods, limitations, and the structure of safety cases.",
+      "summary": "A tour of how frontier LLMs are attempted to be aligned in practice — interventions at pre-training, post-training, and three stages of deployment.",
       "contributors": [
         "Evžen Wybitul (University of Oxford)"
       ],
