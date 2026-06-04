@@ -261,7 +261,7 @@
     "frontmatter": {
       "title": "Principles of Learning",
       "cluster": "B",
-      "summary": "A broad overview of the three fundamental barriers to universal learning — approximation, generalization, and optimization — and how Solomonoff induction frames them.",
+      "summary": "A broad overview of the three fundamental barriers to universal learning — approximation, generalization, and optimization — and how Solomonoff induction solves too of them but fails at the third.",
       "contributors": [
         "Zach Furman (The University of Melbourne)"
       ],
