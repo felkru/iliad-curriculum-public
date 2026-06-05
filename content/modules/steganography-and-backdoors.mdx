@@ -44,8 +44,8 @@ teachingGuide: "
   for AI safety.\v\vPaper Reading (in breakout rooms if possible): [Models can
   hide COT with steganography](https://arxiv.org/html/2506.01926v2)
   [Steganography can arise and not easily prevented by
-  paraphrasing](https://arxiv.org/pdf/2410.03768) [Model weight
-  extractions](https://arxiv.org/pdf/2511.02620) Discussion Prompts for the
+  paraphrasing](/uploads/steganography-and-backdoors/2410.03768v2.pdf) [Model weight
+  extractions](/uploads/steganography-and-backdoors/2511.02620v3.pdf) Discussion Prompts for the
   papers: Why is this scenario a danger to AI safety? What are sender, receiver,
   adversary? What is the channel used How was the secret key exchanged? Is the
   steganography successful? How does it emerge? Give a small example of a
@@ -68,7 +68,7 @@ teachingGuide: "
 
   | 14:00 | Paper Reading: [**Unelicitable Backdoors via Cryptographic
   Transformer Circuits**](https://arxiv.org/html/2406.02619v1) **[Cryptographic
-  Backdoors](https://arxiv.org/pdf/2204.06974)** [\"Backdoor Defense,
+  Backdoors](/uploads/steganography-and-backdoors/2204.06974v2.pdf)** [\"Backdoor Defense,
   Learnability and Obfuscation\"](https://arxiv.org/abs/2409.03077) (Pau
   Christiano) [\"Injecting Undetectable Backdoors in Obfuscated Neural Networks
   and Language Models\"](https://arxiv.org/abs/2406.05660) Explaining the papers
@@ -76,10 +76,10 @@ teachingGuide: "
   this relate to the worst-case interp stuff from module E.3? What is the
   advantage of their backdoor in Section 4.2 compared to Section 4.1? What are
   the properties we would like to have for a good backdoor?  **[Cryptographic
-  Backdoors](https://arxiv.org/pdf/2204.06974)**  |
+  Backdoors](/uploads/steganography-and-backdoors/2204.06974v2.pdf)**  |
 
   | 15:00 | **Exercise**: Construction of the Random ReLU two-layer network from
-  Based on the paper: [**Shafi Goldwasser**](https://arxiv.org/pdf/2204.06974)
+  Based on the paper: [**Shafi Goldwasser**](/uploads/steganography-and-backdoors/2204.06974v2.pdf)
   et al. Calculate that this will work as intended, also there is a slight
   mistake in the paper that is fixed with this exercise. Potentially ask the
   students why the version in the paper won’t work as intended (Answer: It’s
@@ -266,9 +266,9 @@ Mode 3
 #### Perfect Steganography vs Computational Steganography
 
 Perfect steganography, or information-theoretic steganography, means that without the secret key, the attacker doesn’t have enough information to retrieve the secret payload message, no matter how much computational power they have.  
-We included here a short proof of the entropy of the message being lower-bounded by the entropy of the key. This explains why perfect security would be cumbersome in practice, as it needs the key length to scale linearly with message length: [Steganography\_Introduction.pdf](https://drive.google.com/file/d/1hl45fOJMOE7ChJWn52JpudBLJ1lFDwGN/view?usp=drive_link).
+We included here a short proof of the entropy of the message being lower-bounded by the entropy of the key. This explains why perfect security would be cumbersome in practice, as it needs the key length to scale linearly with message length: [Steganography\_Introduction.pdf](/uploads/steganography-and-backdoors/Steganography_Introduction.pdf).
 
-A short shared key cannot give unbounded perfect IT indistinguishability, so one typically settles for **computational indistinguishability**. Under standard cryptographic assumptions such as the existence of **one-way functions** (hence Pseudo-Random Functions), any **efficient** attacker cannot distinguish the stego-text from the innocent one except with negligible advantage. This does **not** protect against an attacker with unlimited computation, but the generic attack is exhaustive search over the key space, so the effort is at most about 2^\{\\lambda\}, and security aims to be of that order.
+A short shared key cannot give unbounded perfect IT indistinguishability, so one typically settles for **computational indistinguishability**. Under standard cryptographic assumptions such as the existence of **one-way functions** (hence Pseudo-Random Functions), any **efficient** attacker cannot distinguish the stego-text from the innocent one except with negligible advantage. This does **not** protect against an attacker with unlimited computation, but the generic attack is exhaustive search over the key space, so the effort is at most about 2^{\\lambda}, and security aims to be of that order.
 
 #### A practical strategy for Steganography with LLMs
 
@@ -285,13 +285,13 @@ The paper keeps this exact sampling procedure, but instead of using fresh random
 
 1.  **Sample exactly like the original LLM**. At each step, the LLM gives a next-token distribution. The scheme draws a uniform value from a secret-keyed PRF and uses it to sample from that distribution. Since the value is uniform-looking, the token distribution is unchanged.
     
-2.  **Make the PRF depend on the hidden symbol**. To transmit a code symbol σ∈\{0,1,←\}, the generator uses randomness like F\_k(r,i,\\sigma) where k is the secret key, iii is the token position, and r is a response-specific random prefix.  
+2.  **Make the PRF depend on the hidden symbol**. To transmit a code symbol σ∈{0,1,←}, the generator uses randomness like F\_k(r,i,\\sigma) where k is the secret key, iii is the token position, and r is a response-specific random prefix.  
     Generate tokens while “pushing” one symbol.  
     For several consecutive tokens, the generator samples using the PRF stream corresponding to the current symbol σ\\sigmaσ. The visible text still follows the normal LLM distribution.
     
 3.  **Decoder scores all candidate symbols.** The decoder knows kkk, so for the observed tokens it computes scores for each candidate symbol: σ=0,1,← The correct symbol’s score tends to grow faster. Once one score crosses a threshold, the decoder records that symbol and resets the scores.
     
-4.  Use dynamic error correction. Because the decoder can occasionally pick the wrong symbol, the hidden payload is first encoded with a dynamic error-correcting code over \{0,1,←\}. The symbol ← acts like a backspace, letting the code repair earlier decoding errors.
+4.  Use dynamic error correction. Because the decoder can occasionally pick the wrong symbol, the hidden payload is first encoded with a dynamic error-correcting code over {0,1,←}. The symbol ← acts like a backspace, letting the code repair earlier decoding errors.
     
 5.  **Repeat until the response ends.** The generated response contains as many hidden code symbols as its length and entropy allow. Longer, higher-entropy responses carry more payload.
     
@@ -302,9 +302,9 @@ The paper keeps this exact sampling procedure, but instead of using fresh random
 
 -   Chain-of-Thought monitoring is, at the moment, the only really practical approach to find out how LLMs reason. Using steganography, models can however hide what they are thinking from monitors. This can arise naturally and quickly, as soon as there is any optimisation pressure on the COT to censor certain thoughts: [Models can hide COT with steganography](https://arxiv.org/html/2506.01926v2)
     
--   Models can collude with each other for nefarious purposes and scheme without human overseers noticing. [Steganography can arise and not easily prevented by paraphrasing](https://arxiv.org/pdf/2410.03768)
+-   Models can collude with each other for nefarious purposes and scheme without human overseers noticing. [Steganography can arise and not easily prevented by paraphrasing](/uploads/steganography-and-backdoors/2410.03768v2.pdf)
     
--   Crucial information could be smuggled out of frontier labs, such as model weights ([Model weight extractions](https://arxiv.org/pdf/2511.02620)) which allows either bad actors to run strong models, the model to proliferate copies of itself to run independently.
+-   Crucial information could be smuggled out of frontier labs, such as model weights ([Model weight extractions](/uploads/steganography-and-backdoors/2511.02620v3.pdf)) which allows either bad actors to run strong models, the model to proliferate copies of itself to run independently.
     
 
 ### Learn more
