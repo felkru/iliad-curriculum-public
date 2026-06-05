@@ -67,7 +67,7 @@ teachingGuide: "Here we outline how the material was taught in-person in April:
   | 14:30 | **Pause** |
 
   | 15:30 | Reading session: [The AI safety case of the
-  AISI](https://arxiv.org/pdf/2505.03989) as preparation for the later talk. The
+  AISI](/uploads/debate/2505.03989v3.pdf) as preparation for the later talk. The
   idea is that the students already know the structure of the talk: The general
   idea The many assumptions that the safety case makes The path towards
   automated research and ultimately alignment The goal is that the students can
@@ -123,7 +123,7 @@ To get a high-level understanding of debate quickly, simply go through the descr
 
 ### Main content
 
-Read the description in this section for an intuitive idea, and for mathematical details and the exercises read the corresponding section in [Debate\_Proofs\_and Exercises.pdf](https://drive.google.com/file/d/16A0hSaMEaBNUPYNvv6c2B5kp1lYfG550/view?usp=drive_link) that is also linked further below. You may also read any of the posts and papers that we link throughout this section.
+Read the description in this section for an intuitive idea, and for mathematical details and the exercises read the corresponding section in [Debate\_Proofs\_and Exercises.pdf](/uploads/debate/Debate_Proofs_and_Exercises.pdf) that is also linked further below. You may also read any of the posts and papers that we link throughout this section.
 
 #### Proof Checkers: When oversight works
 
@@ -133,9 +133,9 @@ But formal verification is limited to purely syntactic domains, and most problem
 
 #### The Debate Setup
 
-[The original AISvD paper](https://arxiv.org/pdf/1805.00899)’s core idea is to align AI by having two systems debate each other in front of a human judge. Rather than requiring the human to solve a difficult problem directly, the judge only needs to evaluate which side makes the stronger argument. The central intuition is that, for many questions, spotting a flaw may be easier than producing a flawless deception, so competitive self-play could reward truthfulness.
+[The original AISvD paper](/uploads/debate/1805.00899v2.pdf)’s core idea is to align AI by having two systems debate each other in front of a human judge. Rather than requiring the human to solve a difficult problem directly, the judge only needs to evaluate which side makes the stronger argument. The central intuition is that, for many questions, spotting a flaw may be easier than producing a flawless deception, so competitive self-play could reward truthfulness.
 
-The setup, formalised here: [Debate\_Proofs\_and Exercises.pdf](https://drive.google.com/file/d/16A0hSaMEaBNUPYNvv6c2B5kp1lYfG550/view?usp=drive_link), consists of a question, e.g., “Can I win a game of tic-tac-toe if I play first?” and two provers, Alice and Bob, Alice arguing for “Yes” and Bob arguing for “No”. The judge evaluates a polynomially-sized list of arguments and decides on their final verdict which side to accept. An example argument for the tic-tac-toe case might be:
+The setup, formalised here: [Debate\_Proofs\_and Exercises.pdf](/uploads/debate/Debate_Proofs_and_Exercises.pdf), consists of a question, e.g., “Can I win a game of tic-tac-toe if I play first?” and two provers, Alice and Bob, Alice arguing for “Yes” and Bob arguing for “No”. The judge evaluates a polynomially-sized list of arguments and decides on their final verdict which side to accept. An example argument for the tic-tac-toe case might be:
 
 1.  Alice: If you play in the middle you will win.
     
@@ -160,7 +160,7 @@ The headline complexity result is that, in this idealized setting, cross-examina
 
 A series of criticisms and caveats have been leveled at the whole idea of AI safety via debate. The following list are the ones which are accepted and actively worked on by debate researchers.
 
--   The most important is **Obfuscated Arguments**, raised by Beth Barnes. This refers to the fact that for computationally bounded provers, a viable strategy for a malicious prover is to “decompose” a false argument into a series of arguments, where most are correct but a small number is false and it is computationally hard to find out which are false. A common example is the claim “N is a prime number” which can be easily refuted by stochastic primality testing. But if Alice partitions this into subclaims \{“N has no prime number in the interval I\_1”, N has no prime number in the interval I\_2”, …\} where the intervals cover the numbers from 2 to sqrt(N), then it is computationally hard to find out which of these subclaims is wrong, even though Bob knows at least one has to be. It is much harder to find out where the prime factors are than to assert that at least two exist.
+-   The most important is **Obfuscated Arguments**, raised by Beth Barnes. This refers to the fact that for computationally bounded provers, a viable strategy for a malicious prover is to “decompose” a false argument into a series of arguments, where most are correct but a small number is false and it is computationally hard to find out which are false. A common example is the claim “N is a prime number” which can be easily refuted by stochastic primality testing. But if Alice partitions this into subclaims {“N has no prime number in the interval I\_1”, N has no prime number in the interval I\_2”, …} where the intervals cover the numbers from 2 to sqrt(N), then it is computationally hard to find out which of these subclaims is wrong, even though Bob knows at least one has to be. It is much harder to find out where the prime factors are than to assert that at least two exist.
     
 -   The best strategy for a prover to win might be to get the human judge to run code as part of an experiment to settle the argument that would then have malicious consequences and force the human judge to reward the dishonest debater.
     
@@ -173,7 +173,7 @@ A series of criticisms and caveats have been leveled at the whole idea of AI saf
 
 #### Prover-Estimator Debate
 
-[This paper](https://arxiv.org/pdf/2506.13609) is a direct attempt to solve the obfuscated arguments problem while keeping the attractive recursive structure of debate. Instead of having the opponent choose which subclaim to attack, the protocol makes the roles asymmetric: Alice is the prover, who decomposes a claim into subclaims, and Bob is the estimator, who assigns probabilities to those subclaims. Alice then has to pick a subclaim and argue that Bob’s probability is wrong in a particular direction. The key idea is that if Bob can assign probabilities that are hard for Alice to distinguish from the truth, then Alice cannot reliably steer the debate toward a hidden flaw unless such a flaw is actually findable.
+[This paper](/uploads/debate/2506.13609v1.pdf) is a direct attempt to solve the obfuscated arguments problem while keeping the attractive recursive structure of debate. Instead of having the opponent choose which subclaim to attack, the protocol makes the roles asymmetric: Alice is the prover, who decomposes a claim into subclaims, and Bob is the estimator, who assigns probabilities to those subclaims. Alice then has to pick a subclaim and argue that Bob’s probability is wrong in a particular direction. The key idea is that if Bob can assign probabilities that are hard for Alice to distinguish from the truth, then Alice cannot reliably steer the debate toward a hidden flaw unless such a flaw is actually findable.
 
 The paper’s most important new concept is **(ϵ,ρ)-stability**. Informally, a recursive argument is stable if its correctness does not depend too delicately on tiny changes in the probabilities assigned to subclaims. That matters because the estimator is only trying to be approximately right. If a correct argument collapses whenever a subclaim probability shifts by an arbitrarily small amount, then no realistic estimator could support it reliably. The authors therefore require stability for the **usefulness** of the protocol: honest provers can win when they have robust arguments, not brittle ones.
 
@@ -193,6 +193,6 @@ The paper’s most important new concept is **(ϵ,ρ)-stability**. Informally, a
     
 -   [The alignment safety-case sketch based on Debate](https://www.aisi.gov.uk/research/an-alignment-safety-case-sketch-based-on-debate)
     
--   [Knowledge Divergence and the Value of Debate for Scalable Oversight](https://arxiv.org/pdf/2603.05293)
+-   [Knowledge Divergence and the Value of Debate for Scalable Oversight](/uploads/debate/2603.05293v1.pdf)
     
 -   [Emergent Alignment via Competion](https://arxiv.org/html/2509.15090v2#abstract)
