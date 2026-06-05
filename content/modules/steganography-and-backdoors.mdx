@@ -268,7 +268,7 @@ Mode 3
 Perfect steganography, or information-theoretic steganography, means that without the secret key, the attacker doesn’t have enough information to retrieve the secret payload message, no matter how much computational power they have.  
 We included here a short proof of the entropy of the message being lower-bounded by the entropy of the key. This explains why perfect security would be cumbersome in practice, as it needs the key length to scale linearly with message length: [Steganography\_Introduction.pdf](https://drive.google.com/file/d/1hl45fOJMOE7ChJWn52JpudBLJ1lFDwGN/view?usp=drive_link).
 
-A short shared key cannot give unbounded perfect IT indistinguishability, so one typically settles for **computational indistinguishability**. Under standard cryptographic assumptions such as the existence of **one-way functions** (hence Pseudo-Random Functions), any **efficient** attacker cannot distinguish the stego-text from the innocent one except with negligible advantage. This does **not** protect against an attacker with unlimited computation, but the generic attack is exhaustive search over the key space, so the effort is at most about 2^{\\lambda}, and security aims to be of that order.
+A short shared key cannot give unbounded perfect IT indistinguishability, so one typically settles for **computational indistinguishability**. Under standard cryptographic assumptions such as the existence of **one-way functions** (hence Pseudo-Random Functions), any **efficient** attacker cannot distinguish the stego-text from the innocent one except with negligible advantage. This does **not** protect against an attacker with unlimited computation, but the generic attack is exhaustive search over the key space, so the effort is at most about 2^\{\\lambda\}, and security aims to be of that order.
 
 #### A practical strategy for Steganography with LLMs
 
@@ -285,13 +285,13 @@ The paper keeps this exact sampling procedure, but instead of using fresh random
 
 1.  **Sample exactly like the original LLM**. At each step, the LLM gives a next-token distribution. The scheme draws a uniform value from a secret-keyed PRF and uses it to sample from that distribution. Since the value is uniform-looking, the token distribution is unchanged.
     
-2.  **Make the PRF depend on the hidden symbol**. To transmit a code symbol σ∈{0,1,←}, the generator uses randomness like F\_k(r,i,\\sigma) where k is the secret key, iii is the token position, and r is a response-specific random prefix.  
+2.  **Make the PRF depend on the hidden symbol**. To transmit a code symbol σ∈\{0,1,←\}, the generator uses randomness like F\_k(r,i,\\sigma) where k is the secret key, iii is the token position, and r is a response-specific random prefix.  
     Generate tokens while “pushing” one symbol.  
     For several consecutive tokens, the generator samples using the PRF stream corresponding to the current symbol σ\\sigmaσ. The visible text still follows the normal LLM distribution.
     
 3.  **Decoder scores all candidate symbols.** The decoder knows kkk, so for the observed tokens it computes scores for each candidate symbol: σ=0,1,← The correct symbol’s score tends to grow faster. Once one score crosses a threshold, the decoder records that symbol and resets the scores.
     
-4.  Use dynamic error correction. Because the decoder can occasionally pick the wrong symbol, the hidden payload is first encoded with a dynamic error-correcting code over {0,1,←}. The symbol ← acts like a backspace, letting the code repair earlier decoding errors.
+4.  Use dynamic error correction. Because the decoder can occasionally pick the wrong symbol, the hidden payload is first encoded with a dynamic error-correcting code over \{0,1,←\}. The symbol ← acts like a backspace, letting the code repair earlier decoding errors.
     
 5.  **Repeat until the response ends.** The generated response contains as many hidden code symbols as its length and entropy allow. Longer, higher-entropy responses carry more payload.
     
