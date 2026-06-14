@@ -1,0 +1,102 @@
+---
+title: Module title
+cluster: B
+summary: A one-sentence pitch for what this module teaches
+contributors:
+  - Jane Doe (Iliad)
+learningOutcomes:
+  - State and prove the main theorem of …
+  - Implement … in PyTorch
+difficulty: 2
+importance: 3
+timeMinutes: 90
+---
+## Overview
+
+Two to three sentences framing what this module is about and why it matters.
+End with what the student will be able to do after working through it. KaTeX
+works inline like $f(x) = \sigma(Wx + b)$ and as display:
+
+$$
+\mathcal{L}(\theta) = \mathbb{E}_\{x \sim \mathcal{D}\}\bigl[\ell(f_\theta(x), y)\bigr].
+$$
+
+## Prerequisites
+
+What students should already know, with links to the modules that cover
+those prerequisites:
+
+-   [Reward Learning Theory](/alignment/reward-learning) — for the assistance-game framing.
+-   Familiarity with stochastic gradient descent.
+
+## Lecture
+
+The main body of the module. Use `###` subsections to break it up. Math,
+prose, and components mix freely.
+
+### A definition
+
+<Definition term="Inductive bias">
+  The set of assumptions a learner uses to generalise from finitely many
+  examples to unseen ones. Two learners with identical training data can
+  disagree because their inductive biases differ.
+</Definition>
+
+### A formal statement
+
+<Theorem kind="theorem" name="Universal approximation">
+  For any continuous $f : [0,1]^n \to \mathbb{R}$ and any $\epsilon > 0$, there
+  exists a one-hidden-layer neural network $\hat f$ with $\sup_x |f(x) - \hat f(x)| < \epsilon$.
+</Theorem>
+
+Use `kind="lemma"`, `"proposition"`, or `"corollary"` for the obvious
+variants. The optional `name` attribution shows in the header.
+
+### A figure
+
+<Figure src="/uploads/<slug>/figure-1.png" alt="Loss-landscape sketch" caption="A flat singular minimum (left) vs. a sharp one (right). The arrow shows the direction of SGD's implicit regulariser." />
+
+### A side-note
+
+<Callout type="note">
+  This is a `note` callout. Use `type="warning"` for caveats, `type="tip"`
+  for shortcuts.
+</Callout>
+
+<Callout type="warning">
+  Common pitfall: the variance term in the bound is taken over $\mathcal{D}$,
+  not the empirical sample.
+</Callout>
+
+<Callout type="tip">
+  For a longer-form discussion of this argument, see Bach (2022, §4.2).
+</Callout>
+
+## Exercises
+
+Use `<Exercise difficulty={N}>` (N from 1–5) and pair each with a
+collapsible `<Solution>`.
+
+<Exercise difficulty={2}>
+  Show that the bias of SGD with constant step size is $O(\eta)$.
+</Exercise>
+
+<Solution>
+  Expand the iteration in a Taylor series around the gradient flow and group
+  the terms by order in $\eta$. The leading-order correction is …
+</Solution>
+
+<Exercise difficulty={3}>
+  Construct a two-parameter neural network whose loss landscape has a
+  non-isolated minimum.
+</Exercise>
+
+<Solution>
+  Take $f_\{\theta\}(x) = \theta_1 \theta_2 x$ and $\ell(y, \hat y) = (y - \hat y)^2$. Then the locus $\{ \theta_1 \theta_2 = c \}$ is a continuum of
+  minima.
+</Solution>
+
+## Further reading
+
+-   [Original paper](https://arxiv.org/abs/0000.00000) — Author et al., year.
+-   [Lecture notes](https://example.org/notes.pdf) — context + figures.
