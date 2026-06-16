@@ -1,0 +1,58 @@
+E.2 Steganography & Backdoors
+
+Contributors
+Stephan Wäldchen (Independent) and Louis Jaburi (EleutherAI).
+
+Learning outcomes
+- The students should understand the basic idea of steganography as a technique to hide messages and that it makes CoT reasoning illegible.
+- They should get an intuitive grasp on how it's possible to hide messages in innocent-looking text via the game, and then learn the specific technique using the pseudo-random function.
+- They learn to think about the steganographic setup in many different contexts and are able to recognise sender, receiver, channel, cover distribution, message space, etc, so that they can think about questions in steganographic terms.
+
+Prerequisites
+Information Theory: (Conditional) Entropy, Mutual Information; Lossy vs Lossless Compression.
+Statistics: Multivariate Normal distribution: moments, density function; Concentration Inequalities: Markov/Chebyshev.
+Cryptography: Pseudo-Random Functions, One-Way functions; Public Key encryption.
+
+Content
+Note: This content section largely focuses on the steganography component of this module. For the content on backdoors, see 'Learn more' and the teaching guide that outlines how this material was taught in-person.
+
+Fast track
+Simply read the description in 'main content' and ask a language model of your choice to help you understand.
+
+Main content
+Introduction to steganography: Steganography is the art and science of hidden communication. Unlike cryptography, which protects the content of a message by making it unreadable to outsiders, steganography seeks to conceal the very existence of the message itself. A steganographic setup typically consists of: A sender and a receiver (encoder and decoder) sharing a secret key; A communication channel; A distribution of innocent messages; A message space; An encoding procedure; A decoding procedure; A correctness condition; An adversary (warden); A security condition.
+
+The Stego Game: A practical game exploring steganography. Needs: at least 4 students, 2 rooms, pen, paper and a blackboard.
+1. Strategy Phase: Two teams (Encoder group + Decoder group); facilitators serve as the channel group.
+2. A list of 6 words is presented.
+3. Encoder Phase: Decoder groups leave. Encoder groups draw a word. Channel group asks an open-ended question. Encoders write answer (max 30 words). Channel group judges innocence.
+4. Decoder Phase: Channel writes stego-text on blackboard. Decoder group has 1 minute to decode.
+5. Adversary Phase: Other team has 5 minutes to guess.
+Subsequent modes: list of words isn't known beforehand; the channel team paraphrases the message.
+
+Perfect Steganography vs Computational Steganography: Perfect steganography (information-theoretic) means that without the secret key, the attacker doesn't have enough information to retrieve the secret payload, no matter how much computational power. The entropy of the message is lower-bounded by the entropy of the key, so perfect security needs key length to scale linearly with message length (Steganography_Introduction.pdf, Google Drive 1hl45fOJMOE7ChJWn52JpudBLJ1lFDwGN). A short shared key gives computational indistinguishability: under standard cryptographic assumptions (one-way functions, hence PRFs), any efficient attacker cannot distinguish stego-text from innocent except with negligible advantage.
+
+A practical strategy for Steganography with LLMs: At every generation step, a language model produces a probability distribution over the next token. The scheme keeps exact sampling but uses a secret-keyed PRF instead of fresh randomness. The authors describe their universal steganographic scheme: (1) Sample exactly like the original LLM; (2) Make the PRF depend on the hidden symbol σ∈{0,1,←} via F_k(r,i,σ); (3) Generate tokens while pushing one symbol; (4) Decoder scores all candidate symbols and the correct symbol's score tends to grow faster; (5) Use dynamic error correction (← acts like backspace); (6) Repeat until response ends; (7) Avoid reuse across many queries via a natural high-entropy prefix r.
+
+Relevance for AI Safety:
+- Chain-of-Thought monitoring is the only really practical approach to find out how LLMs reason. Using steganography, models can hide what they are thinking. This can arise from any optimisation pressure on CoT to censor certain thoughts (https://arxiv.org/html/2506.01926v2).
+- Models can collude with each other for nefarious purposes and scheme without human overseers noticing (https://arxiv.org/pdf/2410.03768).
+- Crucial information could be smuggled out of frontier labs, such as model weights (https://arxiv.org/pdf/2511.02620).
+
+Learn more
+Cryptographic Backdoors:
+- 'Backdoor Defense, Learnability and Obfuscation' (Paul Christiano, https://arxiv.org/abs/2409.03077)
+- 'Injecting Undetectable Backdoors in Obfuscated Neural Networks and Language Models' (https://arxiv.org/abs/2406.05660)
+
+Teaching guide (in-person schedule covering both steganography and backdoors):
+10:00 Fun exercise: The Stego Game.
+11:30 Short whiteboard presentations about steganography theory and practice — informational vs computational indistinguishability; the basic idea behind Undetectable Steganography for Language models (using pseudo-randomness to design universal scheme).
+12:00 Discussion: what is the relevancy of steganography for AI safety? Paper Reading (in breakout rooms): Models can hide CoT with steganography; Steganography can arise and not easily prevented by paraphrasing; Model weight extractions. Discussion Prompts: Why is this scenario a danger? What are sender, receiver, adversary? What is the channel used? How was the secret key exchanged? Is the steganography successful? How does it emerge? Give a small example of a possible stego-text and payload.
+12:30 Lunch Break.
+13:30 Discussion: How would you plant a backdoor in an LLM?
+14:00 Paper reading: 'Unelicitable Backdoors via Cryptographic Transformer Circuits' (https://arxiv.org/html/2406.02619v1). Also Cryptographic Backdoors (https://arxiv.org/pdf/2204.06974); 'Backdoor Defense, Learnability and Obfuscation' (Christiano); 'Injecting Undetectable Backdoors in Obfuscated Neural Networks and Language Models'. Discussion: limitations of current approaches; relation to worst-case interp; properties we want for a good backdoor.
+15:00 Exercise: Construction of the Random ReLU two-layer network based on Shafi Goldwasser et al. (Cryptographic Backdoors). Calculate that this works as intended (ReLU_Exercise.pdf, Google Drive 1tDucCvSSEK7wd7TJfg_PT7wF7xiArm9r). Also fixes a slight mistake in the paper (no normalisation of the input vector, so just making the norm larger is already a backdoor).
+16:00 Pause.
+16:30 Presentation: Merlin-Arthur Classifiers (Merlin_Arthur_Classifiers.pdf, Google Drive 13zokrgrsrUYqM9khxaPz_WD72-FMQVfP).
+17:30 Debate between Claude and ChatGPT: Explain the debate format to both AIs. Topic: 'Should Frontier AI labs have to undergo external safety reviews?'.
+18:00 Dinner.
