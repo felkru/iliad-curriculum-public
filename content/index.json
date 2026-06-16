@@ -1078,6 +1078,60 @@
     ]
   },
   {
+    "slug": "steganography-and-backdoors",
+    "title": "Steganography & Backdoors",
+    "cluster": "E",
+    "frontmatter": {
+      "title": "Steganography & Backdoors",
+      "cluster": "E",
+      "summary": "Hidden communication in LLM outputs — perfect vs computational steganography, a practical PRF-based scheme, and relations with chain-of-thought monitoring; furthermore, hidden backdoors.",
+      "contributors": [
+        "Stephan Wäldchen (Independent)",
+        "Louis Jaburi (EleutherAI)"
+      ],
+      "teachingGuide": "\nThis teaching guide outlines how the materials on both steganography and backdoors were taught in-person.\n\n| Schedule | 26.04. Steganography/Backdoors |\n| :---- | ----- |\n| 10:00 | **Fun exercise: The Stego Game** |\n| 11:30 | Short whiteboard presentations about steganography theory and practice. We explain the difference between informational and computational indistinguishability, how the former one would require a very large random seed, while the latter can be implemented efficiently, while being secure only against computationally constrained adversaries (which is a reasonable assumption). [Steganography\\_Introduction.pdf](https://drive.google.com/file/d/1hl45fOJMOE7ChJWn52JpudBLJ1lFDwGN/view?usp=drive_link) Then we go trough the basic idea behind: [Undetectable Steganography for Language models](https://openreview.net/pdf?id=fq6aQoMSHz), using pseudo-randomness to design universal scheme for LLM-based steganography. |\n| 12:00 | Ask the students what they think the relevancy of steganography is for AI safety.\u000b\u000bPaper Reading (in breakout rooms if possible): [Models can hide COT with steganography](https://arxiv.org/html/2506.01926v2) [Steganography can arise and not easily prevented by paraphrasing](https://arxiv.org/pdf/2410.03768) [Model weight extractions](https://arxiv.org/pdf/2511.02620) Discussion Prompts for the papers: Why is this scenario a danger to AI safety? What are sender, receiver, adversary? What is the channel used How was the secret key exchanged? Is the steganography successful? How does it emerge? Give a small example of a possible stego-text and payload |\n|  |  |\n| 12:30 | **Lunch Break** |\n| 13:30 |  **Discussion**: How would you plant a backdoor in an LLM? Here the students are just asked to brainstorm ideas about how to possibly plant a backdoor in an LLM, thinking about the architectural challenges. |\n| 14:00 | Paper reading: [**Unelicitable Backdoors via Cryptographic Transformer Circuits**](https://arxiv.org/html/2406.02619v1) What is the advantage of their backdoor in Section 4.2 compared to Section 4.1? What are the limitations of the current approaches? How bad would this be for the worst-case interp stuff from yesterday (in the current form and in a more sophisticated setting)? |\n| 14:00 | Paper Reading: [**Unelicitable Backdoors via Cryptographic Transformer Circuits**](https://arxiv.org/html/2406.02619v1) **[Cryptographic Backdoors](https://arxiv.org/pdf/2204.06974)** [\"Backdoor Defense, Learnability and Obfuscation\"](https://arxiv.org/abs/2409.03077) (Pau Christiano) [\"Injecting Undetectable Backdoors in Obfuscated Neural Networks and Language Models\"](https://arxiv.org/abs/2406.05660) Explaining the papers to each other What are the limitations of the current approaches? How does this relate to the worst-case interp stuff from module E.3? What is the advantage of their backdoor in Section 4.2 compared to Section 4.1? What are the properties we would like to have for a good backdoor?  **[Cryptographic Backdoors](https://arxiv.org/pdf/2204.06974)**  |\n| 15:00 | **Exercise**: Construction of the Random ReLU two-layer network from Based on the paper: [**Shafi Goldwasser**](https://arxiv.org/pdf/2204.06974) et al. Calculate that this will work as intended, also there is a slight mistake in the paper that is fixed with this exercise. Potentially ask the students why the version in the paper won’t work as intended (Answer: It’s that there is no normalisation of the input vector, so just making the norm larger is already a backdoor). The exercise is broken down into intermediate steps that are simple enough for the students to go through.  [ReLU\\_Exercise.pdf](https://drive.google.com/file/d/1tDucCvSSEK7wd7TJfg_PT7wF7xiArm9r/view?usp=drive_link)  |\n| 16:00 | **Pause** |\n| 16:30 | Presentation: **Merlin-Arthur Classifiers   [Merlin\\_Arthur\\_Classifiers.pdf](https://drive.google.com/file/d/13zokrgrsrUYqM9khxaPz_WD72-FMQVfP/view?usp=drive_link)** |\n| 17:30 | **Debate between Claude and ChatGPT: Explain the debate format to both AIs As a topic we had “Should Frontier AI labs have to undergo external safety  So far implemented by just repeated copy-paste, one of the students built an automatic process that could be used** |\n| 18:00 | Dinner |",
+      "learningOutcomes": [
+        "Understand the basic idea of steganography as a technique to hide messages and that it makes CoT reasoning illegible.",
+        "Get an intuitive grasp on how it's possible to hide messages in innocent-looking text via the Stego Game, and learn the specific technique using the pseudo-random function.",
+        "Think about the steganographic setup in many different contexts and recognise sender, receiver, channel, cover distribution, message space, etc., so as to reason about questions in steganographic terms."
+      ],
+      "notesForFutureIterations": "* The game was a success, but it can be made harder. One way would be to make the adversary team guess which message out of four was produced by the encoding team. The encoding team knows which messages they have to hide behind when writing the cover text. This would also make it easier for the adversary to win their round, as guessing the hidden message is not really possible. Also, this would be closer to the idea of steganography. This should be set up over a channel in discord for easier time, ideally prepare beforehand if you know the participants.  \n* The ReLU exercise could be made more relevant, less computational perhaps. Potentially put it into a more conceptual and less nitty-gritty form.  \n* There could be a computational exercise for the Merlin-Arthur topic or generally for steganography for the tabular data with the hiring decision with a simple classifier for example. This is relatively straightforward to implement with a neural network and doesn't require transformer training.  \n* Noah Topper proposes to refocus the backdoors section (D.3) to be more about CoT monitoring and alignment auditing instead."
+    },
+    "position": 502,
+    "headings": [
+      {
+        "level": 2,
+        "text": "Overview",
+        "slug": "overview"
+      },
+      {
+        "level": 2,
+        "text": "Prerequisites",
+        "slug": "prerequisites"
+      },
+      {
+        "level": 2,
+        "text": "Content",
+        "slug": "content"
+      },
+      {
+        "level": 3,
+        "text": "Fast track",
+        "slug": "fast-track"
+      },
+      {
+        "level": 3,
+        "text": "Main content",
+        "slug": "main-content"
+      },
+      {
+        "level": 3,
+        "text": "Learn more",
+        "slug": "learn-more"
+      }
+    ]
+  },
+  {
     "slug": "worst-case-interpretability",
     "title": "Worst-Case Interpretability",
     "cluster": "E",
