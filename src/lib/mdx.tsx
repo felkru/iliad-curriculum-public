@@ -54,7 +54,7 @@ const components = {
    * Usage: <Solution>worked answer</Solution>
    */
   Solution: ({ children }: { children: ReactNode }) => (
-    <details className="my-3 ml-4 rounded-md border border-zinc-200 px-3 py-2">
+    <details className="my-3 rounded-md border border-zinc-200 px-3 py-2">
       <summary className="cursor-pointer font-medium">Solution</summary>
       <div className="mt-2">{children}</div>
     </details>
