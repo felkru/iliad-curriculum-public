@@ -114,7 +114,13 @@ const components = {
   Figure: ({ src, alt, caption }: { src: string; alt?: string; caption?: string }) => (
     <figure className="my-6 text-center" data-component="figure">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt ?? caption ?? ""} className="mx-auto max-w-full rounded" />
+      <img
+        src={src}
+        alt={alt ?? caption ?? ""}
+        loading="lazy"
+        decoding="async"
+        className="mx-auto h-auto max-w-full rounded"
+      />
       {caption ? (
         <figcaption className="mt-2 text-sm text-zinc-600">{caption}</figcaption>
       ) : null}
