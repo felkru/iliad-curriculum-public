@@ -39,17 +39,49 @@ So:
 - `content/index.json` / `content/redirects.json` are also exporter-managed —
   prefer changing ordering/redirects through the admin.
 
-## Local development
+## Working locally — options
+
+The public repo is a normal Next.js app, so you can render the whole site on
+your machine. Pick whatever fits your workflow (no DB or secrets needed —
+content is just the committed files in `content/`):
+
+### A. Full local site (recommended — highest fidelity)
 
 ```bash
 git clone git@github.com:felkru/iliad-curriculum-public.git
 cd iliad-curriculum-public
 npm install
-npm run dev          # http://localhost:3000 — full local render of the site
+npm run dev          # http://localhost:3000 — hot-reloading full render
 ```
 
-No database or secrets are needed for local rendering — the content lives in
-`content/` as committed files.
+Renders every custom component (`<Callout>`, `<Exercise>`, `<Figure>`, KaTeX
+math, …) exactly as production.
+
+**VSCode tip:** open the built-in **Simple Browser** (`Cmd/Ctrl+Shift+P` →
+"Simple Browser: Show") at `http://localhost:3000` to see renders side-by-side
+with your editor — ideal for an AI-assisted loop (Claude Code / Copilot) on
+site code and non-module content.
+
+### B. Quick single-file preview (no app running)
+
+For a fast structural look at one `.mdx`, use a VSCode MDX preview extension
+(e.g. "MDX" by unified). It shows prose + standard Markdown but **not** the
+custom curriculum components or math — use Option A when you need those.
+
+### C. No local setup — live preview in the admin
+
+Editing a draft in the admin? Click **👁 Preview** at the top of the editor: it
+builds a live, password-gated preview that hot-reloads on save and shows the
+**full page including frontmatter** (title, summary, contributors, learning
+outcomes) — the same way it'll look once published.
+
+### What you can edit locally
+
+- **Freely:** site code (`src/`) and non-module content (`about.mdx`,
+  `site-config.json`).
+- **Module content** (`content/modules/*.mdx`): render and experiment locally
+  all you like, but **don't hand-push it** — the admin DB is the source of
+  truth and the next publish overwrites it. Edit modules through the admin.
 
 ## Branches & deploys
 
