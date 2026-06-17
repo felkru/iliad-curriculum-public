@@ -59,6 +59,25 @@ export default function PipelineLanding() {
         </Link>
       </div>
 
+      <Link
+        href="/pipeline/local"
+        className="group mt-4 block rounded-lg border border-zinc-200 bg-white p-6 transition hover:border-zinc-400 hover:shadow-sm"
+      >
+        <div className="font-sans text-[0.7rem] uppercase tracking-[0.18em] text-violet-700">
+          For writers · advanced
+        </div>
+        <h2 className="mt-2 font-serif text-[1.4rem] leading-snug" style={{ fontWeight: 600 }}>
+          I want to edit locally (VSCode + AI)
+        </h2>
+        <p className="mt-3 font-serif text-[1rem] leading-relaxed text-zinc-600">
+          Run the whole site on your machine, or preview a single file — options
+          for an AI-integrated local workflow.
+        </p>
+        <span className="mt-4 inline-block text-sm text-violet-700 group-hover:underline">
+          Read the local-editing guide &rarr;
+        </span>
+      </Link>
+
       <footer className="mt-12 border-t border-zinc-200 pt-6 font-sans text-xs text-zinc-500">
         Maintained by Felix Krückel — questions: felix@aisafetyaachen.org
       </footer>
