@@ -51,7 +51,7 @@ export function SidebarNav({
   return (
     <nav
       aria-label="Modules"
-      className="w-full max-w-xs shrink-0 self-start sticky top-16 max-h-[calc(100vh-5rem)] overflow-y-auto pr-4"
+      className="w-full max-w-xs shrink-0 self-start lg:sticky lg:top-16 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto pr-4"
     >
       <div className="space-y-5 font-sans text-sm">
         {orderedClusters.map((cluster) => (
